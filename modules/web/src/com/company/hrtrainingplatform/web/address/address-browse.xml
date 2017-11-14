@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
+        caption="msg://browseCaption"
+        class="com.company.hrtrainingplatform.web.address.AddressBrowse"
+        focusComponent="addressesTable"
+        lookupComponent="addressesTable"
+        messagesPack="com.company.hrtrainingplatform.web.address">
+    <dsContext>
+        <groupDatasource id="addressesDs"
+                         class="com.company.hrtrainingplatform.entity.Address"
+                         view="address-view">
+            <query>
+                <![CDATA[select e from hrtrainingplatform$Address e]]>
+            </query>
+        </groupDatasource>
+    </dsContext>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="addressesTable"
+            spacing="true">
+        <filter id="filter"
+                applyTo="addressesTable"
+                datasource="addressesDs">
+            <properties include=".*"/>
+        </filter>
+        <groupTable id="addressesTable"
+                    width="100%">
+            <actions>
+                <action id="create"/>
+                <action id="edit"/>
+                <action id="remove"/>
+            </actions>
+            <columns>
+                <column id="city"/>
+                <column id="country"/>
+                <column id="number"/>
+                <column id="postalcode"/>
+                <column id="street"/>
+            </columns>
+            <rows datasource="addressesDs"/>
+            <rowsCount/>
+            <buttonsPanel id="buttonsPanel"
+                          alwaysVisible="true">
+                <button id="createBtn"
+                        action="addressesTable.create"/>
+                <button id="editBtn"
+                        action="addressesTable.edit"/>
+                <button id="removeBtn"
+                        action="addressesTable.remove"/>
+            </buttonsPanel>
+        </groupTable>
+    </layout>
+</window>

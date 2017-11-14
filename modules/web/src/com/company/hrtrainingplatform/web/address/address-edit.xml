@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
+        caption="msg://editorCaption"
+        class="com.company.hrtrainingplatform.web.address.AddressEdit"
+        datasource="addressDs"
+        focusComponent="fieldGroup"
+        messagesPack="com.company.hrtrainingplatform.web.address">
+    <dsContext>
+        <datasource id="addressDs"
+                    class="com.company.hrtrainingplatform.entity.Address"
+                    view="address-view"/>
+    </dsContext>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="windowActions"
+            spacing="true">
+        <fieldGroup id="fieldGroup"
+                    datasource="addressDs">
+            <column width="250px">
+                <field property="country"/>
+                <field property="city"/>
+                <field property="postalcode"/>
+                <field property="street"/>
+                <field property="number"/>
+            </column>
+        </fieldGroup>
+        <frame id="windowActions"
+               screen="editWindowActions"/>
+    </layout>
+</window>
