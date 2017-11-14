@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<persistence xmlns="http://java.sun.com/xml/ns/persistence"
+             version="2.0">
+    <persistence-unit name="HRtrainingPlatform"
+                      transaction-type="RESOURCE_LOCAL">
+        <class>com.company.hrtrainingplatform.entity.Address</class>
+        <class>com.company.hrtrainingplatform.entity.Location</class>
+        <class>com.company.hrtrainingplatform.entity.Admin</class>
+        <class>com.company.hrtrainingplatform.entity.Manager</class>
+        <class>com.company.hrtrainingplatform.entity.HREmployee</class>
+        <class>com.company.hrtrainingplatform.entity.Employee</class>
+        <class>com.company.hrtrainingplatform.entity.Survey</class>
+        <class>com.company.hrtrainingplatform.entity.Book</class>
+        <class>com.company.hrtrainingplatform.entity.Certificate</class>
+        <class>com.company.hrtrainingplatform.entity.Training</class>
+    </persistence-unit>
+</persistence>
