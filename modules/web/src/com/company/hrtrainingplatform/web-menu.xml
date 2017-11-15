@@ -7,6 +7,7 @@
         <item screen="hrtrainingplatform$Book.browse"/>
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         <item screen="hrtrainingplatform$Admin.browse"/>
         <item screen="hrtrainingplatform$HREmployee.browse"/>
         <item screen="hrtrainingplatform$Manager.browse"/>
@@ -17,5 +18,7 @@
 >>>>>>> master
 =======
 >>>>>>> parent of 59c98ed... Merge pull request #15 from SWP2Groep10/Brent
+=======
+>>>>>>> parent of 93402f2... Certificate view/UI
     </menu>
 </menu-config>
