@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <screen-config xmlns="http://schemas.haulmont.com/cuba/screens.xsd">
-
     <include file="com/company/hrtrainingplatform/screens.xml"/>
-
+    <screen id="hrtrainingplatform$Address.browse"
+            template="com/company/hrtrainingplatform/web/address/address-browse.xml"/>
+    <screen id="hrtrainingplatform$Location.browse"
+            template="com/company/hrtrainingplatform/web/location/location-browse.xml"/>
+    <screen id="hrtrainingplatform$Location.edit"
+            template="com/company/hrtrainingplatform/web/location/location-edit.xml"/>
+    <screen id="hrtrainingplatform$Address.edit"
+            template="com/company/hrtrainingplatform/web/address/address-edit.xml"/>
 </screen-config>
