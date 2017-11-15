@@ -9,4 +9,6 @@
             template="com/company/hrtrainingplatform/web/location/location-edit.xml"/>
     <screen id="hrtrainingplatform$Address.edit"
             template="com/company/hrtrainingplatform/web/address/address-edit.xml"/>
+    <screen id="hrtrainingplatform$Book.browse"
+            template="com/company/hrtrainingplatform/web/book/book-browse.xml"/>
 </screen-config>
