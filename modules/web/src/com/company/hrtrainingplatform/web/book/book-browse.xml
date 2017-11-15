@@ -76,6 +76,7 @@
                                 <action id="create"/>
                                 <action id="edit"/>
                                 <action id="remove"/>
+                                <action id="excel"/>
                             </actions>
                             <columns>
                                 <column id="author"/>
@@ -95,6 +96,10 @@
                                         action="table.edit"/>
                                 <button id="removeBtn"
                                         action="table.remove"/>
+                                <button id="excelBtn"
+                                        action="table.excel"
+                                        invoke="onExcelBtnClick"
+                                        width="79px"/>
                             </buttonsPanel>
                         </groupTable>
                     </vbox>
