@@ -15,7 +15,6 @@
     <view class="com.company.hrtrainingplatform.entity.Book"
           extends="_local"
           name="book-view"/>
-<<<<<<< HEAD
     <view class="com.company.hrtrainingplatform.entity.Manager"
           extends="_local"
           name="manager-view">
@@ -75,14 +74,6 @@
                 <property name="postalcode"/>
                 <property name="number"/>
             </property>
-=======
-    <view class="com.company.hrtrainingplatform.entity.Certificate"
-          extends="_local"
-          name="certificate-view">
-        <property name="file"
-                  view="_minimal">
-            <property name="size"/>
->>>>>>> master
         </property>
     </view>
 </views>

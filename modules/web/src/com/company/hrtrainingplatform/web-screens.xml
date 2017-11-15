@@ -11,8 +11,6 @@
             template="com/company/hrtrainingplatform/web/address/address-edit.xml"/>
     <screen id="hrtrainingplatform$Book.browse"
             template="com/company/hrtrainingplatform/web/book/book-browse.xml"/>
-<<<<<<< HEAD
-<<<<<<< HEAD
     <screen id="hrtrainingplatform$Admin.browse"
             template="com/company/hrtrainingplatform/web/admin/admin-browse.xml"/>
     <screen id="hrtrainingplatform$HREmployee.browse"
@@ -25,12 +23,4 @@
             template="com/company/hrtrainingplatform/web/training/training-browse.xml"/>
     <screen id="hrtrainingplatform$Training.edit"
             template="com/company/hrtrainingplatform/web/training/training-edit.xml"/>
-=======
-    <screen id="hrtrainingplatform$Certificate.browse"
-            template="com/company/hrtrainingplatform/web/certificate/certificate-browse.xml"/>
-    <screen id="hrtrainingplatform$Certificate.edit"
-            template="com/company/hrtrainingplatform/web/certificate/certificate-edit.xml"/>
->>>>>>> master
-=======
->>>>>>> parent of 59c98ed... Merge pull request #15 from SWP2Groep10/Brent
 </screen-config>
