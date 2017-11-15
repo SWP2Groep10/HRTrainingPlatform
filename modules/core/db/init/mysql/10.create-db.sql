@@ -9,11 +9,11 @@ create table HRTRAININGPLATFORM_ADDRESS (
     DELETE_TS datetime(3),
     DELETED_BY varchar(50),
     --
-    CITY varchar(100) not null,
     COUNTRY varchar(100) not null,
-    NUMBER_ integer not null,
-    POSTALCODE integer not null,
+    CITY varchar(100) not null,
+    POSTALCODE varchar(255) not null,
     STREET varchar(100) not null,
+    NUMBER_ integer not null,
     --
     primary key (ID)
 )^
@@ -129,7 +129,7 @@ create table HRTRAININGPLATFORM_BOOK (
     ISBN varchar(50) not null,
     PUBLISHER varchar(100) not null,
     TITLE varchar(100) not null,
-    YEAR_ integer not null,
+    YEAR_ varchar(255) not null,
     --
     primary key (ID)
 )^

@@ -12,4 +12,7 @@
             <property name="number"/>
         </property>
     </view>
+    <view class="com.company.hrtrainingplatform.entity.Book"
+          extends="_local"
+          name="book-view"/>
 </views>
