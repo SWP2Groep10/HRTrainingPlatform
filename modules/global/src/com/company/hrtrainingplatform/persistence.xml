@@ -13,6 +13,5 @@
         <class>com.company.hrtrainingplatform.entity.Book</class>
         <class>com.company.hrtrainingplatform.entity.Certificate</class>
         <class>com.company.hrtrainingplatform.entity.Training</class>
-        <class>com.company.hrtrainingplatform.entity.NewEntity</class>
     </persistence-unit>
 </persistence>
