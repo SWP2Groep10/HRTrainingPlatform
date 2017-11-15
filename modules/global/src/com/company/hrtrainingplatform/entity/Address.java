@@ -23,7 +23,7 @@ public class Address extends StandardEntity {
 
     @NotNull(message = "This value can not be null")
     @Column(name = "POSTALCODE", nullable = false)
-    protected Integer postalcode;
+    protected String postalcode;
 
     @NotNull(message = "This value can not be null")
     @Column(name = "STREET", nullable = false, length = 100)
@@ -32,6 +32,15 @@ public class Address extends StandardEntity {
     @NotNull(message = "This value can not be null")
     @Column(name = "NUMBER_", nullable = false)
     protected Integer number;
+    public String getPostalcode() {
+        return postalcode;
+    }
+
+    public void setPostalcode(String postalcode) {
+        this.postalcode = postalcode;
+    }
+
+
 
     public void setCity(String city) {
         this.city = city;
@@ -57,13 +66,7 @@ public class Address extends StandardEntity {
         return number;
     }
 
-    public void setPostalcode(Integer postalcode) {
-        this.postalcode = postalcode;
-    }
 
-    public Integer getPostalcode() {
-        return postalcode;
-    }
 
     public void setStreet(String street) {
         this.street = street;
