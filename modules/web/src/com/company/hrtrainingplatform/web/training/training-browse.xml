@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
+        caption="msg://browseCaption"
+        class="com.company.hrtrainingplatform.web.training.TrainingBrowse"
+        focusComponent="trainingsTable"
+        lookupComponent="trainingsTable"
+        messagesPack="com.company.hrtrainingplatform.web.training">
+    <dsContext>
+        <groupDatasource id="trainingsDs"
+                         class="com.company.hrtrainingplatform.entity.Training"
+                         view="training-view">
+            <query>
+                <![CDATA[select e from hrtrainingplatform$Training e]]>
+            </query>
+        </groupDatasource>
+    </dsContext>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="trainingsTable"
+            spacing="true">
+        <filter id="filter"
+                applyTo="trainingsTable"
+                datasource="trainingsDs">
+            <properties include=".*"/>
+        </filter>
+        <groupTable id="trainingsTable"
+                    multiselect="true"
+                    width="100%">
+            <actions>
+                <action id="create"/>
+                <action id="edit"/>
+                <action id="remove"/>
+                <action id="excel"/>
+                <action id="refresh"/>
+            </actions>
+            <columns>
+                <column id="description"/>
+                <column id="startDate"/>
+                <column id="endDate"/>
+                <column id="status"/>
+                <column id="survey"/>
+            </columns>
+            <rows datasource="trainingsDs"/>
+            <rowsCount/>
+            <buttonsPanel id="buttonsPanel"
+                          alwaysVisible="true">
+                <button id="createBtn"
+                        action="trainingsTable.create"/>
+                <button id="editBtn"
+                        action="trainingsTable.edit"/>
+                <button id="removeBtn"
+                        action="trainingsTable.remove"/>
+                <button id="excelBtn"
+                        action="trainingsTable.excel"/>
+                <button id="refreshBtn"
+                        action="trainingsTable.refresh"/>
+            </buttonsPanel>
+        </groupTable>
+    </layout>
+</window>
