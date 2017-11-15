@@ -1,12 +1,19 @@
 
 buildscript {
-    ext.cubaVersion = '6.6.5'
+    ext.cubaVersion = '6.7.2'
     repositories {
         maven {
             url 'https://repo.cuba-platform.com/content/groups/work'
             credentials {
                 username(rootProject.hasProperty('repoUser') ? rootProject['repoUser'] : 'cuba')
                 password(rootProject.hasProperty('repoPass') ? rootProject['repoPass'] : 'cuba123')
+            }
+        }
+        maven {
+            url 'https://repo.cuba-platform.com/content/groups/premium'
+            credentials {
+                username(rootProject.hasProperty('premiumRepoUser') ? rootProject['premiumRepoUser'] : System.getenv('CUBA_PREMIUM_USER'))
+                password(rootProject.hasProperty('premiumRepoPass') ? rootProject['premiumRepoPass'] : System.getenv('CUBA_PREMIUM_PASSWORD'))
             }
         }
     }
@@ -43,10 +50,11 @@ cuba {
 
 dependencies {
     appComponent("com.haulmont.cuba:cuba-global:$cubaVersion")
+    appComponent("com.haulmont.charts:charts-global:$cubaVersion")
 
 }
 
-def hsql = 'org.hsqldb:hsqldb:2.2.9'
+def mysql = 'mysql:mysql-connector-java:5.1.38'
 
 configure([globalModule, coreModule, guiModule, webModule]) {
     apply(plugin: 'java')
@@ -84,8 +92,8 @@ configure(coreModule) {
     dependencies {
         compile(globalModule)
         provided(servletApi)
-        jdbc(hsql)
-        testRuntime(hsql)
+        jdbc(mysql)
+        testRuntime(mysql)
 
     }
 
@@ -106,19 +114,21 @@ configure(coreModule) {
     }
 
     task createDb(dependsOn: assembleDbScripts, description: 'Creates local database', type: CubaDbCreation) {
-        dbms = 'hsql'
-        host = 'localhost'
-        dbName = 'hrtrainingplatform'
-        dbUser = 'sa'
-        dbPassword = ''
+        connectionParams = '?useSSL=false&allowMultiQueries=true'
+        dbms = 'mysql'
+        host = 'dt5.ehb.be'
+        dbName = 'SP2Team10'
+        dbUser = 'SP2Team10'
+        dbPassword = 'qCTBUryK'
     }
 
     task updateDb(dependsOn: assembleDbScripts, description: 'Updates local database', type: CubaDbUpdate) {
-        dbms = 'hsql'
-        host = 'localhost'
-        dbName = 'hrtrainingplatform'
-        dbUser = 'sa'
-        dbPassword = ''
+        connectionParams = '?useSSL=false&allowMultiQueries=true'
+        dbms = 'mysql'
+        host = 'dt5.ehb.be'
+        dbName = 'SP2Team10'
+        dbUser = 'SP2Team10'
+        dbPassword = 'qCTBUryK'
     }
 }
 
