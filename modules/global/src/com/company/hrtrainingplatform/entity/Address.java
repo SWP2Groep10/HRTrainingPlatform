@@ -14,16 +14,12 @@ public class Address extends StandardEntity {
     private static final long serialVersionUID = -4607488382137891335L;
 
     @NotNull(message = "This value can not be null")
-    @Column(name = "CITY", nullable = false, length = 100)
-    protected String city;
-
-    @NotNull(message = "This value can not be null")
     @Column(name = "COUNTRY", nullable = false, length = 100)
     protected String country;
 
     @NotNull(message = "This value can not be null")
-    @Column(name = "NUMBER_", nullable = false)
-    protected Integer number;
+    @Column(name = "CITY", nullable = false, length = 100)
+    protected String city;
 
     @NotNull(message = "This value can not be null")
     @Column(name = "POSTALCODE", nullable = false)
@@ -32,6 +28,10 @@ public class Address extends StandardEntity {
     @NotNull(message = "This value can not be null")
     @Column(name = "STREET", nullable = false, length = 100)
     protected String street;
+
+    @NotNull(message = "This value can not be null")
+    @Column(name = "NUMBER_", nullable = false)
+    protected Integer number;
 
     public void setCity(String city) {
         this.city = city;

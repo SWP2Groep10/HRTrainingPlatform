@@ -1,4 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <views xmlns="http://schemas.haulmont.com/cuba/view.xsd">
-
+    <view class="com.company.hrtrainingplatform.entity.Address"
+          extends="_local"
+          name="address-view"/>
+    <view class="com.company.hrtrainingplatform.entity.Location"
+          extends="_local"
+          name="location-view">
+        <property name="address"
+                  view="_minimal">
+            <property name="postalcode"/>
+            <property name="number"/>
+        </property>
+    </view>
 </views>
