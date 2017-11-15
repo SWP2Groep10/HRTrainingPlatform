@@ -36,7 +36,16 @@ public class Book extends StandardEntity {
 
     @NotNull(message = "This value can not be null")
     @Column(name = "YEAR_", nullable = false)
-    protected Integer year;
+    protected String year;
+    public String getYear() {
+        return year;
+    }
+
+    public void setYear(String year) {
+        this.year = year;
+    }
+
+
 
     public void setPublisher(String publisher) {
         this.publisher = publisher;
@@ -54,13 +63,7 @@ public class Book extends StandardEntity {
         return title;
     }
 
-    public void setYear(Integer year) {
-        this.year = year;
-    }
 
-    public Integer getYear() {
-        return year;
-    }
 
 
     public void setAuthor(String author) {
