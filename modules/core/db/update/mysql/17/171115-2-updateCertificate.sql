@@ -1,1 +1,0 @@
-alter table HRTRAININGPLATFORM_CERTIFICATE add column CERTIFICATE longblob ;
