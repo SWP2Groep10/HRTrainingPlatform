@@ -15,9 +15,17 @@
     <view class="com.company.hrtrainingplatform.entity.Book"
           extends="_local"
           name="book-view"/>
-    <view class="com.company.hrtrainingplatform.entity.Manager"
+    <view class="com.company.hrtrainingplatform.entity.Certificate"
           extends="_local"
-          name="manager-view">
+          name="certificate-view">
+        <property name="file"
+                  view="_minimal">
+            <property name="size"/>
+        </property>
+    </view>
+    <view class="com.company.hrtrainingplatform.entity.Admin"
+          extends="_local"
+          name="admin-view">
         <property name="user"
                   view="_minimal">
             <property name="password"/>
@@ -48,9 +56,9 @@
                       view="_minimal"/>
         </property>
     </view>
-    <view class="com.company.hrtrainingplatform.entity.Admin"
+    <view class="com.company.hrtrainingplatform.entity.Manager"
           extends="_local"
-          name="admin-view">
+          name="manager-view">
         <property name="user"
                   view="_minimal">
             <property name="password"/>
@@ -63,9 +71,6 @@
           extends="_local"
           name="training-view">
         <property name="attendingList"
-                  view="_minimal">
-        </property>
-        <property name="survey"
                   view="_minimal"/>
         <property name="location"
                   view="_minimal">
@@ -75,5 +80,7 @@
                 <property name="number"/>
             </property>
         </property>
+        <property name="survey"
+                  view="_minimal"/>
     </view>
 </views>

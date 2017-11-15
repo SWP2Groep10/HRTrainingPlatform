@@ -20,7 +20,8 @@
     <layout expand="windowActions"
             spacing="true">
         <fieldGroup id="fieldGroup"
-                    datasource="trainingDs">
+                    datasource="trainingDs"
+                    responsive="true">
             <column width="250px">
                 <field property="description"/>
                 <field property="startDate"/>

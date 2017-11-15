@@ -5,10 +5,11 @@
         <item screen="hrtrainingplatform$Address.browse"/>
         <item screen="hrtrainingplatform$Location.browse"/>
         <item screen="hrtrainingplatform$Book.browse"/>
+        <item screen="hrtrainingplatform$Certificate.browse"/>
         <item screen="hrtrainingplatform$Admin.browse"/>
+        <item screen="hrtrainingplatform$Employee.browse"/>
         <item screen="hrtrainingplatform$HREmployee.browse"/>
         <item screen="hrtrainingplatform$Manager.browse"/>
-        <item screen="hrtrainingplatform$Employee.browse"/>
         <item screen="hrtrainingplatform$Training.browse"/>
     </menu>
 </menu-config>

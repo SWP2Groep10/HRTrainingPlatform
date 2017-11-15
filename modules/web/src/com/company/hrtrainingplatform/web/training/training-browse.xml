@@ -24,14 +24,12 @@
             <properties include=".*"/>
         </filter>
         <groupTable id="trainingsTable"
-                    multiselect="true"
                     width="100%">
             <actions>
                 <action id="create"/>
                 <action id="edit"/>
                 <action id="remove"/>
                 <action id="excel"/>
-                <action id="refresh"/>
             </actions>
             <columns>
                 <column id="description"/>
@@ -52,8 +50,6 @@
                         action="trainingsTable.remove"/>
                 <button id="excelBtn"
                         action="trainingsTable.excel"/>
-                <button id="refreshBtn"
-                        action="trainingsTable.refresh"/>
             </buttonsPanel>
         </groupTable>
     </layout>
