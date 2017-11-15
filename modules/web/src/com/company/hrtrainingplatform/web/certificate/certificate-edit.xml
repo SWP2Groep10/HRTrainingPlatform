@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
+        caption="msg://editorCaption"
+        class="com.company.hrtrainingplatform.web.certificate.CertificateEdit"
+        datasource="certificateDs"
+        focusComponent="fieldGroup"
+        messagesPack="com.company.hrtrainingplatform.web.certificate">
+    <dsContext>
+        <datasource id="certificateDs"
+                    class="com.company.hrtrainingplatform.entity.Certificate"
+                    view="certificate-view"/>
+    </dsContext>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="windowActions"
+            spacing="true">
+        <fieldGroup id="fieldGroup"
+                    datasource="certificateDs">
+            <column width="250px">
+                <field property="description"/>
+                <field property="file"/>
+            </column>
+        </fieldGroup>
+        <frame id="windowActions"
+               screen="editWindowActions"/>
+    </layout>
+</window>
