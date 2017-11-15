@@ -146,6 +146,7 @@ create table HRTRAININGPLATFORM_CERTIFICATE (
     DELETED_BY varchar(50),
     --
     DESCRIPTION varchar(100) not null,
+    FILE_ID varchar(32),
     --
     primary key (ID)
 )^
