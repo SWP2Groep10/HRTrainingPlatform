@@ -11,4 +11,20 @@
             template="com/company/hrtrainingplatform/web/address/address-edit.xml"/>
     <screen id="hrtrainingplatform$Book.browse"
             template="com/company/hrtrainingplatform/web/book/book-browse.xml"/>
+    <screen id="hrtrainingplatform$Certificate.browse"
+            template="com/company/hrtrainingplatform/web/certificate/certificate-browse.xml"/>
+    <screen id="hrtrainingplatform$Certificate.edit"
+            template="com/company/hrtrainingplatform/web/certificate/certificate-edit.xml"/>
+    <screen id="hrtrainingplatform$Admin.browse"
+            template="com/company/hrtrainingplatform/web/admin/admin-browse.xml"/>
+    <screen id="hrtrainingplatform$Employee.browse"
+            template="com/company/hrtrainingplatform/web/employee/employee-browse.xml"/>
+    <screen id="hrtrainingplatform$HREmployee.browse"
+            template="com/company/hrtrainingplatform/web/hremployee/hr-employee-browse.xml"/>
+    <screen id="hrtrainingplatform$Manager.browse"
+            template="com/company/hrtrainingplatform/web/manager/manager-browse.xml"/>
+    <screen id="hrtrainingplatform$Training.browse"
+            template="com/company/hrtrainingplatform/web/training/training-browse.xml"/>
+    <screen id="hrtrainingplatform$Training.edit"
+            template="com/company/hrtrainingplatform/web/training/training-edit.xml"/>
 </screen-config>
