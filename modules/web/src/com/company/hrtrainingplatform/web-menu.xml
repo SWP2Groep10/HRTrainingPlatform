@@ -12,7 +12,7 @@
         <item screen="hrtrainingplatform$Training.browse"/>
         <item screen="hrtrainingplatform$Certificate.browse"/>
     </menu>
-    <menu id="application-hrtrainingplatform"
+    <menu id="Data"
           insertBefore="administration">
         <item screen="hrtrainingplatform$Address.browse"/>
         <item screen="hrtrainingplatform$Location.browse"/>
