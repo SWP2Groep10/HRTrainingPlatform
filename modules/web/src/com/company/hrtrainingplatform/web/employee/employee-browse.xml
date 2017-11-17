@@ -33,6 +33,9 @@
                 description="Esc"
                 icon="icons/cancel.png"
                 invoke="cancel"/>
+        <action id="oData"
+                caption="mainMsg://actions.RefreshEmployees"
+                invoke="onOData"/>
     </actions>
     <dialogMode height="600"
                 width="800"/>
@@ -76,6 +79,8 @@
                                 action="table.remove"/>
                         <button id="excelBtn"
                                 action="table.excel"/>
+                        <button id="oDataBtn"
+                                action="oData"/>
                     </buttonsPanel>
                 </groupTable>
             </vbox>
