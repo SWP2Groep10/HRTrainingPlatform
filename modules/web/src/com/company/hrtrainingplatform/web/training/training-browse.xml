@@ -24,10 +24,7 @@
             <properties include=".*"/>
         </filter>
         <groupTable id="trainingsTable"
-<<<<<<< HEAD
-=======
                     responsive="true"
->>>>>>> master
                     width="100%">
             <actions>
                 <action id="create"/>
