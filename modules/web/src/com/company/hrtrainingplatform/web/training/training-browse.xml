@@ -38,6 +38,9 @@
                 <column id="endDate"/>
                 <column id="status"/>
                 <column id="survey"/>
+                <column id="recBookList"
+                        align="RIGHT"
+                        collapsed="true"/>
             </columns>
             <rows datasource="trainingsDs"/>
             <rowsCount/>

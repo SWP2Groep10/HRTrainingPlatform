@@ -22,13 +22,13 @@
         <entity class="com.company.hrtrainingplatform.entity.Survey">
             <include re=".*"/>
         </entity>
-        <entity class="com.company.hrtrainingplatform.entity.Book">
-            <include re=".*"/>
-        </entity>
         <entity class="com.company.hrtrainingplatform.entity.Certificate">
             <include re=".*"/>
         </entity>
         <entity class="com.company.hrtrainingplatform.entity.Training">
+            <include re=".*"/>
+        </entity>
+        <entity class="com.company.hrtrainingplatform.entity.ISBNnr">
             <include re=".*"/>
         </entity>
     </entities>

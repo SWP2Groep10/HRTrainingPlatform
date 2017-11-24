@@ -16,6 +16,5 @@
           insertBefore="administration">
         <item screen="hrtrainingplatform$Address.browse"/>
         <item screen="hrtrainingplatform$Location.browse"/>
-        <item screen="hrtrainingplatform$Book.browse"/>
     </menu>
 </menu-config>
