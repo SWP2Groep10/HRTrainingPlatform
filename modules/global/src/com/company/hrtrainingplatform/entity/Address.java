@@ -7,7 +7,7 @@ import javax.validation.constraints.NotNull;
 import com.haulmont.cuba.core.entity.StandardEntity;
 import com.haulmont.chile.core.annotations.NamePattern;
 
-@NamePattern("%s %s %s|street,city,country")
+@NamePattern("%s %s %s %s|street,city,country,number")
 @Table(name = "HRTRAININGPLATFORM_ADDRESS")
 @Entity(name = "hrtrainingplatform$Address")
 public class Address extends StandardEntity {
