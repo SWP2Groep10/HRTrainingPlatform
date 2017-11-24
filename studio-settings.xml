@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <studio>
     <screenDesigner>
+<<<<<<< HEAD
         <screen layoutAnalysisDisabled="true"
                 module="web"
                 reference="com/company/hrtrainingplatform/web/training/training-edit.xml"/>
+=======
+>>>>>>> master
     </screenDesigner>
 </studio>

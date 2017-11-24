@@ -17,6 +17,7 @@
     </dsContext>
     <dialogMode height="600"
                 width="800"/>
+<<<<<<< HEAD
     <layout expand="windowActions"
             spacing="true">
         <fieldGroup id="fieldGroup"
@@ -71,5 +72,64 @@
         </groupBox>
         <frame id="windowActions"
                screen="editWindowActions"/>
+=======
+    <layout spacing="true">
+        <scrollBox height="500px"
+                   responsive="true"
+                   spacing="true">
+            <fieldGroup id="fieldGroup"
+                        datasource="trainingDs">
+                <column width="250px">
+                    <field property="description"/>
+                    <field property="startDate"/>
+                    <field property="endDate"/>
+                    <field property="status"/>
+                    <field property="survey"/>
+                </column>
+            </fieldGroup>
+            <frame id="windowActions"
+                   height="30px"
+                   screen="editWindowActions"/>
+            <groupBox id="locationBox"
+                      caption="msg://com.company.hrtrainingplatform.entity/Training.location">
+                <table id="locationTable"
+                       height="200px"
+                       width="100%">
+                    <actions>
+                        <action id="add"/>
+                        <action id="remove"/>
+                    </actions>
+                    <columns>
+                        <column id="locationName"/>
+                        <column id="address"/>
+                    </columns>
+                    <rows datasource="locationDs"/>
+                    <buttonsPanel>
+                        <button action="locationTable.add"/>
+                        <button action="locationTable.remove"/>
+                    </buttonsPanel>
+                </table>
+            </groupBox>
+            <groupBox id="attendingListBox"
+                      caption="msg://com.company.hrtrainingplatform.entity/Training.attendingList">
+                <table id="attendingListTable"
+                       height="200px"
+                       width="100%">
+                    <actions>
+                        <action id="add"/>
+                        <action id="remove"/>
+                    </actions>
+                    <columns>
+                        <column id="user"/>
+                    </columns>
+                    <rows datasource="attendingListDs"/>
+                    <buttonsPanel>
+                        <button action="attendingListTable.add"/>
+                        <button action="attendingListTable.remove"/>
+                    </buttonsPanel>
+                </table>
+            </groupBox>
+        </scrollBox>
+>>>>>>> master
     </layout>
 </window>
