@@ -1,2 +1,0 @@
-alter table HRTRAININGPLATFORM_SURVEY_QUESTION_LINK drop foreign key FK_SURQUE_SURVEY;
-drop table if exists HRTRAININGPLATFORM_SURVEY cascade ;

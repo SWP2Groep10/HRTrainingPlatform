@@ -20,6 +20,12 @@
             <include re=".*"/>
         </entity>
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+        <entity class="com.company.hrtrainingplatform.entity.Survey">
+            <include re=".*"/>
+        </entity>
+>>>>>>> parent of ba4f4c5... survey class by Amir + Ricardo
         <entity class="com.company.hrtrainingplatform.entity.Certificate">
 =======
         <entity class="com.company.hrtrainingplatform.entity.Survey">
@@ -33,9 +39,6 @@
             <include re=".*"/>
         </entity>
         <entity class="com.company.hrtrainingplatform.entity.Training">
-            <include re=".*"/>
-        </entity>
-        <entity class="com.company.hrtrainingplatform.entity.Test">
             <include re=".*"/>
         </entity>
     </entities>

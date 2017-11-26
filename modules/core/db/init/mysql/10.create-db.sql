@@ -100,7 +100,24 @@ create table HRTRAININGPLATFORM_EMPLOYEE (
 )^
 -- end HRTRAININGPLATFORM_EMPLOYEE
 <<<<<<< HEAD
+<<<<<<< HEAD
 
+=======
+-- begin HRTRAININGPLATFORM_SURVEY
+create table HRTRAININGPLATFORM_SURVEY (
+    ID varchar(32),
+    VERSION integer not null,
+    CREATE_TS datetime(3),
+    CREATED_BY varchar(50),
+    UPDATE_TS datetime(3),
+    UPDATED_BY varchar(50),
+    DELETE_TS datetime(3),
+    DELETED_BY varchar(50),
+    --
+    primary key (ID)
+)^
+-- end HRTRAININGPLATFORM_SURVEY
+>>>>>>> parent of ba4f4c5... survey class by Amir + Ricardo
 
 =======
 -- begin HRTRAININGPLATFORM_SURVEY

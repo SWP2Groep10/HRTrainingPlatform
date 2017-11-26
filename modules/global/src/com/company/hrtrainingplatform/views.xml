@@ -81,6 +81,11 @@
             </property>
         </property>
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+        <property name="survey"
+                  view="_minimal"/>
+>>>>>>> parent of ba4f4c5... survey class by Amir + Ricardo
         <property name="recBookList"
                   view="_local"/>
 =======
