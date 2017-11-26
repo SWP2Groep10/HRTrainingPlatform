@@ -1,15 +1,20 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <menu-config xmlns="http://schemas.haulmont.com/cuba/menu.xsd">
-    <menu id="application-hrtrainingplatform"
+    <menu id="Users"
+          insertBefore="administration">
+        <item screen="hrtrainingplatform$Manager.browse"/>
+        <item screen="hrtrainingplatform$HREmployee.browse"/>
+        <item screen="hrtrainingplatform$Employee.browse"/>
+        <item screen="hrtrainingplatform$Admin.browse"/>
+    </menu>
+    <menu id="Training"
+          insertBefore="administration">
+        <item screen="hrtrainingplatform$Training.browse"/>
+        <item screen="hrtrainingplatform$Certificate.browse"/>
+    </menu>
+    <menu id="Data"
           insertBefore="administration">
         <item screen="hrtrainingplatform$Address.browse"/>
         <item screen="hrtrainingplatform$Location.browse"/>
-        <item screen="hrtrainingplatform$Book.browse"/>
-        <item screen="hrtrainingplatform$Certificate.browse"/>
-        <item screen="hrtrainingplatform$Admin.browse"/>
-        <item screen="hrtrainingplatform$Employee.browse"/>
-        <item screen="hrtrainingplatform$HREmployee.browse"/>
-        <item screen="hrtrainingplatform$Manager.browse"/>
-        <item screen="hrtrainingplatform$Training.browse"/>
     </menu>
 </menu-config>

@@ -12,9 +12,6 @@
             <property name="number"/>
         </property>
     </view>
-    <view class="com.company.hrtrainingplatform.entity.Book"
-          extends="_local"
-          name="book-view"/>
     <view class="com.company.hrtrainingplatform.entity.Certificate"
           extends="_local"
           name="certificate-view">
@@ -80,17 +77,9 @@
                 <property name="number"/>
             </property>
         </property>
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
         <property name="survey"
                   view="_minimal"/>
->>>>>>> parent of ba4f4c5... survey class by Amir + Ricardo
         <property name="recBookList"
                   view="_local"/>
-=======
-        <property name="survey"
-                  view="_minimal"/>
->>>>>>> parent of 957ec06... Merge branch 'master' into Amir
     </view>
 </views>

@@ -9,23 +9,9 @@
         <class>com.company.hrtrainingplatform.entity.Manager</class>
         <class>com.company.hrtrainingplatform.entity.HREmployee</class>
         <class>com.company.hrtrainingplatform.entity.Employee</class>
-<<<<<<< HEAD
-<<<<<<< HEAD
-        <class>com.company.hrtrainingplatform.entity.Certificate</class>
-        <class>com.company.hrtrainingplatform.entity.Training</class>
-        <class>com.company.hrtrainingplatform.entity.ISBNnr</class>
-        <class>com.company.hrtrainingplatform.entity.Test</class>
-=======
-        <class>com.company.hrtrainingplatform.entity.Survey</class>
-        <class>com.company.hrtrainingplatform.entity.Book</class>
-        <class>com.company.hrtrainingplatform.entity.Certificate</class>
-        <class>com.company.hrtrainingplatform.entity.Training</class>
->>>>>>> parent of 957ec06... Merge branch 'master' into Amir
-=======
         <class>com.company.hrtrainingplatform.entity.Survey</class>
         <class>com.company.hrtrainingplatform.entity.Certificate</class>
         <class>com.company.hrtrainingplatform.entity.Training</class>
         <class>com.company.hrtrainingplatform.entity.ISBNnr</class>
->>>>>>> parent of ba4f4c5... survey class by Amir + Ricardo
     </persistence-unit>
 </persistence>
