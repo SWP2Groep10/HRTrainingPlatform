@@ -24,7 +24,6 @@
             <properties include=".*"/>
         </filter>
         <groupTable id="trainingsTable"
-                    responsive="true"
                     width="100%">
             <actions>
                 <action id="create"/>
@@ -38,9 +37,6 @@
                 <column id="endDate"/>
                 <column id="status"/>
                 <column id="survey"/>
-                <column id="recBookList"
-                        align="RIGHT"
-                        collapsed="true"/>
             </columns>
             <rows datasource="trainingsDs"/>
             <rowsCount/>

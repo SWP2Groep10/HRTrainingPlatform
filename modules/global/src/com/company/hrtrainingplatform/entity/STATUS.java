@@ -7,9 +7,9 @@ import javax.annotation.Nullable;
 
 public enum STATUS implements EnumClass<String> {
 
-    EXPIRED("10"),
-    ONGOING("20"),
-    PLANNED("30");
+    EXPIRED("0"),
+    ONGOING("1"),
+    PLANNED("2");
 
     private String id;
 

@@ -15,10 +15,6 @@ import javax.persistence.TemporalType;
 import javax.validation.constraints.NotNull;
 import com.haulmont.cuba.core.entity.StandardEntity;
 import com.haulmont.chile.core.annotations.NamePattern;
-import com.haulmont.cuba.core.entity.annotation.OnDelete;
-import com.haulmont.cuba.core.entity.annotation.OnDeleteInverse;
-import com.haulmont.cuba.core.global.DeletePolicy;
-import javax.persistence.Lob;
 
 @NamePattern("%s %s|description,status")
 @Table(name = "HRTRAININGPLATFORM_TRAINING")
@@ -26,24 +22,13 @@ import javax.persistence.Lob;
 public class Training extends StandardEntity {
     private static final long serialVersionUID = 2831799128035995203L;
 
-    @NotNull(message = "Training can't be given without any attending employees")
     @JoinTable(name = "HRTRAININGPLATFORM_TRAINING_EMPLOYEE_LINK",
         joinColumns = @JoinColumn(name = "TRAINING_ID"),
         inverseJoinColumns = @JoinColumn(name = "EMPLOYEE_ID"))
     @ManyToMany
     protected List<Employee> attendingList;
 
-    @JoinTable(name = "HRTRAININGPLATFORM_TRAINING_ISB_NNR_LINK",
-        joinColumns = @JoinColumn(name = "TRAINING_ID"),
-        inverseJoinColumns = @JoinColumn(name = "I_S_B_NNR_ID"))
-    @OnDeleteInverse(DeletePolicy.UNLINK)
-    @OnDelete(DeletePolicy.UNLINK)
-    @ManyToMany
-    protected List<ISBNnr> recBookList;
-
-    @NotNull(message = "Training's require descriptions")
-    @Lob
-    @Column(name = "DESCRIPTION", nullable = false)
+    @Column(name = "DESCRIPTION", nullable = false, length = 100)
     protected String description;
 
     @Temporal(TemporalType.TIMESTAMP)
@@ -56,7 +41,6 @@ public class Training extends StandardEntity {
     @Column(name = "END_DATE", nullable = false)
     protected Date endDate;
 
-    @NotNull(message = "Location is required.")
     @JoinTable(name = "HRTRAININGPLATFORM_TRAINING_LOCATION_LINK",
         joinColumns = @JoinColumn(name = "TRAINING_ID"),
         inverseJoinColumns = @JoinColumn(name = "LOCATION_ID"))
@@ -65,15 +49,6 @@ public class Training extends StandardEntity {
 
     @Column(name = "STATUS", nullable = false)
     protected String status;
-
-
-    public void setRecBookList(List<ISBNnr> recBookList) {
-        this.recBookList = recBookList;
-    }
-
-    public List<ISBNnr> getRecBookList() {
-        return recBookList;
-    }
 
 
     public void setDescription(String description) {
