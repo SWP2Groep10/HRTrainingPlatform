@@ -19,9 +19,6 @@
         <entity class="com.company.hrtrainingplatform.entity.Employee">
             <include re=".*"/>
         </entity>
-        <entity class="com.company.hrtrainingplatform.entity.Survey">
-            <include re=".*"/>
-        </entity>
         <entity class="com.company.hrtrainingplatform.entity.Certificate">
             <include re=".*"/>
         </entity>
@@ -29,6 +26,9 @@
             <include re=".*"/>
         </entity>
         <entity class="com.company.hrtrainingplatform.entity.ISBNnr">
+            <include re=".*"/>
+        </entity>
+        <entity class="com.company.hrtrainingplatform.entity.Test">
             <include re=".*"/>
         </entity>
     </entities>

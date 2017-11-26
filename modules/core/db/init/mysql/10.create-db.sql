@@ -99,20 +99,7 @@ create table HRTRAININGPLATFORM_EMPLOYEE (
     primary key (ID)
 )^
 -- end HRTRAININGPLATFORM_EMPLOYEE
--- begin HRTRAININGPLATFORM_SURVEY
-create table HRTRAININGPLATFORM_SURVEY (
-    ID varchar(32),
-    VERSION integer not null,
-    CREATE_TS datetime(3),
-    CREATED_BY varchar(50),
-    UPDATE_TS datetime(3),
-    UPDATED_BY varchar(50),
-    DELETE_TS datetime(3),
-    DELETED_BY varchar(50),
-    --
-    primary key (ID)
-)^
--- end HRTRAININGPLATFORM_SURVEY
+
 
 -- begin HRTRAININGPLATFORM_CERTIFICATE
 create table HRTRAININGPLATFORM_CERTIFICATE (

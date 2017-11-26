@@ -66,9 +66,6 @@ public class Training extends StandardEntity {
     @Column(name = "STATUS", nullable = false)
     protected String status;
 
-    @OneToOne(fetch = FetchType.LAZY, optional = false)
-    @JoinColumn(name = "SURVEY_ID")
-    protected Survey survey;
 
     public void setRecBookList(List<ISBNnr> recBookList) {
         this.recBookList = recBookList;
@@ -128,13 +125,7 @@ public class Training extends StandardEntity {
         return status == null ? null : STATUS.fromId(status);
     }
 
-    public void setSurvey(Survey survey) {
-        this.survey = survey;
-    }
 
-    public Survey getSurvey() {
-        return survey;
-    }
 
 
 }
