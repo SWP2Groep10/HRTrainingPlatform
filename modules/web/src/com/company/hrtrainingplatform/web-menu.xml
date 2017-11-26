@@ -6,6 +6,10 @@
         <item screen="hrtrainingplatform$HREmployee.browse"/>
         <item screen="hrtrainingplatform$Employee.browse"/>
         <item screen="hrtrainingplatform$Admin.browse"/>
+        <item screen="hrtrainingplatform$Question.browse"/>
+        <item screen="hrtrainingplatform$QuestionCategory.browse"/>
+        <item screen="hrtrainingplatform$Survey.browse"/>
+        <item screen="hrtrainingplatform$FilledSurvey.browse"/>
     </menu>
     <menu id="Training"
           insertBefore="administration">

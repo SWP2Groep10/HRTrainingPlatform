@@ -66,7 +66,7 @@ public class Training extends StandardEntity {
     @Column(name = "STATUS", nullable = false)
     protected String status;
 
-    @OneToOne(fetch = FetchType.LAZY, optional = false)
+    @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "SURVEY_ID")
     protected Survey survey;
 

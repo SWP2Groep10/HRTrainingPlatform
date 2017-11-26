@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
+        caption="msg://editorCaption"
+        class="com.company.hrtrainingplatform.web.question.QuestionEdit"
+        datasource="questionDs"
+        focusComponent="fieldGroup"
+        messagesPack="com.company.hrtrainingplatform.web.question">
+    <dsContext>
+        <datasource id="questionDs"
+                    class="com.company.hrtrainingplatform.entity.Question"
+                    view="question-view">
+            <collectionDatasource id="possibleAnswersDs"
+                                  property="possibleAnswers"/>
+        </datasource>
+    </dsContext>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="windowActions"
+            spacing="true">
+        <fieldGroup id="fieldGroup"
+                    datasource="questionDs">
+            <column width="250px">
+                <field property="questionText"/>
+                <field property="category"/>
+            </column>
+        </fieldGroup>
+        <groupBox id="possibleAnswersBox"
+                  caption="msg://com.company.hrtrainingplatform.entity/Question.possibleAnswers">
+            <table id="possibleAnswersTable"
+                   height="200px"
+                   width="100%">
+                <actions>
+                    <action id="create"/>
+                    <action id="edit"/>
+                    <action id="remove"/>
+                </actions>
+                <columns>
+                    <column id="answerText"/>
+                    <column id="active"/>
+                </columns>
+                <rows datasource="possibleAnswersDs"/>
+                <buttonsPanel>
+                    <button action="possibleAnswersTable.create"/>
+                    <button action="possibleAnswersTable.edit"/>
+                    <button action="possibleAnswersTable.remove"/>
+                </buttonsPanel>
+            </table>
+        </groupBox>
+        <frame id="windowActions"
+               screen="editWindowActions"/>
+    </layout>
+</window>
