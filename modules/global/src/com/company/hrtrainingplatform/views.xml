@@ -83,4 +83,7 @@
         <property name="survey"
                   view="_minimal"/>
     </view>
+    <view class="com.haulmont.cuba.security.entity.Group"
+          extends="_local"
+          name="group-view"/>
 </views>
