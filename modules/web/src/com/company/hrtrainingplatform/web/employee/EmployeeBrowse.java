@@ -53,19 +53,23 @@ public class EmployeeBrowse extends EntityCombinedScreen {
             u.setLoginLowerCase(data.getJSONObject(1).getString("FirstName"));
             u.setPassword(data.getJSONObject(1).getString("FirstName"));
             //UUID id = UUID.fromString("d04c525712a9efe686e7b19fa078433d");
-            List<Group> groups = loadGroups();
+            //List<Group> groups = loadGroups();
+            Group g = new Group();
+            g.setName("Employee");
+            u.setGroup(g);
+            
 
-            //u.setGroup();
+
             //showNotification(firstNames[1]);
-            showNotification(groups.toString());
+            //showNotification(groups.toString());
         } else {
             showNotification("Boy, this didn't work");
         }
     }
 
     protected List<Group> loadGroups() {
-
-        LoadContext<Group> group = LoadContext.create(Group.class).setQuery(LoadContext.createQuery("SELECT * FROM SP2Team10.SEC_GROUP WHERE ID = :ID").setParameter("ID", "d04c525712a9efe686e7b19fa078433d")).setView("group-view");
+        Group g = null;
+        LoadContext<Group> group = LoadContext.create(Group.class).setQuery(LoadContext.createQuery("SELECT * FROM SP2Team10.SEC_GROUP WHERE ID = ?ID").setParameter("ID", "d04c525712a9efe686e7b19fa078433d")).setView("group-view");
         /*TypedQuery<Group> query = EntityManager.createQuery("select * from SP2Team10.SEC_GROUP where ID = ?groupID", Group.class);
         query.setParameter(groupID, customer);*/
         DataManager dm = null;
