@@ -113,27 +113,7 @@ create table HRTRAININGPLATFORM_SURVEY (
     primary key (ID)
 )^
 -- end HRTRAININGPLATFORM_SURVEY
--- begin HRTRAININGPLATFORM_BOOK
-create table HRTRAININGPLATFORM_BOOK (
-    ID varchar(32),
-    VERSION integer not null,
-    CREATE_TS datetime(3),
-    CREATED_BY varchar(50),
-    UPDATE_TS datetime(3),
-    UPDATED_BY varchar(50),
-    DELETE_TS datetime(3),
-    DELETED_BY varchar(50),
-    --
-    AUTHOR varchar(100) not null,
-    COST decimal(19, 2) not null,
-    ISBN varchar(50) not null,
-    PUBLISHER varchar(100) not null,
-    TITLE varchar(100) not null,
-    YEAR_ varchar(255) not null,
-    --
-    primary key (ID)
-)^
--- end HRTRAININGPLATFORM_BOOK
+
 -- begin HRTRAININGPLATFORM_CERTIFICATE
 create table HRTRAININGPLATFORM_CERTIFICATE (
     ID varchar(32),
@@ -162,7 +142,7 @@ create table HRTRAININGPLATFORM_TRAINING (
     DELETE_TS datetime(3),
     DELETED_BY varchar(50),
     --
-    DESCRIPTION varchar(100) not null,
+    DESCRIPTION longtext not null,
     START_DATE datetime(3) not null,
     END_DATE datetime(3) not null,
     STATUS varchar(50) not null,
@@ -185,3 +165,26 @@ create table HRTRAININGPLATFORM_TRAINING_EMPLOYEE_LINK (
     primary key (TRAINING_ID, EMPLOYEE_ID)
 )^
 -- end HRTRAININGPLATFORM_TRAINING_EMPLOYEE_LINK
+-- begin HRTRAININGPLATFORM_ISB_NNR
+create table HRTRAININGPLATFORM_ISB_NNR (
+    ID varchar(32),
+    VERSION integer not null,
+    CREATE_TS datetime(3),
+    CREATED_BY varchar(50),
+    UPDATE_TS datetime(3),
+    UPDATED_BY varchar(50),
+    DELETE_TS datetime(3),
+    DELETED_BY varchar(50),
+    --
+    ISBN varchar(20) not null,
+    --
+    primary key (ID)
+)^
+-- end HRTRAININGPLATFORM_ISB_NNR
+-- begin HRTRAININGPLATFORM_TRAINING_ISB_NNR_LINK
+create table HRTRAININGPLATFORM_TRAINING_ISB_NNR_LINK (
+    TRAINING_ID varchar(32),
+    I_S_B_NNR_ID varchar(32),
+    primary key (TRAINING_ID, I_S_B_NNR_ID)
+)^
+-- end HRTRAININGPLATFORM_TRAINING_ISB_NNR_LINK

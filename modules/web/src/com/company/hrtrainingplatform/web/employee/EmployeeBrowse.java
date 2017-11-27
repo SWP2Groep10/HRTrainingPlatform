@@ -13,11 +13,13 @@ import java.net.URL;
 import java.nio.charset.Charset;
 import java.util.List;
 import java.util.UUID;
+import javax.persistence.*;
+import javax.persistence.EntityManager;
 
 import org.json.*;
 
-public class EmployeeBrowse extends EntityCombinedScreen{
-    public void onOData(Component source)throws IOException{
+public class EmployeeBrowse extends EntityCombinedScreen {
+    public void onOData(Component source) throws IOException {
         JSONObject json;
         URL oData = new URL("http://services.odata.org/V3/Northwind/Northwind.svc/Employees?$format=json");
         //Binnenhalen van de odata en omzetten naar een JSON
@@ -32,17 +34,17 @@ public class EmployeeBrowse extends EntityCombinedScreen{
             String jsonText = sb.toString();
             json = new JSONObject(jsonText);
             //showNotification(json.toString();
-        } catch(Exception e) {
+        } catch (Exception e) {
             showNotification(e.getMessage());
             json = null;
         } finally {
             is.close();
         }
         //Omzetten van de data voor gebruik
-        if(json != null){
+        if (json != null) {
             JSONArray data = json.getJSONArray("value");
             String[] firstNames = new String[data.length()];
-            for(int i = 0; i < data.length(); i++){
+            for (int i = 0; i < data.length(); i++) {
                 JSONObject temp = data.getJSONObject(i);
                 firstNames[i] = temp.getString("FirstName");
             }
@@ -63,9 +65,9 @@ public class EmployeeBrowse extends EntityCombinedScreen{
 
     protected List<Group> loadGroups() {
 
-        LoadContext<Group> group = LoadContext.create(Group.class).setQuery(LoadContext.createQuery("SELECT * FROM SP2Team10.SEC_GROUP WHERE ID = :ID").setParameter("ID","d04c525712a9efe686e7b19fa078433d")).setView("group-view");
-        TypedQuery<Group> query = entityManager.createQuery("select * from SP2Team10.SEC_GROUP where ID = ?groupID", Group.class);
-        query.setParameter(groupID, customer);
+        LoadContext<Group> group = LoadContext.create(Group.class).setQuery(LoadContext.createQuery("SELECT * FROM SP2Team10.SEC_GROUP WHERE ID = :ID").setParameter("ID", "d04c525712a9efe686e7b19fa078433d")).setView("group-view");
+        /*TypedQuery<Group> query = EntityManager.createQuery("select * from SP2Team10.SEC_GROUP where ID = ?groupID", Group.class);
+        query.setParameter(groupID, customer);*/
         DataManager dm = null;
 
         return dm.loadList(group);

@@ -12,9 +12,6 @@
             <property name="number"/>
         </property>
     </view>
-    <view class="com.company.hrtrainingplatform.entity.Book"
-          extends="_local"
-          name="book-view"/>
     <view class="com.company.hrtrainingplatform.entity.Certificate"
           extends="_local"
           name="certificate-view">
@@ -82,6 +79,8 @@
         </property>
         <property name="survey"
                   view="_minimal"/>
+        <property name="recBookList"
+                  view="_local"/>
     </view>
     <view class="com.haulmont.cuba.security.entity.Group"
           extends="_local"
