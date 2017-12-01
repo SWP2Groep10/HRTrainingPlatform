@@ -25,7 +25,6 @@
             template="com/company/hrtrainingplatform/web/training/training-browse.xml"/>
     <screen id="hrtrainingplatform$Training.edit"
             template="com/company/hrtrainingplatform/web/training/training-edit.xml"/>
-<<<<<<< HEAD
     <screen id="hrtrainingplatform$Question.browse"
             template="com/company/hrtrainingplatform/web/question/question-browse.xml"/>
     <screen id="hrtrainingplatform$Question.edit"
@@ -44,8 +43,4 @@
             template="com/company/hrtrainingplatform/web/filledsurvey/filled-survey-browse.xml"/>
     <screen id="hrtrainingplatform$FilledSurvey.edit"
             template="com/company/hrtrainingplatform/web/filledsurvey/filled-survey-edit.xml"/>
-=======
-    <screen id="mainWindow"
-            template="com/company/hrtrainingplatform/web/screens/ext-mainwindow.xml"/>
->>>>>>> master
 </screen-config>
