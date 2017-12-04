@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
+        caption="msg://editorCaption"
+        class="com.company.hrtrainingplatform.web.possibleanswer.PossibleAnswerEdit"
+        datasource="possibleAnswerDs"
+        focusComponent="fieldGroup"
+        messagesPack="com.company.hrtrainingplatform.web.possibleanswer">
+    <dsContext>
+        <datasource id="possibleAnswerDs"
+                    class="com.company.hrtrainingplatform.entity.PossibleAnswer"
+                    view="possibleAnswer-view"/>
+    </dsContext>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="windowActions"
+            spacing="true">
+        <fieldGroup id="fieldGroup"
+                    datasource="possibleAnswerDs">
+            <column width="250px">
+                <field property="code"/>
+                <field property="answerText"/>
+                <field property="question"/>
+                <field property="active"/>
+            </column>
+        </fieldGroup>
+        <frame id="windowActions"
+               screen="editWindowActions"/>
+    </layout>
+</window>
