@@ -6,6 +6,7 @@ import javax.persistence.Column;
 import javax.validation.constraints.NotNull;
 import com.haulmont.cuba.core.entity.StandardEntity;
 import com.haulmont.chile.core.annotations.NamePattern;
+import javax.validation.constraints.Pattern;
 
 @NamePattern("%s %s %s|street,city,country")
 @Table(name = "HRTRAININGPLATFORM_ADDRESS")
@@ -13,10 +14,12 @@ import com.haulmont.chile.core.annotations.NamePattern;
 public class Address extends StandardEntity {
     private static final long serialVersionUID = -4607488382137891335L;
 
+    @Pattern(message = "Must start with a capital letter", regexp = "[A-Z][a-zA-Z0-9 ]*")
     @NotNull(message = "This value can not be null")
     @Column(name = "COUNTRY", nullable = false, length = 100)
     protected String country;
 
+    @Pattern(message = "Must start with a capital letter", regexp = "[A-Z][a-zA-Z0-9 ]*")
     @NotNull(message = "This value can not be null")
     @Column(name = "CITY", nullable = false, length = 100)
     protected String city;
@@ -25,6 +28,7 @@ public class Address extends StandardEntity {
     @Column(name = "POSTALCODE", nullable = false)
     protected String postalcode;
 
+    @Pattern(message = "Must start with a capital letter", regexp = "[A-Z][a-zA-Z0-9 ]*")
     @NotNull(message = "This value can not be null")
     @Column(name = "STREET", nullable = false, length = 100)
     protected String street;
