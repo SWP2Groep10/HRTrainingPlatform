@@ -77,12 +77,54 @@
                 <property name="number"/>
             </property>
         </property>
-        <property name="survey"
-                  view="_minimal"/>
         <property name="recBookList"
                   view="_local"/>
     </view>
-    <view class="com.haulmont.cuba.security.entity.Group"
+    <view class="com.company.hrtrainingplatform.entity.Question"
           extends="_local"
-          name="group-view"/>
+          name="question-view">
+        <property name="possibleAnswers"
+                  view="_minimal">
+            <property name="active"/>
+        </property>
+        <property name="category"
+                  view="_minimal"/>
+    </view>
+    <view class="com.company.hrtrainingplatform.entity.PossibleAnswer"
+          extends="_local"
+          name="possibleAnswer-view">
+        <property name="question"
+                  view="_minimal"/>
+    </view>
+    <view class="com.company.hrtrainingplatform.entity.PossibleAnswer"
+          extends="_local"
+          name="possibleAnswer-caption-view"/>
+    <view class="com.company.hrtrainingplatform.entity.Survey"
+          extends="_local"
+          name="survey-view">
+        <property name="questions"
+                  view="question-view"/>
+    </view>
+    <view class="com.company.hrtrainingplatform.entity.SelectedAnswer"
+          extends="_local"
+          name="answer-view">
+        <property name="question"
+                  view="question-view"/>
+        <property name="answer"
+                  view="_minimal">
+            <property name="active"/>
+        </property>
+        <property name="filledSurvey"
+                  view="_minimal"/>
+    </view>
+    <view class="com.company.hrtrainingplatform.entity.FilledSurvey"
+          extends="_local"
+          name="filledSurvey-view">
+        <property name="survey"
+                  view="survey-view"/>
+        <property name="user"
+                  view="_minimal"/>
+        <property name="answers"
+                  view="answer-view"/>
+    </view>
 </views>

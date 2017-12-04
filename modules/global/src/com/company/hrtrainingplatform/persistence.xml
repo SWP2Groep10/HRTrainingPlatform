@@ -9,9 +9,14 @@
         <class>com.company.hrtrainingplatform.entity.Manager</class>
         <class>com.company.hrtrainingplatform.entity.HREmployee</class>
         <class>com.company.hrtrainingplatform.entity.Employee</class>
-        <class>com.company.hrtrainingplatform.entity.Survey</class>
         <class>com.company.hrtrainingplatform.entity.Certificate</class>
         <class>com.company.hrtrainingplatform.entity.Training</class>
         <class>com.company.hrtrainingplatform.entity.ISBNnr</class>
+        <class>com.company.hrtrainingplatform.entity.QuestionCategory</class>
+        <class>com.company.hrtrainingplatform.entity.Question</class>
+        <class>com.company.hrtrainingplatform.entity.PossibleAnswer</class>
+        <class>com.company.hrtrainingplatform.entity.Survey</class>
+        <class>com.company.hrtrainingplatform.entity.FilledSurvey</class>
+        <class>com.company.hrtrainingplatform.entity.SelectedAnswer</class>
     </persistence-unit>
 </persistence>
