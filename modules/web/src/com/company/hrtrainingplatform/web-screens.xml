@@ -9,8 +9,6 @@
             template="com/company/hrtrainingplatform/web/location/location-edit.xml"/>
     <screen id="hrtrainingplatform$Address.edit"
             template="com/company/hrtrainingplatform/web/address/address-edit.xml"/>
-    <screen id="hrtrainingplatform$Book.browse"
-            template="com/company/hrtrainingplatform/web/book/book-browse.xml"/>
     <screen id="hrtrainingplatform$Certificate.browse"
             template="com/company/hrtrainingplatform/web/certificate/certificate-browse.xml"/>
     <screen id="hrtrainingplatform$Certificate.edit"
@@ -27,4 +25,24 @@
             template="com/company/hrtrainingplatform/web/training/training-browse.xml"/>
     <screen id="hrtrainingplatform$Training.edit"
             template="com/company/hrtrainingplatform/web/training/training-edit.xml"/>
+    <screen id="mainWindow"
+            template="com/company/hrtrainingplatform/web/screens/ext-mainwindow.xml"/>
+    <screen id="hrtrainingplatform$QuestionCategory.browse"
+            template="com/company/hrtrainingplatform/web/questioncategory/question-category-browse.xml"/>
+    <screen id="hrtrainingplatform$QuestionCategory.edit"
+            template="com/company/hrtrainingplatform/web/questioncategory/question-category-edit.xml"/>
+    <screen id="hrtrainingplatform$Question.browse"
+            template="com/company/hrtrainingplatform/web/question/question-browse.xml"/>
+    <screen id="hrtrainingplatform$Question.edit"
+            template="com/company/hrtrainingplatform/web/question/question-edit.xml"/>
+    <screen id="hrtrainingplatform$PossibleAnswer.edit"
+            template="com/company/hrtrainingplatform/web/possibleanswer/possible-answer-edit.xml"/>
+    <screen id="hrtrainingplatform$Survey.browse"
+            template="com/company/hrtrainingplatform/web/survey/survey-browse.xml"/>
+    <screen id="hrtrainingplatform$Survey.edit"
+            template="com/company/hrtrainingplatform/web/survey/survey-edit.xml"/>
+    <screen id="hrtrainingplatform$FilledSurvey.browse"
+            template="com/company/hrtrainingplatform/web/filledsurvey/filled-survey-browse.xml"/>
+    <screen id="hrtrainingplatform$FilledSurvey.edit"
+            template="com/company/hrtrainingplatform/web/filledsurvey/filled-survey-edit.xml"/>
 </screen-config>
