@@ -20,7 +20,7 @@
     <layout expand="trainingsTable"
             spacing="true">
         <chart:mapViewer id="locationMap"
-                         height="200px"
+                         height="300px"
                          width="100%"/>
         <filter id="filter"
                 applyTo="trainingsTable"
