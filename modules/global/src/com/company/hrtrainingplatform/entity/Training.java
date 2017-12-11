@@ -33,6 +33,11 @@ public class Training extends StandardEntity {
     @ManyToMany
     protected List<Employee> attendingList;
 
+    @OnDelete(DeletePolicy.CASCADE)
+    @OneToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "SURVEY_ID")
+    protected Survey survey;
+
     @JoinTable(name = "HRTRAININGPLATFORM_TRAINING_ISB_NNR_LINK",
         joinColumns = @JoinColumn(name = "TRAINING_ID"),
         inverseJoinColumns = @JoinColumn(name = "I_S_B_NNR_ID"))
@@ -66,9 +71,14 @@ public class Training extends StandardEntity {
     @Column(name = "STATUS", nullable = false)
     protected String status;
 
-    @OneToOne(fetch = FetchType.LAZY, optional = false)
-    @JoinColumn(name = "SURVEY_ID")
-    protected Survey survey;
+    public void setSurvey(Survey survey) {
+        this.survey = survey;
+    }
+
+    public Survey getSurvey() {
+        return survey;
+    }
+
 
     public void setRecBookList(List<ISBNnr> recBookList) {
         this.recBookList = recBookList;
@@ -126,14 +136,6 @@ public class Training extends StandardEntity {
 
     public STATUS getStatus() {
         return status == null ? null : STATUS.fromId(status);
-    }
-
-    public void setSurvey(Survey survey) {
-        this.survey = survey;
-    }
-
-    public Survey getSurvey() {
-        return survey;
     }
 
 
