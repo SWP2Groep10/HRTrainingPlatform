@@ -24,23 +24,21 @@
             <properties include=".*"/>
         </filter>
         <groupTable id="trainingsTable"
-                    responsive="true"
                     width="100%">
             <actions>
                 <action id="create"/>
                 <action id="edit"/>
                 <action id="remove"/>
-                <action id="excel"/>
+                <action id="excel"
+                        caption="Excel"
+                        description="Excel"/>
             </actions>
             <columns>
+                <column id="survey"/>
                 <column id="description"/>
                 <column id="startDate"/>
                 <column id="endDate"/>
                 <column id="status"/>
-                <column id="survey"/>
-                <column id="recBookList"
-                        align="RIGHT"
-                        collapsed="true"/>
             </columns>
             <rows datasource="trainingsDs"/>
             <rowsCount/>
@@ -52,7 +50,7 @@
                         action="trainingsTable.edit"/>
                 <button id="removeBtn"
                         action="trainingsTable.remove"/>
-                <button id="excelBtn"
+                <button id="ExcelButton"
                         action="trainingsTable.excel"/>
             </buttonsPanel>
         </groupTable>

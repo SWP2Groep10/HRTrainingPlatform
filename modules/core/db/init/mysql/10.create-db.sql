@@ -128,6 +128,7 @@ create table HRTRAININGPLATFORM_TRAINING (
     DELETE_TS datetime(3),
     DELETED_BY varchar(50),
     --
+    SURVEY_ID varchar(32),
     DESCRIPTION longtext not null,
     START_DATE datetime(3) not null,
     END_DATE datetime(3) not null,
