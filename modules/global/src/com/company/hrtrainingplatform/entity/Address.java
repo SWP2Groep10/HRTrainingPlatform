@@ -7,11 +7,12 @@ import javax.validation.constraints.NotNull;
 import com.haulmont.cuba.core.entity.StandardEntity;
 import com.haulmont.chile.core.annotations.NamePattern;
 
-@NamePattern("%s %s %s|street,city,country")
+@NamePattern("%s %s, %s|street,number,city")
 @Table(name = "HRTRAININGPLATFORM_ADDRESS")
 @Entity(name = "hrtrainingplatform$Address")
 public class Address extends StandardEntity {
     private static final long serialVersionUID = -4607488382137891335L;
+
 
     @NotNull(message = "This value can not be null")
     @Column(name = "COUNTRY", nullable = false, length = 100)
