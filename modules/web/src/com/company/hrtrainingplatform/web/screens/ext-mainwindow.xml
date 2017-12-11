@@ -18,6 +18,19 @@ group by a.city]]>
                           name="count"/>
             </properties>
         </valueCollectionDatasource>
+        <valueCollectionDatasource id="trainingStatusDs">
+            <query>
+                <![CDATA[select t.status, count(t.status)
+from hrtrainingplatform$Training t
+group by t.status]]>
+            </query>
+            <properties>
+                <property datatype="string"
+                          name="status"/>
+                <property datatype="long"
+                          name="count"/>
+            </properties>
+        </valueCollectionDatasource>
     </dsContext>
     <layout responsive="true"
             stylename="c-sidemenu-responsive">
@@ -68,11 +81,11 @@ group by a.city]]>
                     </hbox>
                     <main:timeZoneIndicator id="timeZoneIndicator"
                                             width="100%"/>
+                    <main:ftsField id="ftsField"
+                                   width="100%"/>
                     <main:sideMenu id="sideMenu"
                                    sidePanel="sideMenuPanel"
                                    sidePanelToggleButton="mobileMenuButton"/>
-                    <main:ftsField id="ftsField"
-                                   width="100%"/>
                 </cssLayout>
             </cssLayout>
             <main:workArea id="workArea"
@@ -84,26 +97,49 @@ group by a.city]]>
                            stylename="c-welcome-text"
                            value="mainMsg://application.welcomeText"
                            width="100%"/>
-                    <chart:pieChart id="cityChart"
-                                    datasource="cityDs"
-                                    height="300px"
-                                    titleField="city"
-                                    valueField="count"
-                                    width="100%">
-                        <chart:legend autoMargins="false"
-                                      marginRight="80"
-                                      markerType="CIRCLE"
-                                      position="RIGHT"/>
-                        <chart:allLabels>
+                    <split orientation="horizontal"
+                           width="100%">
+                        <chart:pieChart id="cityChart"
+                                        datasource="cityDs"
+                                        height="300px"
+                                        titleField="city"
+                                        valueField="count"
+                                        width="100%">
+                            <chart:legend autoMargins="false"
+                                          marginRight="80"
+                                          markerType="CIRCLE"
+                                          position="RIGHT"/>
+                            <chart:allLabels>
                                 <chart:label bold="true"
                                              size="14"
-                                             text="msg://testtesttest"
+                                             text="msg://Training locaties"
                                              x="10"
                                              y="20"/>
-                        </chart:allLabels>
-                        <chart:balloon fixedPosition="true"/>
-                        <chart:export/>
-                    </chart:pieChart>
+                            </chart:allLabels>
+                            <chart:balloon fixedPosition="true"/>
+                            <chart:export/>
+                        </chart:pieChart>
+                        <chart:pieChart id="trainingStatusChart"
+                                        datasource="trainingStatusDs"
+                                        height="300px"
+                                        titleField="status"
+                                        valueField="count"
+                                        width="100%">
+                            <chart:legend autoMargins="false"
+                                          marginRight="80"
+                                          markerType="CIRCLE"
+                                          position="RIGHT"/>
+                            <chart:allLabels>
+                                <chart:label bold="true"
+                                             size="14"
+                                             text="msg://Training status"
+                                             x="10"
+                                             y="20"/>
+                            </chart:allLabels>
+                            <chart:balloon fixedPosition="true"/>
+                            <chart:export/>
+                        </chart:pieChart>
+                    </split>
                 </main:initialLayout>
             </main:workArea>
         </hbox>
