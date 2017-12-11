@@ -22,6 +22,7 @@ public class ODataServiceBean implements ODataService {
     public HashSet<Employee> getEmployees(String ODataURL){
         HashSet<Employee> result = new HashSet<>();
 
+
         StringBuilder json = new StringBuilder();
 
         try{
