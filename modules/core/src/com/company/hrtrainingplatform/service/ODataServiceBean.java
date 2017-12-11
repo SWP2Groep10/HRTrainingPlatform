@@ -1,13 +1,11 @@
 package com.company.hrtrainingplatform.service;
 
 import com.company.hrtrainingplatform.entity.Employee;
-import net.arnx.jsonic.JSON;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 import org.springframework.stereotype.Service;
 
-import javax.xml.registry.infomodel.User;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
@@ -53,6 +51,8 @@ public class ODataServiceBean implements ODataService {
 
             if(employee != null){
                 Employee e = new Employee();
+                e.getUser().setFirstName(employee.getString("FirstName"));
+                e.getUser().setLastName(employee.getString("LastName"));
                 e.setFirstName(employee.getString("FirstName"));
                 e.setLastName(employee.getString("LastName"));
                 result.add(e);

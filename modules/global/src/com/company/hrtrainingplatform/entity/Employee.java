@@ -26,6 +26,10 @@ public class Employee extends StandardEntity {
     @Column(name = "LAST_NAME")
     protected String lastName;
 
+    public Employee(){
+        user = new User();
+    }
+
     public void setFirstName(String firstName) {
         this.firstName = firstName;
     }
