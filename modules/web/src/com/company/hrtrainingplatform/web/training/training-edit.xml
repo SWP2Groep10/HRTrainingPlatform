@@ -86,6 +86,8 @@
                     </actions>
                     <columns>
                         <column id="user"/>
+                        <column id="firstName"/>
+                        <column id="lastName"/>
                     </columns>
                     <rows datasource="attendingListDs"/>
                     <buttonsPanel>

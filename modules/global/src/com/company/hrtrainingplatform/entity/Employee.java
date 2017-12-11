@@ -8,6 +8,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import com.haulmont.cuba.core.entity.StandardEntity;
 import com.haulmont.chile.core.annotations.NamePattern;
+import javax.persistence.Column;
 
 @NamePattern("%s|user")
 @Table(name = "HRTRAININGPLATFORM_EMPLOYEE")
@@ -18,6 +19,29 @@ public class Employee extends StandardEntity {
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "USER_ID")
     protected User user;
+
+    @Column(name = "FIRST_NAME")
+    protected String firstName;
+
+    @Column(name = "LAST_NAME")
+    protected String lastName;
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
 
     public void setUser(User user) {
         this.user = user;

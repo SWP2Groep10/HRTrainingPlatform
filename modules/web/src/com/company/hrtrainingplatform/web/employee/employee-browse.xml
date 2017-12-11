@@ -13,15 +13,22 @@
     <dsContext>
         <datasource id="employeeDs"
                     class="com.company.hrtrainingplatform.entity.Employee"
+                    datasourceClass="com.company.hrtrainingplatform.web.employee.ODataDatasource"
                     view="employee-view"/>
         <groupDatasource id="employeesDs"
                          class="com.company.hrtrainingplatform.entity.Employee"
                          view="employee-view">
             <query>
                 <![CDATA[select e from hrtrainingplatform$Employee e]]>
-
             </query>
         </groupDatasource>
+        <collectionDatasource id="employeesODataDs"
+                              class="com.company.hrtrainingplatform.entity.Employee"
+                              datasourceClass="com.company.hrtrainingplatform.web.employee.ODataDatasource">
+            <query>
+                <![CDATA[select e from hrtrainingplatform$Employee e]]>
+            </query>
+        </collectionDatasource>
     </dsContext>
     <actions>
         <action id="save"
@@ -34,8 +41,6 @@
                 description="Esc"
                 icon="icons/cancel.png"
                 invoke="cancel"/>
-        <action id="oData"
-                invoke="onOData"/>
     </actions>
     <dialogMode height="600"
                 width="800"/>
@@ -55,9 +60,9 @@
                         datasource="employeesDs">
                     <properties include=".*"/>
                 </filter>
-                <groupTable id="table"
-                            multiselect="true"
-                            width="100%">
+                <table id="table"
+                       multiselect="true"
+                       width="100%">
                     <actions>
                         <action id="create"/>
                         <action id="edit"/>
@@ -65,9 +70,10 @@
                         <action id="excel"/>
                     </actions>
                     <columns>
-                        <column id="user"/>
+                        <column id="firstName"/>
+                        <column id="lastName"/>
                     </columns>
-                    <rows datasource="employeesDs"/>
+                    <rows datasource="employeesODataDs"/>
                     <rowsCount/>
                     <buttonsPanel id="buttonsPanel"
                                   alwaysVisible="true">
@@ -79,10 +85,8 @@
                                 action="table.remove"/>
                         <button id="excelBtn"
                                 action="table.excel"/>
-                        <button id="employeesBtn"
-                                action="oData"/>
                     </buttonsPanel>
-                </groupTable>
+                </table>
             </vbox>
             <vbox id="editBox"
                   expand="fieldGroupBox"
@@ -94,6 +98,8 @@
                                 datasource="employeeDs">
                         <column width="250px">
                             <field property="user"/>
+                            <field property="firstName"/>
+                            <field property="lastName"/>
                         </column>
                     </fieldGroup>
                 </vbox>

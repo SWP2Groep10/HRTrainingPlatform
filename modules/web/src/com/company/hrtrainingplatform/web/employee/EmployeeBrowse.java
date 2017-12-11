@@ -13,6 +13,7 @@ import java.net.URL;
 import java.nio.charset.Charset;
 import java.util.List;
 import java.util.UUID;
+import javax.inject.Inject;
 import javax.persistence.*;
 import javax.persistence.EntityManager;
 
@@ -77,3 +78,25 @@ public class EmployeeBrowse extends EntityCombinedScreen {
         return dm.loadList(group);
     }
 }
+
+/*
+(╯°□°)╯︵ ┻━┻ FLIP THAT TABLE.
+
+┻━┻ ︵ ヽ(°□°ヽ) FLIP THIS TABLE.
+
+┻━┻ ︵ ＼\('0')/／ ︵ ┻━┻
+
+FLIP ALL THE TABLES!
+
+ಠ_ಠ Tom...
+
+ಠ_ಠ Put.
+
+ಠ__ಠ The tables.
+
+ಠ___ಠ Back.
+
+(╮°-°)╮┳━┳
+
+(╯°□°)╯︵ ┻━┻ NEVER!﻿
+*/
