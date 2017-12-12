@@ -11,8 +11,6 @@
           insertBefore="administration">
         <item screen="hrtrainingplatform$Training.browse"/>
         <item screen="hrtrainingplatform$Certificate.browse"/>
-        <item screen="hrtrainingplatform$Survey.browse"/>
-        <item screen="hrtrainingplatform$FilledSurvey.browse"/>
     </menu>
     <menu id="Data"
           insertBefore="administration">
