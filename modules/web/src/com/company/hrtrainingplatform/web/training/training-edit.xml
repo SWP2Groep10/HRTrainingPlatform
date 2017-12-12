@@ -11,52 +11,29 @@
                     view="training-view">
             <collectionDatasource id="attendingListDs"
                                   property="attendingList"/>
-            <collectionDatasource id="recBookListDs"
-                                  property="recBookList"/>
             <collectionDatasource id="locationDs"
                                   property="location"/>
+            <collectionDatasource id="recBookListDs"
+                                  property="recBookList"/>
         </datasource>
     </dsContext>
     <dialogMode height="600"
                 width="800"/>
     <layout spacing="true">
         <scrollBox height="100%"
-                   margin="true">
+                   responsive="true"
+                   spacing="true">
             <fieldGroup id="fieldGroup"
                         datasource="trainingDs">
                 <column width="250px">
-                    <field property="description"
-                           rows="5"/>
+                    <field property="description"/>
                     <field property="startDate"/>
                     <field property="endDate"/>
                     <field property="status"/>
                 </column>
             </fieldGroup>
-            <groupBox id="attendingListBox"
-                      caption="msg://com.company.hrtrainingplatform.entity/Training.attendingList"
-                      collapsable="true"
-                      spacing="true">
-                <table id="attendingListTable"
-                       height="200px"
-                       width="100%">
-                    <actions>
-                        <action id="add"/>
-                        <action id="remove"/>
-                    </actions>
-                    <columns>
-                        <column id="user"/>
-                    </columns>
-                    <rows datasource="attendingListDs"/>
-                    <buttonsPanel>
-                        <button action="attendingListTable.add"/>
-                        <button action="attendingListTable.remove"/>
-                    </buttonsPanel>
-                </table>
-            </groupBox>
             <groupBox id="recBookListBox"
-                      caption="msg://com.company.hrtrainingplatform.entity/Training.recBookList"
-                      collapsable="true"
-                      collapsed="true">
+                      caption="msg://com.company.hrtrainingplatform.entity/Training.recBookList">
                 <table id="recBookListTable"
                        height="200px"
                        width="100%">
@@ -75,10 +52,7 @@
                 </table>
             </groupBox>
             <groupBox id="locationBox"
-                      caption="msg://com.company.hrtrainingplatform.entity/Training.location"
-                      collapsable="true"
-                      collapsed="true"
-                      spacing="true">
+                      caption="msg://com.company.hrtrainingplatform.entity/Training.location">
                 <table id="locationTable"
                        height="200px"
                        width="100%">
@@ -91,14 +65,12 @@
                         <column id="address"/>
                     </columns>
                     <rows datasource="locationDs"/>
-                    <rowsCount/>
                     <buttonsPanel>
                         <button action="locationTable.add"/>
                         <button action="locationTable.remove"/>
                     </buttonsPanel>
                 </table>
             </groupBox>
-<<<<<<< HEAD
             <groupBox id="attendingListBox"
                       caption="msg://com.company.hrtrainingplatform.entity/Training.attendingList">
                 <table id="attendingListTable"
@@ -120,9 +92,6 @@
             </groupBox>
             <frame id="windowActions"
                    height="30px"
-=======
-            <frame id="windowActions"
->>>>>>> Wissam
                    screen="editWindowActions"/>
         </scrollBox>
     </layout>
