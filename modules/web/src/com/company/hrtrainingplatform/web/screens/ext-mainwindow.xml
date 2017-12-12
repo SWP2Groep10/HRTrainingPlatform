@@ -92,6 +92,30 @@ group by t.status]]>
                            height="100%">
                 <main:initialLayout margin="true"
                                     spacing="true">
+                    <split height="100%"
+                           orientation="vertical"
+                           width="100%">
+                        <hbox height="100%"
+                              spacing="true"
+                              width="100%">
+                            <chart:serialChart height="100%"
+                                               width="100%"/>
+                            <chart:serialChart height="100%"
+                                               width="100%"/>
+                            <chart:serialChart height="100%"
+                                               width="100%"/>
+                        </hbox>
+                        <hbox height="100%"
+                              spacing="true"
+                              width="100%">
+                            <chart:serialChart height="100%"
+                                               width="100%"/>
+                            <chart:serialChart height="100%"
+                                               width="100%"/>
+                            <chart:serialChart height="100%"
+                                               width="100%"/>
+                        </hbox>
+                    </split>
                     <label id="welcomeLabel"
                            align="MIDDLE_CENTER"
                            stylename="c-welcome-text"
