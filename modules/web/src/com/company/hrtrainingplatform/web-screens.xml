@@ -21,10 +21,6 @@
             template="com/company/hrtrainingplatform/web/hremployee/hr-employee-browse.xml"/>
     <screen id="hrtrainingplatform$Manager.browse"
             template="com/company/hrtrainingplatform/web/manager/manager-browse.xml"/>
-    <screen id="hrtrainingplatform$Training.browse"
-            template="com/company/hrtrainingplatform/web/training/training-browse.xml"/>
-    <screen id="hrtrainingplatform$Training.edit"
-            template="com/company/hrtrainingplatform/web/training/training-edit.xml"/>
     <screen id="mainWindow"
             template="com/company/hrtrainingplatform/web/screens/ext-mainwindow.xml"/>
     <screen id="hrtrainingplatform$QuestionCategory.browse"
@@ -45,4 +41,8 @@
             template="com/company/hrtrainingplatform/web/filledsurvey/filled-survey-browse.xml"/>
     <screen id="hrtrainingplatform$FilledSurvey.edit"
             template="com/company/hrtrainingplatform/web/filledsurvey/filled-survey-edit.xml"/>
+    <screen id="hrtrainingplatform$Training.browse"
+            template="com/company/hrtrainingplatform/web/training/training-browse.xml"/>
+    <screen id="hrtrainingplatform$Training.edit"
+            template="com/company/hrtrainingplatform/web/training/training-edit.xml"/>
 </screen-config>
