@@ -19,6 +19,7 @@ import com.haulmont.cuba.core.entity.annotation.OnDelete;
 import com.haulmont.cuba.core.entity.annotation.OnDeleteInverse;
 import com.haulmont.cuba.core.global.DeletePolicy;
 import javax.persistence.Lob;
+import javax.persistence.ManyToOne;
 
 @NamePattern("%s %s|description,status")
 @Table(name = "HRTRAININGPLATFORM_TRAINING")
@@ -32,6 +33,12 @@ public class Training extends StandardEntity {
         inverseJoinColumns = @JoinColumn(name = "EMPLOYEE_ID"))
     @ManyToMany
     protected List<Employee> attendingList;
+
+    @OnDeleteInverse(DeletePolicy.UNLINK)
+    @OnDelete(DeletePolicy.UNLINK)
+    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @JoinColumn(name = "MANAGER_ID")
+    protected Manager manager;
 
     @OnDelete(DeletePolicy.CASCADE)
     @OneToOne(fetch = FetchType.LAZY)
@@ -70,6 +77,16 @@ public class Training extends StandardEntity {
 
     @Column(name = "STATUS", nullable = false)
     protected String status;
+
+
+    public void setManager(Manager manager) {
+        this.manager = manager;
+    }
+
+    public Manager getManager() {
+        return manager;
+    }
+
 
     public void setSurvey(Survey survey) {
         this.survey = survey;
