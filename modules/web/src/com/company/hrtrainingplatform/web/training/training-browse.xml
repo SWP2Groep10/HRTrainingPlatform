@@ -41,10 +41,14 @@
                 <column id="startDate"/>
                 <column id="endDate"/>
                 <column id="status"/>
+<<<<<<< HEAD
                 <column id="survey"/>
                 <column id="recBookList"
                         align="RIGHT"
                         collapsed="true"/>
+=======
+                <column id="manager"/>
+>>>>>>> Test
             </columns>
             <rows datasource="trainingsDs"/>
             <rowsCount/>

@@ -86,6 +86,7 @@
         <property name="possibleAnswers"
                   view="_minimal">
             <property name="active"/>
+            <property name="answerText"/>
         </property>
         <property name="category"
                   view="_minimal"/>
@@ -127,4 +128,27 @@
         <property name="answers"
                   view="answer-view"/>
     </view>
+<<<<<<< HEAD
+=======
+    <view class="com.company.hrtrainingplatform.entity.Training"
+          extends="_local"
+          name="training-view">
+        <property name="attendingList"
+                  view="_minimal"/>
+        <property name="survey"
+                  view="_minimal"/>
+        <property name="recBookList"
+                  view="_minimal"/>
+        <property name="location"
+                  view="_minimal">
+            <property name="address"
+                      view="_minimal">
+                <property name="postalcode"/>
+                <property name="number"/>
+            </property>
+        </property>
+        <property name="manager"
+                  view="_minimal"/>
+    </view>
+>>>>>>> Test
 </views>
