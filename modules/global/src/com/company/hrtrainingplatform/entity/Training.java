@@ -34,8 +34,6 @@ public class Training extends StandardEntity {
     @ManyToMany
     protected List<Employee> attendingList;
 
-<<<<<<< HEAD
-=======
     @OnDeleteInverse(DeletePolicy.UNLINK)
     @OnDelete(DeletePolicy.UNLINK)
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
@@ -47,7 +45,6 @@ public class Training extends StandardEntity {
     @JoinColumn(name = "SURVEY_ID")
     protected Survey survey;
 
->>>>>>> Test
     @JoinTable(name = "HRTRAININGPLATFORM_TRAINING_ISB_NNR_LINK",
         joinColumns = @JoinColumn(name = "TRAINING_ID"),
         inverseJoinColumns = @JoinColumn(name = "I_S_B_NNR_ID"))
@@ -81,8 +78,6 @@ public class Training extends StandardEntity {
     @Column(name = "STATUS", nullable = false)
     protected String status;
 
-<<<<<<< HEAD
-=======
 
     public void setManager(Manager manager) {
         this.manager = manager;
@@ -102,7 +97,6 @@ public class Training extends StandardEntity {
     }
 
 
->>>>>>> Test
     public void setRecBookList(List<ISBNnr> recBookList) {
         this.recBookList = recBookList;
     }

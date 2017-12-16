@@ -1,11 +1,8 @@
 package com.company.hrtrainingplatform.web.training;
 
+import com.haulmont.cuba.gui.components.AbstractWindow;
 import com.haulmont.cuba.gui.components.AbstractEditor;
 import com.company.hrtrainingplatform.entity.Training;
-<<<<<<< HEAD
-
-public class TrainingEdit extends AbstractEditor<Training> {
-=======
 import com.haulmont.cuba.core.app.EmailService;
 import com.haulmont.cuba.core.global.AppBeans;
 import com.haulmont.cuba.core.global.EmailInfo;
@@ -63,5 +60,4 @@ public class TrainingEdit extends AbstractEditor {
         emailService.sendEmailAsync(emailInfo);
     }
 
->>>>>>> Test
 }

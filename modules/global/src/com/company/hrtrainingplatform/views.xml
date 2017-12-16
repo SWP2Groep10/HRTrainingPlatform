@@ -64,22 +64,6 @@
                       view="_minimal"/>
         </property>
     </view>
-    <view class="com.company.hrtrainingplatform.entity.Training"
-          extends="_local"
-          name="training-view">
-        <property name="attendingList"
-                  view="_minimal"/>
-        <property name="location"
-                  view="_minimal">
-            <property name="address"
-                      view="_minimal">
-                <property name="postalcode"/>
-                <property name="number"/>
-            </property>
-        </property>
-        <property name="recBookList"
-                  view="_local"/>
-    </view>
     <view class="com.company.hrtrainingplatform.entity.Question"
           extends="_local"
           name="question-view">
@@ -128,8 +112,6 @@
         <property name="answers"
                   view="answer-view"/>
     </view>
-<<<<<<< HEAD
-=======
     <view class="com.company.hrtrainingplatform.entity.Training"
           extends="_local"
           name="training-view">
@@ -150,5 +132,4 @@
         <property name="manager"
                   view="_minimal"/>
     </view>
->>>>>>> Test
 </views>

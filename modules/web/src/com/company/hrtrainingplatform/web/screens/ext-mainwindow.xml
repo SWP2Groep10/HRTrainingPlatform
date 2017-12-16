@@ -2,36 +2,7 @@
 <window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
         caption="mainMsg://application.caption"
         class="com.company.hrtrainingplatform.web.screens.ExtAppMainWindow"
-        xmlns:chart="http://schemas.haulmont.com/charts/charts.xsd"
         xmlns:main="http://schemas.haulmont.com/cuba/mainwindow.xsd">
-    <dsContext>
-        <valueCollectionDatasource id="cityDs">
-            <query>
-                <![CDATA[select a.city, count(a.city)
-from hrtrainingplatform$Address a
-group by a.city]]>
-            </query>
-            <properties>
-                <property datatype="string"
-                          name="city"/>
-                <property datatype="long"
-                          name="count"/>
-            </properties>
-        </valueCollectionDatasource>
-        <valueCollectionDatasource id="trainingStatusDs">
-            <query>
-                <![CDATA[select t.status, count(t.status)
-from hrtrainingplatform$Training t
-group by t.status]]>
-            </query>
-            <properties>
-                <property datatype="string"
-                          name="status"/>
-                <property datatype="long"
-                          name="count"/>
-            </properties>
-        </valueCollectionDatasource>
-    </dsContext>
     <layout responsive="true"
             stylename="c-sidemenu-responsive">
         <hbox id="horizontalWrap"
@@ -81,89 +52,22 @@ group by t.status]]>
                     </hbox>
                     <main:timeZoneIndicator id="timeZoneIndicator"
                                             width="100%"/>
-                    <main:ftsField id="ftsField"
-                                   width="100%"/>
                     <main:sideMenu id="sideMenu"
                                    sidePanel="sideMenuPanel"
                                    sidePanelToggleButton="mobileMenuButton"/>
+                    <main:ftsField id="ftsField"
+                                   width="100%"/>
                 </cssLayout>
             </cssLayout>
             <main:workArea id="workArea"
                            height="100%">
                 <main:initialLayout margin="true"
                                     spacing="true">
-                    <split height="100%"
-                           orientation="vertical"
-                           width="100%">
-                        <hbox height="100%"
-                              spacing="true"
-                              width="100%">
-                            <chart:serialChart height="100%"
-                                               width="100%"/>
-                            <chart:serialChart height="100%"
-                                               width="100%"/>
-                            <chart:serialChart height="100%"
-                                               width="100%"/>
-                        </hbox>
-                        <hbox height="100%"
-                              spacing="true"
-                              width="100%">
-                            <chart:serialChart height="100%"
-                                               width="100%"/>
-                            <chart:serialChart height="100%"
-                                               width="100%"/>
-                            <chart:serialChart height="100%"
-                                               width="100%"/>
-                        </hbox>
-                    </split>
                     <label id="welcomeLabel"
                            align="MIDDLE_CENTER"
                            stylename="c-welcome-text"
                            value="mainMsg://application.welcomeText"
                            width="100%"/>
-                    <split orientation="horizontal"
-                           width="100%">
-                        <chart:pieChart id="cityChart"
-                                        datasource="cityDs"
-                                        height="300px"
-                                        titleField="city"
-                                        valueField="count"
-                                        width="100%">
-                            <chart:legend autoMargins="false"
-                                          marginRight="80"
-                                          markerType="CIRCLE"
-                                          position="RIGHT"/>
-                            <chart:allLabels>
-                                <chart:label bold="true"
-                                             size="14"
-                                             text="msg://Training locaties"
-                                             x="10"
-                                             y="20"/>
-                            </chart:allLabels>
-                            <chart:balloon fixedPosition="true"/>
-                            <chart:export/>
-                        </chart:pieChart>
-                        <chart:pieChart id="trainingStatusChart"
-                                        datasource="trainingStatusDs"
-                                        height="300px"
-                                        titleField="status"
-                                        valueField="count"
-                                        width="100%">
-                            <chart:legend autoMargins="false"
-                                          marginRight="80"
-                                          markerType="CIRCLE"
-                                          position="RIGHT"/>
-                            <chart:allLabels>
-                                <chart:label bold="true"
-                                             size="14"
-                                             text="msg://Training status"
-                                             x="10"
-                                             y="20"/>
-                            </chart:allLabels>
-                            <chart:balloon fixedPosition="true"/>
-                            <chart:export/>
-                        </chart:pieChart>
-                    </split>
                 </main:initialLayout>
             </main:workArea>
         </hbox>
