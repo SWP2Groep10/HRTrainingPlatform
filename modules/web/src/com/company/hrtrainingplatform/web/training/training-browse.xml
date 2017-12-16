@@ -39,6 +39,7 @@
                 <column id="startDate"/>
                 <column id="endDate"/>
                 <column id="status"/>
+                <column id="manager"/>
             </columns>
             <rows datasource="trainingsDs"/>
             <rowsCount/>

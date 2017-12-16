@@ -129,5 +129,7 @@
                 <property name="number"/>
             </property>
         </property>
+        <property name="manager"
+                  view="_minimal"/>
     </view>
 </views>
