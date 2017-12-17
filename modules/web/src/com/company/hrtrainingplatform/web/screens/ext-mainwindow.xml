@@ -129,6 +129,7 @@ group by a.city]]>
                                           datasource="trainingsDs"
                                           height="100%"
                                           responsive="true"
+                                          editable="true"
                                           width="100%">
                             <chart:columns>
                                 <chart:column value="status"/>
