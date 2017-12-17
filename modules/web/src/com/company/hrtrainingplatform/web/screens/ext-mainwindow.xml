@@ -25,6 +25,19 @@ group by a.city]]>
                 <![CDATA[select e from hrtrainingplatform$Training e]]>
             </query>
         </collectionDatasource>
+        <valueCollectionDatasource id="certificateDs">
+            <query>
+                <![CDATA[select DISTINCT c.employee, count(c.employee)
+from hrtrainingplatform$Certificate c
+group by c.employee]]>
+            </query>
+            <properties>
+                <property datatype="string"
+                          name="employee"/>
+                <property datatype="long"
+                          name="count"/>
+            </properties>
+        </valueCollectionDatasource>
     </dsContext>
     <layout responsive="true"
             stylename="c-sidemenu-responsive">
@@ -91,7 +104,30 @@ group by a.city]]>
                            width="100%">
                         <split height="100%"
                                orientation="horizontal"
-                               width="100%"/>
+                               width="100%">
+                            <chart:serialChart height="100%"
+                                               width="100%"/>
+                            <chart:pieChart id="certificateChart"
+                                            datasource="certificateDs"
+                                            height="100%"
+                                            titleField="employee"
+                                            valueField="count"
+                                            width="100%">
+                                <chart:legend autoMargins="false"
+                                              marginRight="40"
+                                              markerType="CIRCLE"
+                                              position="RIGHT"/>
+                                <chart:allLabels>
+                                    <chart:label bold="true"
+                                                 size="14"
+                                                 text="msg://Certificate per employee"
+                                                 x="10"
+                                                 y="20"/>
+                                </chart:allLabels>
+                                <chart:balloon fixedPosition="true"/>
+                                <chart:export/>
+                            </chart:pieChart>
+                        </split>
                         <split height="100%"
                                orientation="horizontal"
                                width="100%"/>
@@ -127,17 +163,15 @@ group by a.city]]>
                         </chart:pieChart>
                         <chart:pivotTable id="trainingTable"
                                           datasource="trainingsDs"
+                                          editable="true"
                                           height="100%"
                                           responsive="true"
-                                          editable="true"
                                           width="100%">
                             <chart:columns>
                                 <chart:column value="status"/>
                             </chart:columns>
                             <chart:properties>
                                 <chart:property name="description"/>
-                                <chart:property name="startDate"/>
-                                <chart:property name="endDate"/>
                                 <chart:property name="status"/>
                             </chart:properties>
                             <chart:rows>

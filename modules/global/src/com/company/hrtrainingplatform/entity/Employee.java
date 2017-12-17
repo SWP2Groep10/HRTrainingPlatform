@@ -8,6 +8,11 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import com.haulmont.cuba.core.entity.StandardEntity;
 import com.haulmont.chile.core.annotations.NamePattern;
+import com.haulmont.cuba.core.entity.annotation.OnDelete;
+import com.haulmont.cuba.core.entity.annotation.OnDeleteInverse;
+import com.haulmont.cuba.core.global.DeletePolicy;
+import java.util.List;
+import javax.persistence.OneToMany;
 
 @NamePattern("%s|user")
 @Table(name = "HRTRAININGPLATFORM_EMPLOYEE")
@@ -18,6 +23,20 @@ public class Employee extends StandardEntity {
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "USER_ID")
     protected User user;
+
+    @OnDeleteInverse(DeletePolicy.UNLINK)
+    @OnDelete(DeletePolicy.UNLINK)
+    @OneToMany(mappedBy = "employee")
+    protected List<Certificate> certificateList;
+
+    public void setCertificateList(List<Certificate> certificateList) {
+        this.certificateList = certificateList;
+    }
+
+    public List<Certificate> getCertificateList() {
+        return certificateList;
+    }
+
 
     public void setUser(User user) {
         this.user = user;
