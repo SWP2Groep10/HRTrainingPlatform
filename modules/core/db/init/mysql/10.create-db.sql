@@ -113,6 +113,7 @@ create table HRTRAININGPLATFORM_CERTIFICATE (
     --
     DESCRIPTION varchar(100) not null,
     FILE_ID varchar(32),
+    EMPLOYEE_ID varchar(32) not null,
     --
     primary key (ID)
 )^
@@ -288,3 +289,8 @@ create table HRTRAININGPLATFORM_SURVEY_QUESTION_LINK (
     primary key (SURVEY_ID, QUESTION_ID)
 )^
 -- end HRTRAININGPLATFORM_SURVEY_QUESTION_LINK
+-- begin SEC_USER
+alter table SEC_USER add column MANAGER_ID varchar(32) ^
+alter table SEC_USER add column DTYPE varchar(100) ^
+update SEC_USER set DTYPE = 'sec$User' where DTYPE is null ^
+-- end SEC_USER
