@@ -169,6 +169,13 @@ group by t.startDate]]>
                                                        valueLineEnabled="true"
                                                        valueZoomable="true"/>
                                     <chart:export/>
+                                    <chart:allLabels>
+                                        <chart:label bold="true"
+                                                     size="14"
+                                                     text="msg://Training amount per date"
+                                                     x="10"
+                                                     y="1"/>
+                                    </chart:allLabels>
                                 </chart:serialChart>
                                 <chart:pieChart id="certificateChart"
                                                 datasource="certificateDs"
