@@ -56,7 +56,7 @@
                     </actions>
                     <columns>
                         <column id="user"/>
-                        <column id="manager"/>
+                        <column id="depManager"/>
                     </columns>
                     <rows datasource="attendingListDs"/>
                     <buttonsPanel>

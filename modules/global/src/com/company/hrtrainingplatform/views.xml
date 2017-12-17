@@ -41,8 +41,6 @@
             <property name="group"
                       view="_minimal"/>
         </property>
-        <property name="manager"
-                  view="_minimal"/>
     </view>
     <view class="com.company.hrtrainingplatform.entity.HREmployee"
           extends="_local"
