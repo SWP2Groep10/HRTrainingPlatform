@@ -33,6 +33,7 @@
             <columns>
                 <column id="description"/>
                 <column id="file"/>
+                <column id="employee"/>
             </columns>
             <rows datasource="certificatesDs"/>
             <rowsCount/>

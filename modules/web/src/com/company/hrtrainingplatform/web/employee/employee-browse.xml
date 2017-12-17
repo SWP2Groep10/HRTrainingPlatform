@@ -19,7 +19,6 @@
                          view="employee-view">
             <query>
                 <![CDATA[select e from hrtrainingplatform$Employee e]]>
-
             </query>
         </groupDatasource>
     </dsContext>
