@@ -19,7 +19,6 @@
                          view="employee-view">
             <query>
                 <![CDATA[select e from hrtrainingplatform$Employee e]]>
-
             </query>
         </groupDatasource>
     </dsContext>
@@ -66,6 +65,7 @@
                     </actions>
                     <columns>
                         <column id="user"/>
+                        <column id="manager"/>
                     </columns>
                     <rows datasource="employeesDs"/>
                     <rowsCount/>
@@ -94,6 +94,7 @@
                                 datasource="employeeDs">
                         <column width="250px">
                             <field property="user"/>
+                            <field property="manager"/>
                         </column>
                     </fieldGroup>
                 </vbox>
