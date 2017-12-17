@@ -2,7 +2,30 @@
 <window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
         caption="mainMsg://application.caption"
         class="com.company.hrtrainingplatform.web.screens.ExtAppMainWindow"
+        xmlns:chart="http://schemas.haulmont.com/charts/charts.xsd"
         xmlns:main="http://schemas.haulmont.com/cuba/mainwindow.xsd">
+    <dsContext>
+        <valueCollectionDatasource id="cityDs">
+            <query>
+                <![CDATA[select a.city, count(a.city)
+from hrtrainingplatform$Address a
+group by a.city]]>
+            </query>
+            <properties>
+                <property datatype="string"
+                          name="city"/>
+                <property datatype="long"
+                          name="count"/>
+            </properties>
+        </valueCollectionDatasource>
+        <collectionDatasource id="trainingsDs"
+                              class="com.company.hrtrainingplatform.entity.Training"
+                              view="_local">
+            <query>
+                <![CDATA[select e from hrtrainingplatform$Training e]]>
+            </query>
+        </collectionDatasource>
+    </dsContext>
     <layout responsive="true"
             stylename="c-sidemenu-responsive">
         <hbox id="horizontalWrap"
@@ -63,11 +86,64 @@
                            height="100%">
                 <main:initialLayout margin="true"
                                     spacing="true">
+                    <split height="100%"
+                           orientation="vertical"
+                           width="100%">
+                        <split height="100%"
+                               orientation="horizontal"
+                               width="100%"/>
+                        <split height="100%"
+                               orientation="horizontal"
+                               width="100%"/>
+                    </split>
                     <label id="welcomeLabel"
                            align="MIDDLE_CENTER"
                            stylename="c-welcome-text"
                            value="mainMsg://application.welcomeText"
                            width="100%"/>
+                    <split height="100%"
+                           orientation="horizontal"
+                           responsive="true"
+                           width="100%">
+                        <chart:pieChart id="cityChart"
+                                        datasource="cityDs"
+                                        height="100%"
+                                        titleField="city"
+                                        valueField="count"
+                                        width="100%">
+                            <chart:legend autoMargins="false"
+                                          marginRight="40"
+                                          markerType="CIRCLE"
+                                          position="RIGHT"/>
+                            <chart:allLabels>
+                                <chart:label bold="true"
+                                             size="14"
+                                             text="msg://Training locaties"
+                                             x="10"
+                                             y="20"/>
+                            </chart:allLabels>
+                            <chart:balloon fixedPosition="true"/>
+                            <chart:export/>
+                        </chart:pieChart>
+                        <chart:pivotTable id="trainingTable"
+                                          datasource="trainingsDs"
+                                          height="100%"
+                                          responsive="true"
+                                          width="100%">
+                            <chart:columns>
+                                <chart:column value="status"/>
+                            </chart:columns>
+                            <chart:properties>
+                                <chart:property name="description"/>
+                                <chart:property name="startDate"/>
+                                <chart:property name="endDate"/>
+                                <chart:property name="status"/>
+                            </chart:properties>
+                            <chart:rows>
+                                <chart:row value="description"/>
+                            </chart:rows>
+                        </chart:pivotTable>
+                    </split>
                 </main:initialLayout>
             </main:workArea>
         </hbox>

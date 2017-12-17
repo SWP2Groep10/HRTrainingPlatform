@@ -58,12 +58,12 @@ public class Training extends StandardEntity {
     @Column(name = "DESCRIPTION", nullable = false)
     protected String description;
 
-    @Temporal(TemporalType.TIMESTAMP)
+    @Temporal(TemporalType.DATE)
     @NotNull(message = "This value can not be null")
     @Column(name = "START_DATE", nullable = false)
     protected Date startDate;
 
-    @Temporal(TemporalType.TIMESTAMP)
+    @Temporal(TemporalType.DATE)
     @NotNull(message = "This value can not be null")
     @Column(name = "END_DATE", nullable = false)
     protected Date endDate;
