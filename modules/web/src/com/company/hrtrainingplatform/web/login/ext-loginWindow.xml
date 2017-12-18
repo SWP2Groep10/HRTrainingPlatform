@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
-        class="com.company.hrtrainingplatform.web.login.ExtLoginwindow"
+        class="com.company.hrtrainingplatform.web.login.ExtAppLoginwindow"
         extends="/com/haulmont/cuba/web/app/loginwindow/loginwindow.xml"
         messagesPack="com.company.hrtrainingplatform.web.login">
     <dialogMode height="600"

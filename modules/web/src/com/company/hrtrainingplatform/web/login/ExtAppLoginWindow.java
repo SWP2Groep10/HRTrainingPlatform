@@ -1,7 +1,7 @@
 package com.company.hrtrainingplatform.web.login;
 
-import com.company.sample.web.register.RegisterScreen;
-import com.company.sample.web.restorepassword.RestorePasswordScreen;
+import com.company.hrtrainingplatform.web.login.RegisterScreen;
+import com.company.hrtrainingplatform.web.login.RestorePasswordScreen;
 import com.haulmont.cuba.gui.WindowManager.OpenType;
 import com.haulmont.cuba.gui.components.Button;
 import com.haulmont.cuba.web.app.loginwindow.AppLoginWindow;

@@ -17,7 +17,7 @@ public class RegisterScreen extends AbstractWindow {
     private static final String COMPANY_GROUP_ID = "0fa2b1a51d684d699fbddff348347f93";
 
     //Ook uit database halen
-    private static final String DEFAULT_ROLE_ID;
+    private static final String DEFAULT_ROLE_ID = "55a13061bb806887516159b8e99fdaf7";
 
     @Inject
     private TextField loginField;
