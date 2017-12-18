@@ -10,10 +10,10 @@ import com.haulmont.cuba.core.entity.FileDescriptor;
 import javax.persistence.FetchType;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
+import javax.persistence.ManyToOne;
 import com.haulmont.cuba.core.entity.annotation.OnDelete;
 import com.haulmont.cuba.core.entity.annotation.OnDeleteInverse;
 import com.haulmont.cuba.core.global.DeletePolicy;
-import javax.persistence.ManyToOne;
 
 @NamePattern(" %s|description")
 @Table(name = "HRTRAININGPLATFORM_CERTIFICATE")
