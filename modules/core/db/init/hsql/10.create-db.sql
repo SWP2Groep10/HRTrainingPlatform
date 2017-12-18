@@ -95,7 +95,12 @@ create table HRTRAININGPLATFORM_EMPLOYEE (
     DELETED_BY varchar(50),
     --
     USER_ID varchar(36) not null,
+<<<<<<< HEAD
     MANAGER_ID varchar(36),
+=======
+    FIRST_NAME varchar(255),
+    LAST_NAME varchar(255),
+>>>>>>> Tom
     --
     primary key (ID)
 )^
@@ -116,7 +121,10 @@ create table HRTRAININGPLATFORM_SURVEY (
     primary key (ID)
 )^
 -- end HRTRAININGPLATFORM_SURVEY
+<<<<<<< HEAD
 
+=======
+>>>>>>> Tom
 -- begin HRTRAININGPLATFORM_CERTIFICATE
 create table HRTRAININGPLATFORM_CERTIFICATE (
     ID varchar(36) not null,
@@ -145,10 +153,16 @@ create table HRTRAININGPLATFORM_TRAINING (
     DELETE_TS timestamp,
     DELETED_BY varchar(50),
     --
+<<<<<<< HEAD
     SURVEY_ID varchar(36),
     DESCRIPTION longvarchar not null,
     START_DATE date not null,
     END_DATE date not null,
+=======
+    DESCRIPTION longvarchar not null,
+    START_DATE timestamp not null,
+    END_DATE timestamp not null,
+>>>>>>> Tom
     STATUS varchar(50) not null,
     --
     primary key (ID)
