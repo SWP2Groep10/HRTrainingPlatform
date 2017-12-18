@@ -3,7 +3,6 @@ package com.company.hrtrainingplatform.web.training;
 import com.company.hrtrainingplatform.entity.Employee;
 import com.company.hrtrainingplatform.entity.Manager;
 import com.haulmont.cuba.gui.components.AbstractWindow;
-import com.haulmont.cuba.gui.components.AbstractEditor;
 import com.company.hrtrainingplatform.entity.Training;
 import com.haulmont.cuba.core.app.EmailService;
 import com.haulmont.cuba.core.global.AppBeans;

@@ -24,6 +24,19 @@ public class Employee extends StandardEntity {
     @JoinColumn(name = "USER_ID")
     protected User user;
 
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "MANAGER_ID")
+    protected Manager manager;
+
+    public void setManager(Manager manager) {
+        this.manager = manager;
+    }
+
+    public Manager getManager() {
+        return manager;
+    }
+
+
     public void setUser(User user) {
         this.user = user;
     }

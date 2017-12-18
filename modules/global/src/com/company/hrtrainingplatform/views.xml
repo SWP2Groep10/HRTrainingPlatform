@@ -35,18 +35,12 @@
           name="employee-view">
         <property name="user"
                   view="_minimal">
-
             <property name="email"/>
             <property name="group"
                       view="_minimal"/>
-
         </property>
         <property name="manager"
                   view="_minimal">
-            <property name="user"
-                      view="_minimal">
-                <property name="email"/>
-            </property>
         </property>
     </view>
     <view class="com.company.hrtrainingplatform.entity.HREmployee"
@@ -123,13 +117,6 @@
           name="training-view">
         <property name="attendingList"
                   view="_minimal">
-            <property name="manager"
-                      view="_minimal">
-                <property name="user"
-                          view="_minimal">
-                    <property name="email"/>
-                </property>
-            </property>
             <property name="user"
                       view="_minimal">
                 <property name="email"/>
