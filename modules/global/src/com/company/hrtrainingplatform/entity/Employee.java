@@ -24,18 +24,8 @@ public class Employee extends StandardEntity {
     @JoinColumn(name = "USER_ID")
     protected User user;
 
-    @OnDeleteInverse(DeletePolicy.UNLINK)
-    @OnDelete(DeletePolicy.UNLINK)
-    @OneToMany(mappedBy = "employee")
-    protected List<Certificate> certificateList;
 
-    public void setCertificateList(List<Certificate> certificateList) {
-        this.certificateList = certificateList;
-    }
 
-    public List<Certificate> getCertificateList() {
-        return certificateList;
-    }
 
 
     public void setUser(User user) {

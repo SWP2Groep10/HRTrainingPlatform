@@ -31,19 +31,8 @@ public class Certificate extends StandardEntity {
     protected FileDescriptor file;
 
 
-    @OnDeleteInverse(DeletePolicy.UNLINK)
-    @OnDelete(DeletePolicy.UNLINK)
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "EMPLOYEE_ID")
-    protected Employee employee;
 
-    public void setEmployee(Employee employee) {
-        this.employee = employee;
-    }
 
-    public Employee getEmployee() {
-        return employee;
-    }
 
 
     public void setFile(FileDescriptor file) {

@@ -19,7 +19,6 @@
             <column width="250px">
                 <field property="description"/>
                 <field property="file"/>
-                <field property="employee"/>
             </column>
         </fieldGroup>
         <frame id="windowActions"

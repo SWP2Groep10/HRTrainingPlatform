@@ -19,8 +19,6 @@
                   view="_minimal">
             <property name="size"/>
         </property>
-        <property name="employee"
-                  view="_minimal"/>
     </view>
     <view class="com.company.hrtrainingplatform.entity.Admin"
           extends="_local"
@@ -38,13 +36,6 @@
           name="employee-view">
         <property name="user"
                   view="_minimal">
-        </property>
-        <property name="certificateList"
-                  view="_minimal">
-            <property name="file"
-                      view="_minimal"/>
-            <property name="employee"
-                      view="_minimal"/>
         </property>
     </view>
     <view class="com.company.hrtrainingplatform.entity.HREmployee"
