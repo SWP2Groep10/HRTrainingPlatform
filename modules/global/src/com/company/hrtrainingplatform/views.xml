@@ -68,7 +68,8 @@
           extends="_local"
           name="training-view">
         <property name="attendingList"
-                  view="_minimal"/>
+                  view="_minimal">
+        </property>
         <property name="location"
                   view="_minimal">
             <property name="address"
