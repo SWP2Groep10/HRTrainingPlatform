@@ -1,5 +1,7 @@
 package com.company.hrtrainingplatform.web.training;
 
+import com.company.hrtrainingplatform.entity.Employee;
+import com.company.hrtrainingplatform.entity.Manager;
 import com.haulmont.cuba.gui.components.AbstractWindow;
 import com.haulmont.cuba.gui.components.AbstractEditor;
 import com.company.hrtrainingplatform.entity.Training;
@@ -20,20 +22,23 @@ public class TrainingEdit extends AbstractEditor {
     protected EmailService emailService;
     @Inject
     private Datasource<Training> trainingDs;
+    @Inject
+    private UserSessionSource userSessionSource;
 
     public void onSendRequestClick() {
 
-        User manager = trainingDs.getItem().getManager().getUser();
+        Employee userSessionEmp = userSessionSource.getUserSession().getAttribute("employee");
+        User curManagerUser = userSessionEmp.getManager().getUser();
 
         showOptionDialog(
                 "Email",
-                "Send a training request email to manager " + manager.getName() + " ?",
+                "Send a training request email to your manager -" + curManagerUser.getName() + "- ?",
                 MessageType.CONFIRMATION,
                 new Action[] {
                         new DialogAction(DialogAction.Type.YES) {
                             @Override
                             public void actionPerform(Component component) {
-                                sendByEmail(manager.getEmail());
+                                sendByEmail(curManagerUser.getEmail());
                             }
                         },
                         new DialogAction(DialogAction.Type.NO)
@@ -42,9 +47,11 @@ public class TrainingEdit extends AbstractEditor {
     }
 
     private void sendByEmail(String requestmail) {
-        User currentUser= AppBeans.get(UserSessionSource.class).getUserSession().getUser();
+
+        User curUser= AppBeans.get(UserSessionSource.class).getUserSession().getUser();
+
         String trainingDesc = trainingDs.getItem().getDescription();
-        UUID trainingID = trainingDs.getItem().getId();
+        UUID trainingUUID = trainingDs.getItem().getId();
 
         EmailInfo emailInfo = new EmailInfo(
 
@@ -52,10 +59,8 @@ public class TrainingEdit extends AbstractEditor {
                 "Training Request: "+ trainingDesc, // subject
                 null, // the "from" address will be taken from the "cuba.email.fromAddress" app property
 
-                "Training request for: \n"+"Full name: " + currentUser.getName()
-                        +"\nuser ID: "+ currentUser.getLogin() + "\n Training :" + trainingDesc + "\n Training UUID:" + trainingID// body template
-
-
+                "Training request for: \n"+"Full name: " + curUser.getName()
+                        +"\nuser ID: "+ curUser.getLogin() + "\n Training :" + trainingDesc + "\n Training UUID:" + trainingUUID// body template
         );
         emailService.sendEmailAsync(emailInfo);
     }

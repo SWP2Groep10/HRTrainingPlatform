@@ -24,10 +24,6 @@ public class Employee extends StandardEntity {
     @JoinColumn(name = "USER_ID")
     protected User user;
 
-
-
-
-
     public void setUser(User user) {
         this.user = user;
     }
