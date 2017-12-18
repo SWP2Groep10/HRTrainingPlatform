@@ -10,8 +10,9 @@
             <columns count="2"/>
             <rows>
                 <row>
-                    <label value="Login"/>
+                    <label value="Employee ID"/>
                     <textField id="loginField"
+                               datatype="int"
                                required="true"/>
                 </row>
                 <row>

@@ -1,24 +1,30 @@
 package com.company.hrtrainingplatform.service;
 
 import com.company.hrtrainingplatform.entity.Employee;
+import com.haulmont.cuba.core.global.Metadata;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 import org.springframework.stereotype.Service;
 
+import javax.inject.Inject;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.URL;
 import java.net.URLConnection;
+import java.util.ArrayList;
 import java.util.HashSet;
 
 @Service(ODataService.NAME)
 public class ODataServiceBean implements ODataService {
+    @Inject
+    private Metadata metadata;
+
     @Override
-    public HashSet<Employee> getEmployees(String ODataURL){
-        HashSet<Employee> result = new HashSet<>();
+    public ArrayList<Employee> getEmployees(String ODataURL){
+        ArrayList<Employee> result = new ArrayList<>();
         StringBuilder json = new StringBuilder();
         try{
             URL url = new URL(ODataURL);
@@ -63,7 +69,7 @@ public class ODataServiceBean implements ODataService {
 
     @Override
     public Employee getEmployee(int EmployeeID, String ODataURL){
-        Employee result = new Employee();
+        Employee result = metadata.create(Employee.class);
         StringBuilder json = new StringBuilder();
         //http://services.odata.org/V3/Northwind/Northwind.svc/Employees?$format=json&$filter=EmployeeID eq 2
         String ODataQuery = ODataURL;
@@ -72,7 +78,7 @@ public class ODataServiceBean implements ODataService {
         } else {
             ODataQuery = ODataQuery + "&";
         }
-
+        System.out.println("Trying the URL");
         try{
             URL url = new URL(ODataQuery + "$filter=EmployeeID eq " + EmployeeID);
             URLConnection connection = url.openConnection();
@@ -97,14 +103,16 @@ public class ODataServiceBean implements ODataService {
                 employee = employees.getJSONObject(i);
             } catch (JSONException e){
                 employee = null;
+                System.out.println("Employee is null");
             }
 
             if(employee != null){
-                result.getUser().setFirstName(employee.getString("FirstName"));
-                result.getUser().setLastName(employee.getString("LastName"));
+                System.out.println("Employee is there");
+                //result.getUser().setFirstName(employee.getString("FirstName"));
+                //result.getUser().setLastName(employee.getString("LastName"));
                 result.setFirstName(employee.getString("FirstName"));
                 result.setLastName(employee.getString("LastName"));
-                result.getUser().setLogin(employee.getInt("EmployeeID")+"");
+                //result.getUser().setLogin(employee.getInt("EmployeeID")+"");
             }
         }
 

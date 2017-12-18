@@ -9,11 +9,11 @@ create table HRTRAININGPLATFORM_ADDRESS (
     DELETE_TS timestamp,
     DELETED_BY varchar(50),
     --
-    CITY varchar(100) not null,
     COUNTRY varchar(100) not null,
-    NUMBER_ integer not null,
-    POSTALCODE integer not null,
+    CITY varchar(100) not null,
+    POSTALCODE varchar(255) not null,
     STREET varchar(100) not null,
+    NUMBER_ integer not null,
     --
     primary key (ID)
 )^
@@ -112,6 +112,8 @@ create table HRTRAININGPLATFORM_SURVEY (
     DELETE_TS timestamp,
     DELETED_BY varchar(50),
     --
+    TITLE varchar(255) not null,
+    --
     primary key (ID)
 )^
 -- end HRTRAININGPLATFORM_SURVEY
@@ -127,6 +129,7 @@ create table HRTRAININGPLATFORM_CERTIFICATE (
     DELETED_BY varchar(50),
     --
     DESCRIPTION varchar(100) not null,
+    FILE_ID varchar(36),
     --
     primary key (ID)
 )^
@@ -270,3 +273,17 @@ create table HRTRAININGPLATFORM_SELECTED_ANSWER (
     primary key (ID)
 )^
 -- end HRTRAININGPLATFORM_SELECTED_ANSWER
+-- begin HRTRAININGPLATFORM_SURVEY_QUESTION_LINK
+create table HRTRAININGPLATFORM_SURVEY_QUESTION_LINK (
+    SURVEY_ID varchar(36) not null,
+    QUESTION_ID varchar(36) not null,
+    primary key (SURVEY_ID, QUESTION_ID)
+)^
+-- end HRTRAININGPLATFORM_SURVEY_QUESTION_LINK
+-- begin HRTRAININGPLATFORM_TRAINING_ISB_NNR_LINK
+create table HRTRAININGPLATFORM_TRAINING_ISB_NNR_LINK (
+    TRAINING_ID varchar(36) not null,
+    I_S_B_NNR_ID varchar(36) not null,
+    primary key (TRAINING_ID, I_S_B_NNR_ID)
+)^
+-- end HRTRAININGPLATFORM_TRAINING_ISB_NNR_LINK
