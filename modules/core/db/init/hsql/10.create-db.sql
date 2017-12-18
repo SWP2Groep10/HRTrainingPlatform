@@ -95,6 +95,8 @@ create table HRTRAININGPLATFORM_EMPLOYEE (
     DELETED_BY varchar(50),
     --
     USER_ID varchar(36) not null,
+    FIRST_NAME varchar(255),
+    LAST_NAME varchar(255),
     --
     primary key (ID)
 )^
@@ -113,27 +115,6 @@ create table HRTRAININGPLATFORM_SURVEY (
     primary key (ID)
 )^
 -- end HRTRAININGPLATFORM_SURVEY
--- begin HRTRAININGPLATFORM_BOOK
-create table HRTRAININGPLATFORM_BOOK (
-    ID varchar(36) not null,
-    VERSION integer not null,
-    CREATE_TS timestamp,
-    CREATED_BY varchar(50),
-    UPDATE_TS timestamp,
-    UPDATED_BY varchar(50),
-    DELETE_TS timestamp,
-    DELETED_BY varchar(50),
-    --
-    AUTHOR varchar(100) not null,
-    COST decimal(19, 2) not null,
-    ISBN varchar(50) not null,
-    PUBLISHER varchar(100) not null,
-    TITLE varchar(100) not null,
-    YEAR_ integer not null,
-    --
-    primary key (ID)
-)^
--- end HRTRAININGPLATFORM_BOOK
 -- begin HRTRAININGPLATFORM_CERTIFICATE
 create table HRTRAININGPLATFORM_CERTIFICATE (
     ID varchar(36) not null,
@@ -161,11 +142,10 @@ create table HRTRAININGPLATFORM_TRAINING (
     DELETE_TS timestamp,
     DELETED_BY varchar(50),
     --
-    DESCRIPTION varchar(100) not null,
+    DESCRIPTION longvarchar not null,
     START_DATE timestamp not null,
     END_DATE timestamp not null,
     STATUS varchar(50) not null,
-    SURVEY_ID varchar(36) not null,
     --
     primary key (ID)
 )^
@@ -184,3 +164,109 @@ create table HRTRAININGPLATFORM_TRAINING_EMPLOYEE_LINK (
     primary key (TRAINING_ID, EMPLOYEE_ID)
 )^
 -- end HRTRAININGPLATFORM_TRAINING_EMPLOYEE_LINK
+-- begin HRTRAININGPLATFORM_ISB_NNR
+create table HRTRAININGPLATFORM_ISB_NNR (
+    ID varchar(36) not null,
+    VERSION integer not null,
+    CREATE_TS timestamp,
+    CREATED_BY varchar(50),
+    UPDATE_TS timestamp,
+    UPDATED_BY varchar(50),
+    DELETE_TS timestamp,
+    DELETED_BY varchar(50),
+    --
+    ISBN varchar(20) not null,
+    --
+    primary key (ID)
+)^
+-- end HRTRAININGPLATFORM_ISB_NNR
+-- begin HRTRAININGPLATFORM_QUESTION_CATEGORY
+create table HRTRAININGPLATFORM_QUESTION_CATEGORY (
+    ID varchar(36) not null,
+    VERSION integer not null,
+    CREATE_TS timestamp,
+    CREATED_BY varchar(50),
+    UPDATE_TS timestamp,
+    UPDATED_BY varchar(50),
+    DELETE_TS timestamp,
+    DELETED_BY varchar(50),
+    --
+    NAME varchar(100),
+    --
+    primary key (ID)
+)^
+-- end HRTRAININGPLATFORM_QUESTION_CATEGORY
+-- begin HRTRAININGPLATFORM_QUESTION
+create table HRTRAININGPLATFORM_QUESTION (
+    ID varchar(36) not null,
+    VERSION integer not null,
+    CREATE_TS timestamp,
+    CREATED_BY varchar(50),
+    UPDATE_TS timestamp,
+    UPDATED_BY varchar(50),
+    DELETE_TS timestamp,
+    DELETED_BY varchar(50),
+    --
+    QUESTION_TEXT varchar(255),
+    DESCRIPTION varchar(255),
+    CATEGORY_ID varchar(36),
+    --
+    primary key (ID)
+)^
+-- end HRTRAININGPLATFORM_QUESTION
+-- begin HRTRAININGPLATFORM_POSSIBLE_ANSWER
+create table HRTRAININGPLATFORM_POSSIBLE_ANSWER (
+    ID varchar(36) not null,
+    VERSION integer not null,
+    CREATE_TS timestamp,
+    CREATED_BY varchar(50),
+    UPDATE_TS timestamp,
+    UPDATED_BY varchar(50),
+    DELETE_TS timestamp,
+    DELETED_BY varchar(50),
+    --
+    CODE varchar(255),
+    ANSWER_TEXT varchar(255),
+    QUESTION_ID varchar(36) not null,
+    ACTIVE boolean,
+    --
+    primary key (ID)
+)^
+-- end HRTRAININGPLATFORM_POSSIBLE_ANSWER
+-- begin HRTRAININGPLATFORM_FILLED_SURVEY
+create table HRTRAININGPLATFORM_FILLED_SURVEY (
+    ID varchar(36) not null,
+    VERSION integer not null,
+    CREATE_TS timestamp,
+    CREATED_BY varchar(50),
+    UPDATE_TS timestamp,
+    UPDATED_BY varchar(50),
+    DELETE_TS timestamp,
+    DELETED_BY varchar(50),
+    --
+    SURVEY_ID varchar(36) not null,
+    FILLED_DATE date not null,
+    USER_ID varchar(36) not null,
+    --
+    primary key (ID)
+)^
+-- end HRTRAININGPLATFORM_FILLED_SURVEY
+-- begin HRTRAININGPLATFORM_SELECTED_ANSWER
+create table HRTRAININGPLATFORM_SELECTED_ANSWER (
+    ID varchar(36) not null,
+    VERSION integer not null,
+    CREATE_TS timestamp,
+    CREATED_BY varchar(50),
+    UPDATE_TS timestamp,
+    UPDATED_BY varchar(50),
+    DELETE_TS timestamp,
+    DELETED_BY varchar(50),
+    --
+    QUESTION_ID varchar(36) not null,
+    ANSWER_ID varchar(36) not null,
+    FILLED_SURVEY_ID varchar(36) not null,
+    COMMENT_ varchar(255),
+    --
+    primary key (ID)
+)^
+-- end HRTRAININGPLATFORM_SELECTED_ANSWER
