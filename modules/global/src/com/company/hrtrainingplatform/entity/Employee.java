@@ -28,10 +28,7 @@ public class Employee extends StandardEntity {
     @JoinColumn(name = "MANAGER_ID")
     protected Manager manager;
 
-    @OnDeleteInverse(DeletePolicy.UNLINK)
-    @OnDelete(DeletePolicy.UNLINK)
-    @OneToMany(mappedBy = "employee")
-    protected List<Certificate> certificateList;
+
 
     public void setManager(Manager manager) {
         this.manager = manager;
@@ -42,13 +39,7 @@ public class Employee extends StandardEntity {
     }
 
 
-    public void setCertificateList(List<Certificate> certificateList) {
-        this.certificateList = certificateList;
-    }
 
-    public List<Certificate> getCertificateList() {
-        return certificateList;
-    }
 
 
     public void setUser(User user) {

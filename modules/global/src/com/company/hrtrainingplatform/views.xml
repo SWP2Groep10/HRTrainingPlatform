@@ -9,7 +9,6 @@
         <property name="address"
                   view="_minimal">
             <property name="postalcode"/>
-            <property name="number"/>
         </property>
     </view>
     <view class="com.company.hrtrainingplatform.entity.Certificate"
@@ -36,13 +35,17 @@
           name="employee-view">
         <property name="user"
                   view="_minimal">
-            <property name="password"/>
             <property name="email"/>
             <property name="group"
                       view="_minimal"/>
         </property>
         <property name="manager"
-                  view="_minimal"/>
+                  view="_minimal">
+            <property name="user"
+                      view="_minimal">
+                <property name="email"/>
+            </property>
+        </property>
     </view>
     <view class="com.company.hrtrainingplatform.entity.HREmployee"
           extends="_local"
@@ -60,7 +63,6 @@
           name="manager-view">
         <property name="user"
                   view="_minimal">
-            <property name="password"/>
             <property name="email"/>
             <property name="group"
                       view="_minimal"/>
@@ -118,7 +120,19 @@
           extends="_local"
           name="training-view">
         <property name="attendingList"
-                  view="_minimal"/>
+                  view="_minimal">
+            <property name="manager"
+                      view="_minimal">
+                <property name="user"
+                          view="_minimal">
+                    <property name="email"/>
+                </property>
+            </property>
+            <property name="user"
+                      view="_minimal">
+                <property name="email"/>
+            </property>
+        </property>
         <property name="survey"
                   view="_minimal"/>
         <property name="recBookList"
@@ -128,10 +142,7 @@
             <property name="address"
                       view="_minimal">
                 <property name="postalcode"/>
-                <property name="number"/>
             </property>
         </property>
-        <property name="manager"
-                  view="_minimal"/>
     </view>
 </views>

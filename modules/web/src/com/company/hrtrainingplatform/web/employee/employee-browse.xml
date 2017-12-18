@@ -33,8 +33,6 @@
                 description="Esc"
                 icon="icons/cancel.png"
                 invoke="cancel"/>
-        <action id="oData"
-                invoke="onOData"/>
     </actions>
     <dialogMode height="600"
                 width="800"/>
@@ -55,13 +53,11 @@
                     <properties include=".*"/>
                 </filter>
                 <groupTable id="table"
-                            multiselect="true"
                             width="100%">
                     <actions>
                         <action id="create"/>
                         <action id="edit"/>
                         <action id="remove"/>
-                        <action id="excel"/>
                     </actions>
                     <columns>
                         <column id="user"/>
@@ -77,10 +73,6 @@
                                 action="table.edit"/>
                         <button id="removeBtn"
                                 action="table.remove"/>
-                        <button id="excelBtn"
-                                action="table.excel"/>
-                        <button id="employeesBtn"
-                                action="oData"/>
                     </buttonsPanel>
                 </groupTable>
             </vbox>

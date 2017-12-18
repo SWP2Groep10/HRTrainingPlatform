@@ -31,7 +31,6 @@
                     <field property="endDate"/>
                     <field property="status"/>
                     <field property="survey"/>
-                    <field property="manager"/>
                 </column>
             </fieldGroup>
             <buttonsPanel margin="true,true,true,false">
