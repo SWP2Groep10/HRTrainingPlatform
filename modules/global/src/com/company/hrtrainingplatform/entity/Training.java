@@ -34,11 +34,6 @@ public class Training extends StandardEntity {
     @ManyToMany
     protected List<Employee> attendingList;
 
-    @OnDeleteInverse(DeletePolicy.UNLINK)
-    @OnDelete(DeletePolicy.UNLINK)
-    @ManyToOne(fetch = FetchType.LAZY, optional = false)
-    @JoinColumn(name = "MANAGER_ID")
-    protected Manager manager;
 
     @OnDelete(DeletePolicy.CASCADE)
     @OneToOne(fetch = FetchType.LAZY)
@@ -79,13 +74,7 @@ public class Training extends StandardEntity {
     protected String status;
 
 
-    public void setManager(Manager manager) {
-        this.manager = manager;
-    }
 
-    public Manager getManager() {
-        return manager;
-    }
 
 
     public void setSurvey(Survey survey) {

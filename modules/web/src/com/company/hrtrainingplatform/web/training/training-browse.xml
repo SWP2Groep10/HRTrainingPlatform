@@ -34,12 +34,11 @@
                         description="Excel"/>
             </actions>
             <columns>
-                <column id="survey"/>
                 <column id="description"/>
                 <column id="startDate"/>
                 <column id="endDate"/>
                 <column id="status"/>
-                <column id="manager"/>
+                <column id="survey"/>
             </columns>
             <rows datasource="trainingsDs"/>
             <rowsCount/>
