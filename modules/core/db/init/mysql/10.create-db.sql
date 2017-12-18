@@ -114,7 +114,6 @@ create table HRTRAININGPLATFORM_CERTIFICATE (
     --
     DESCRIPTION varchar(100) not null,
     FILE_ID varchar(32),
-    EMPLOYEE_ID varchar(32) not null,
     --
     primary key (ID)
 )^
