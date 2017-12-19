@@ -5,7 +5,7 @@
         xmlns:chart="http://schemas.haulmont.com/charts/charts.xsd"
         xmlns:main="http://schemas.haulmont.com/cuba/mainwindow.xsd">
     <dsContext>
-        <valueCollectionDatasource id="addressDs">
+        <valueCollectionDatasource id="cityDs">
             <query>
                 <![CDATA[select a.city, count(a.city)
 from hrtrainingplatform$Address a
@@ -18,7 +18,7 @@ group by a.city]]>
                           name="count"/>
             </properties>
         </valueCollectionDatasource>
-        <collectionDatasource id="trainingDs"
+        <collectionDatasource id="trainingsDs"
                               class="com.company.hrtrainingplatform.entity.Training"
                               view="_local">
             <query>
@@ -187,8 +187,8 @@ group by t.startDate]]>
                             <split height="100%"
                                    orientation="horizontal"
                                    width="100%">
-                                <chart:serialChart height="100%"
-                                                   width="100%"/>
+                                <chart:ganttChart height="100%"
+                                                  width="100%"/>
                                 <chart:serialChart height="100%"
                                                    width="100%"/>
                             </split>
@@ -198,15 +198,16 @@ group by t.startDate]]>
                                    width="100%">
                             <label id="welcomeLabel"
                                    align="MIDDLE_CENTER"
+                                   height="47px"
                                    stylename="c-welcome-text"
                                    value="mainMsg://application.welcomeText"
                                    width="100%"/>
                         </cssLayout>
-                        <split height="100%"
+                        <split height="120%"
                                orientation="horizontal"
                                width="100%">
                             <chart:pieChart id="cityChart"
-                                            datasource="addressDs"
+                                            datasource="cityDs"
                                             height="100%"
                                             titleField="city"
                                             valueField="count"
@@ -226,7 +227,7 @@ group by t.startDate]]>
                                 <chart:export/>
                             </chart:pieChart>
                             <chart:pivotTable id="trainingTable"
-                                              datasource="trainingDs"
+                                              datasource="trainingsDs"
                                               editable="true"
                                               height="100%"
                                               responsive="true"

@@ -4,6 +4,7 @@
     <list default="true" id="1d4dc3bd-cc8a-4596-9951-86eeeb51cb0d" name="Default" comment="">
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/modules/core/db/update/hsql/17/171219-2-updateCertificate.sql" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/modules/core/db/update/hsql/17/171219-2-updateCertificate01.sql" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/modules/core/db/update/hsql/17/171219-2-updateCertificate02.sql" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/modules/core/db/update/hsql/17/171218-1-createHrtrainingplatformSurveyQuestionLink.sql" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/modules/core/db/update/hsql/17/171218-1-createHrtrainingplatformTrainingIsbNnrLink.sql" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/modules/core/db/update/hsql/17/171218-2-createHrtrainingplatformSurveyQuestionLink.sql" afterPath="" />
@@ -17,8 +18,6 @@
       <change type="DELETED" beforePath="$PROJECT_DIR$/modules/core/db/update/hsql/17/171218-2-updateTraining03.sql" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/modules/core/db/update/hsql/17/171218-2-updateTraining04.sql" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/core/db/init/hsql/10.create-db.sql" afterPath="$PROJECT_DIR$/modules/core/db/init/hsql/10.create-db.sql" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/core/db/init/hsql/20.create-db.sql" afterPath="$PROJECT_DIR$/modules/core/db/init/hsql/20.create-db.sql" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/global/src/com/company/hrtrainingplatform/entity/Certificate.java" afterPath="$PROJECT_DIR$/modules/global/src/com/company/hrtrainingplatform/entity/Certificate.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/global/src/com/company/hrtrainingplatform/entity/Employee.java" afterPath="$PROJECT_DIR$/modules/global/src/com/company/hrtrainingplatform/entity/Employee.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/web/src/com/company/hrtrainingplatform/web/screens/ext-mainwindow.xml" afterPath="$PROJECT_DIR$/modules/web/src/com/company/hrtrainingplatform/web/screens/ext-mainwindow.xml" />

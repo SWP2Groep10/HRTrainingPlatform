@@ -31,6 +31,9 @@ public class Employee extends StandardEntity {
     @Column(name = "LAST_NAME")
     protected String lastName;
 
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "MANAGER_ID")
+    protected Manager manager;
 
     public Employee(){
         user = new User();
@@ -61,5 +64,11 @@ public class Employee extends StandardEntity {
         return user;
     }
 
+    public void setManager(Manager manager) {
+        this.manager = manager;
+    }
 
+    public Manager getManager() {
+        return manager;
+    }
 }
