@@ -9,6 +9,11 @@ import javax.persistence.ManyToOne;
 import com.haulmont.cuba.core.entity.StandardEntity;
 import com.haulmont.chile.core.annotations.NamePattern;
 import javax.persistence.Column;
+import com.haulmont.cuba.core.entity.annotation.OnDelete;
+import com.haulmont.cuba.core.entity.annotation.OnDeleteInverse;
+import com.haulmont.cuba.core.global.DeletePolicy;
+import java.util.List;
+import javax.persistence.OneToMany;
 
 @NamePattern("%s|user")
 @Table(name = "HRTRAININGPLATFORM_EMPLOYEE")
@@ -25,6 +30,7 @@ public class Employee extends StandardEntity {
 
     @Column(name = "LAST_NAME")
     protected String lastName;
+
 
     public Employee(){
         user = new User();
