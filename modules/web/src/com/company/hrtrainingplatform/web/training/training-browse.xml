@@ -54,9 +54,9 @@
                         action="trainingsTable.remove"/>
                 <button id="ExcelButton"
                         action="trainingsTable.excel"/>
-                <button id="ShowLocation"
-                        caption="Show Location"
-                        invoke="onShowLocationClick"/>
+                <button id="SendRequest"
+                        caption="Send Training Request"
+                        invoke="onSendRequestClick"/>
             </buttonsPanel>
         </groupTable>
     </layout>

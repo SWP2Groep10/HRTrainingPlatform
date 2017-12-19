@@ -1,8 +1,10 @@
 package com.company.hrtrainingplatform.web.training;
 
-import com.company.hrtrainingplatform.entity.*;
+import com.company.hrtrainingplatform.entity.Address;
+import com.company.hrtrainingplatform.entity.Employee;
+import com.company.hrtrainingplatform.entity.Location;
+import com.company.hrtrainingplatform.entity.Training;
 import com.haulmont.bali.util.ParamsMap;
-import com.haulmont.cuba.gui.components.AbstractWindow;
 import com.haulmont.cuba.gui.components.AbstractEditor;
 import com.haulmont.cuba.core.app.EmailService;
 import com.haulmont.cuba.core.global.AppBeans;
@@ -17,7 +19,7 @@ import java.util.UUID;
 
 public class TrainingEdit extends AbstractEditor {
     @Inject
-    private Table<Location> locationTable;
+    private Table<Location> locationsTable;
     @Inject
     protected EmailService emailService;
     @Inject
@@ -49,7 +51,6 @@ public class TrainingEdit extends AbstractEditor {
     private void sendByEmail(String requestmail) {
 
         User curUser= AppBeans.get(UserSessionSource.class).getUserSession().getUser();
-
         String trainingDesc = trainingDs.getItem().getDescription();
         UUID trainingUUID = trainingDs.getItem().getId();
 
@@ -65,19 +66,13 @@ public class TrainingEdit extends AbstractEditor {
         emailService.sendEmailAsync(emailInfo);
     }
 
-
-
-
-    public void onShowMapClick(Component source) {
-
-            Location l =locationTable.getSingleSelected();
+    public void onShowMapClick() {
+        try {
+            Location l = locationsTable.getSingleSelected();
             Address a = l.getAddress();
-
-                locationTable.setEnabled(true);
-                String url = "http://maps.google.com/?q=" + a.getCountry() + "+" + a.getCity() + "+" + a.getPostalcode() + "+" + a.getStreet() + "+" + a.getNumber();
-                showWebPage(url, ParamsMap.of("target", "_blank"));
-
+            String url = "http://maps.google.com/?q=" + a.getCountry() + "+" + a.getCity() + "+" + a.getPostalcode() + "+" + a.getStreet() + "+" + a.getNumber();
+            showWebPage(url, ParamsMap.of("target", "_blank"));
+        }
+        catch (NullPointerException e){showNotification("No selection has been made.");}
     }
-    
-    
 }

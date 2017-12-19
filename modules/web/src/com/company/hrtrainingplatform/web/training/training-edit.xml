@@ -108,6 +108,7 @@
                         <button action="locationTable.remove"/>
                         <button id="ShowMap"
                                 caption="Show Map"
+                                icon="font-icon:MAP_O"
                                 invoke="onShowMapClick"
                                 trackSelection="true"/>
                     </buttonsPanel>
