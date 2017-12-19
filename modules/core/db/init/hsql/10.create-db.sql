@@ -95,6 +95,8 @@ create table HRTRAININGPLATFORM_EMPLOYEE (
     DELETED_BY varchar(50),
     --
     USER_ID varchar(36) not null,
+    FIRST_NAME varchar(255),
+    LAST_NAME varchar(255),
     MANAGER_ID varchar(36),
     --
     primary key (ID)
@@ -116,7 +118,6 @@ create table HRTRAININGPLATFORM_SURVEY (
     primary key (ID)
 )^
 -- end HRTRAININGPLATFORM_SURVEY
-
 -- begin HRTRAININGPLATFORM_CERTIFICATE
 create table HRTRAININGPLATFORM_CERTIFICATE (
     ID varchar(36) not null,

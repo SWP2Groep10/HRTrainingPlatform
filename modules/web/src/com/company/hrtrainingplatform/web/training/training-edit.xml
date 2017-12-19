@@ -116,6 +116,27 @@
                     </buttonsPanel>
                 </table>
             </groupBox>
+            <groupBox id="attendingListBox"
+                      caption="msg://com.company.hrtrainingplatform.entity/Training.attendingList">
+                <table id="attendingListTable"
+                       height="200px"
+                       width="100%">
+                    <actions>
+                        <action id="add"/>
+                        <action id="remove"/>
+                    </actions>
+                    <columns>
+                        <column id="user"/>
+                        <column id="firstName"/>
+                        <column id="lastName"/>
+                    </columns>
+                    <rows datasource="attendingListDs"/>
+                    <buttonsPanel>
+                        <button action="attendingListTable.add"/>
+                        <button action="attendingListTable.remove"/>
+                    </buttonsPanel>
+                </table>
+            </groupBox>
             <frame id="windowActions"
                    screen="editWindowActions"/>
         </scrollBox>

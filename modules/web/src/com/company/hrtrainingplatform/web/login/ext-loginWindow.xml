@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
+        class="com.company.hrtrainingplatform.web.login.ExtAppLoginWindow"
+        extends="/com/haulmont/cuba/web/app/loginwindow/loginwindow.xml"
+        messagesPack="com.company.hrtrainingplatform.web.login"
+        xmlns:ext="http://schemas.haulmont.com/cuba/window-ext.xsd">
+    <dialogMode height="600"
+                width="800"/>
+    <layout>
+        <vbox id="loginWrapper"
+              spacing="true">
+            <vbox id="loginMainBox">
+                <grid id="loginFormLayout">
+                    <rows>
+                        <row>
+                            <hbox align="MIDDLE_CENTER"
+                                  colspan="2"
+                                  spacing="true">
+                                <linkButton id="registerBtn"
+                                            caption="Register"
+                                            invoke="onRegisterBtnClick"/>
+                                <linkButton id="restorePasswordBtn"
+                                            caption="Restore password"
+                                            invoke="onRestorePasswordBtnClick"/>
+                            </hbox>
+                        </row>
+                    </rows>
+                </grid>
+            </vbox>
+        </vbox>
+    </layout>
+</window>
