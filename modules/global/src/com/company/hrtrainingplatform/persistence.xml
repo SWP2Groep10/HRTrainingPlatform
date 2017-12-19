@@ -18,5 +18,6 @@
         <class>com.company.hrtrainingplatform.entity.Survey</class>
         <class>com.company.hrtrainingplatform.entity.FilledSurvey</class>
         <class>com.company.hrtrainingplatform.entity.SelectedAnswer</class>
+        <class>com.company.hrtrainingplatform.entity.TaskSpan</class>
     </persistence-unit>
 </persistence>

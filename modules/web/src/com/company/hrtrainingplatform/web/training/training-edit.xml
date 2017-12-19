@@ -40,7 +40,6 @@
                         disableOnClick="true"
                         invoke="onSendRequestClick"/>
             </buttonsPanel>
-          
             <groupBox id="attendingListBox"
                       caption="msg://com.company.hrtrainingplatform.entity/Training.attendingList"
                       collapsable="true"
@@ -48,28 +47,22 @@
                 <table id="attendingListTable"
                        height="200px"
                        width="100%">
-                  
                     <actions>
                         <action id="add"/>
                         <action id="remove"/>
                         <action id="SendRequest"
                                 invoke="onSendRequestClick"/>
                     </actions>
-                  
                     <columns>
                         <column id="user"/>
                         <column id="manager"/>
                     </columns>
-                  
                     <rows datasource="attendingListDs"/>
-                  
                     <buttonsPanel>
                         <button action="attendingListTable.add"/>
                         <button action="attendingListTable.remove"/>
                     </buttonsPanel>
-                  
                 </table>
-              
             </groupBox>
             <groupBox id="recBookListBox"
                       caption="msg://com.company.hrtrainingplatform.entity/Training.recBookList"
@@ -113,27 +106,6 @@
                     <buttonsPanel>
                         <button action="locationTable.add"/>
                         <button action="locationTable.remove"/>
-                    </buttonsPanel>
-                </table>
-            </groupBox>
-            <groupBox id="attendingListBox"
-                      caption="msg://com.company.hrtrainingplatform.entity/Training.attendingList">
-                <table id="attendingListTable"
-                       height="200px"
-                       width="100%">
-                    <actions>
-                        <action id="add"/>
-                        <action id="remove"/>
-                    </actions>
-                    <columns>
-                        <column id="user"/>
-                        <column id="firstName"/>
-                        <column id="lastName"/>
-                    </columns>
-                    <rows datasource="attendingListDs"/>
-                    <buttonsPanel>
-                        <button action="attendingListTable.add"/>
-                        <button action="attendingListTable.remove"/>
                     </buttonsPanel>
                 </table>
             </groupBox>

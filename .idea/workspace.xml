@@ -2,27 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1d4dc3bd-cc8a-4596-9951-86eeeb51cb0d" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/modules/core/db/update/hsql/17/171219-2-updateCertificate.sql" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/modules/core/db/update/hsql/17/171219-2-updateCertificate01.sql" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/modules/core/db/update/hsql/17/171219-2-updateCertificate02.sql" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/modules/core/db/update/hsql/17/171218-1-createHrtrainingplatformSurveyQuestionLink.sql" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/modules/core/db/update/hsql/17/171218-1-createHrtrainingplatformTrainingIsbNnrLink.sql" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/modules/core/db/update/hsql/17/171218-2-createHrtrainingplatformSurveyQuestionLink.sql" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/modules/core/db/update/hsql/17/171218-2-createHrtrainingplatformTrainingIsbNnrLink.sql" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/modules/core/db/update/hsql/17/171218-2-updateAddress.sql" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/modules/core/db/update/hsql/17/171218-2-updateCertificate02.sql" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/modules/core/db/update/hsql/17/171218-2-updateCertificate03.sql" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/modules/core/db/update/hsql/17/171218-2-updateEmployee01.sql" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/modules/core/db/update/hsql/17/171218-2-updateEmployee02.sql" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/modules/core/db/update/hsql/17/171218-2-updateSurvey.sql" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/modules/core/db/update/hsql/17/171218-2-updateTraining03.sql" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/modules/core/db/update/hsql/17/171218-2-updateTraining04.sql" afterPath="" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/modules/core/db/update/hsql/17/171219-1-createTaskSpan.sql" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/modules/core/db/update/hsql/17/171219-2-updateTraining05.sql" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/modules/core/db/update/hsql/17/171219-2-updateTraining06.sql" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/modules/global/src/com/company/hrtrainingplatform/entity/TaskSpan.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/global/src/com/company/hrtrainingplatform/entity/Certificate.java" afterPath="$PROJECT_DIR$/modules/global/src/com/company/hrtrainingplatform/entity/Certificate.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/global/src/com/company/hrtrainingplatform/entity/Employee.java" afterPath="$PROJECT_DIR$/modules/global/src/com/company/hrtrainingplatform/entity/Employee.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/core/db/init/hsql/10.create-db.sql" afterPath="$PROJECT_DIR$/modules/core/db/init/hsql/10.create-db.sql" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/core/db/init/hsql/20.create-db.sql" afterPath="$PROJECT_DIR$/modules/core/db/init/hsql/20.create-db.sql" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/core/src/com/company/hrtrainingplatform/fts.xml" afterPath="$PROJECT_DIR$/modules/core/src/com/company/hrtrainingplatform/fts.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/global/src/com/company/hrtrainingplatform/entity/Training.java" afterPath="$PROJECT_DIR$/modules/global/src/com/company/hrtrainingplatform/entity/Training.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/global/src/com/company/hrtrainingplatform/entity/messages.properties" afterPath="$PROJECT_DIR$/modules/global/src/com/company/hrtrainingplatform/entity/messages.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/global/src/com/company/hrtrainingplatform/persistence.xml" afterPath="$PROJECT_DIR$/modules/global/src/com/company/hrtrainingplatform/persistence.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/global/src/com/company/hrtrainingplatform/views.xml" afterPath="$PROJECT_DIR$/modules/global/src/com/company/hrtrainingplatform/views.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/web/src/com/company/hrtrainingplatform/web/screens/ext-mainwindow.xml" afterPath="$PROJECT_DIR$/modules/web/src/com/company/hrtrainingplatform/web/screens/ext-mainwindow.xml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/modules/core/db/update/hsql/17/171218-2-updateEmployee03.sql" afterPath="$PROJECT_DIR$/modules/core/db/update/hsql/17/171219-2-updateEmployee01.sql" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/modules/core/db/update/hsql/17/171218-2-updateTraining05.sql" afterPath="$PROJECT_DIR$/modules/core/db/update/hsql/17/171219-2-updateTraining02.sql" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/web/src/com/company/hrtrainingplatform/web/training/training-edit.xml" afterPath="$PROJECT_DIR$/modules/web/src/com/company/hrtrainingplatform/web/training/training-edit.xml" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -32,7 +25,58 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <leaf>
+      <file leaf-file-name="views.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/modules/global/src/com/company/hrtrainingplatform/views.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="261">
+              <caret line="68" column="0" lean-forward="false" selection-start-line="68" selection-start-column="0" selection-end-line="68" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="training-browse.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/modules/web/src/com/company/hrtrainingplatform/web/training/training-browse.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Survey.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/modules/global/src/com/company/hrtrainingplatform/entity/Survey.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Training.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/modules/global/src/com/company/hrtrainingplatform/entity/Training.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Employee.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/modules/global/src/com/company/hrtrainingplatform/entity/Employee.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -46,6 +90,7 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/modules/web/src/com/company/hrtrainingplatform/web/login/Restorepasswordscreen.java" />
+        <option value="$PROJECT_DIR$/modules/global/src/com/company/hrtrainingplatform/views.xml" />
       </list>
     </option>
   </component>
@@ -56,7 +101,7 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds" extendedState="1">
-    <option name="x" value="952" />
+    <option name="x" value="94" />
     <option name="width" value="974" />
     <option name="height" value="1047" />
   </component>
@@ -76,7 +121,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="AndroidView" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -88,6 +133,57 @@
               <item name="HRTrainingPlatform" type="b2602c69:ProjectViewProjectNode" />
               <item name="HRTrainingPlatform" type="462c0819:PsiDirectoryNode" />
               <item name="modules" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="HRTrainingPlatform" type="b2602c69:ProjectViewProjectNode" />
+              <item name="HRTrainingPlatform" type="462c0819:PsiDirectoryNode" />
+              <item name="modules" type="462c0819:PsiDirectoryNode" />
+              <item name="global" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="HRTrainingPlatform" type="b2602c69:ProjectViewProjectNode" />
+              <item name="HRTrainingPlatform" type="462c0819:PsiDirectoryNode" />
+              <item name="modules" type="462c0819:PsiDirectoryNode" />
+              <item name="global" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="HRTrainingPlatform" type="b2602c69:ProjectViewProjectNode" />
+              <item name="HRTrainingPlatform" type="462c0819:PsiDirectoryNode" />
+              <item name="modules" type="462c0819:PsiDirectoryNode" />
+              <item name="global" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="HRTrainingPlatform" type="b2602c69:ProjectViewProjectNode" />
+              <item name="HRTrainingPlatform" type="462c0819:PsiDirectoryNode" />
+              <item name="modules" type="462c0819:PsiDirectoryNode" />
+              <item name="global" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="company" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="HRTrainingPlatform" type="b2602c69:ProjectViewProjectNode" />
+              <item name="HRTrainingPlatform" type="462c0819:PsiDirectoryNode" />
+              <item name="modules" type="462c0819:PsiDirectoryNode" />
+              <item name="global" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="company" type="462c0819:PsiDirectoryNode" />
+              <item name="hrtrainingplatform" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="HRTrainingPlatform" type="b2602c69:ProjectViewProjectNode" />
+              <item name="HRTrainingPlatform" type="462c0819:PsiDirectoryNode" />
+              <item name="modules" type="462c0819:PsiDirectoryNode" />
+              <item name="global" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="company" type="462c0819:PsiDirectoryNode" />
+              <item name="hrtrainingplatform" type="462c0819:PsiDirectoryNode" />
+              <item name="entity" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="HRTrainingPlatform" type="b2602c69:ProjectViewProjectNode" />
@@ -133,15 +229,15 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
+      <pane id="AndroidView" />
       <pane id="Scratches" />
-      <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../HRTrainingPlatform-Test" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../HRTrainingPlatform - kopie" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -250,14 +346,15 @@
       <updated>1513595377851</updated>
       <workItem from="1513595386212" duration="241000" />
       <workItem from="1513675997400" duration="1380000" />
+      <workItem from="1513715839130" duration="1348000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1621000" />
+    <option name="totallyTimeSpent" value="2969000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="952" y="0" width="974" height="1047" extended-state="1" />
+    <frame x="94" y="0" width="974" height="1047" extended-state="1" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -265,21 +362,21 @@
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32930845" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28914404" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28914404" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -300,6 +397,61 @@
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/modules/web/src/com/company/hrtrainingplatform/web-app.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modules/global/src/com/company/hrtrainingplatform/views.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="261">
+          <caret line="68" column="0" lean-forward="false" selection-start-line="68" selection-start-column="0" selection-end-line="68" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/Rar$DIa0.952/Training.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/Rar$DIa0.430/Survey.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modules/web/src/com/company/hrtrainingplatform/web/training/training-browse.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modules/global/src/com/company/hrtrainingplatform/entity/Survey.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modules/global/src/com/company/hrtrainingplatform/entity/Training.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modules/global/src/com/company/hrtrainingplatform/entity/Employee.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />

@@ -151,6 +151,7 @@ create table HRTRAININGPLATFORM_TRAINING (
     START_DATE date not null,
     END_DATE date not null,
     STATUS varchar(50) not null,
+    TASK_SPAN_ID varchar(36),
     --
     primary key (ID)
 )^
@@ -289,3 +290,19 @@ create table HRTRAININGPLATFORM_TRAINING_ISB_NNR_LINK (
     primary key (TRAINING_ID, I_S_B_NNR_ID)
 )^
 -- end HRTRAININGPLATFORM_TRAINING_ISB_NNR_LINK
+-- begin HRTRAININGPLATFORM_TASK_SPAN
+create table HRTRAININGPLATFORM_TASK_SPAN (
+    ID varchar(36) not null,
+    VERSION integer not null,
+    CREATE_TS timestamp,
+    CREATED_BY varchar(50),
+    UPDATE_TS timestamp,
+    UPDATED_BY varchar(50),
+    DELETE_TS timestamp,
+    DELETED_BY varchar(50),
+    --
+    CATEGORY varchar(255),
+    --
+    primary key (ID)
+)^
+-- end HRTRAININGPLATFORM_TASK_SPAN

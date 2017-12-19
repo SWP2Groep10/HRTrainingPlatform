@@ -46,5 +46,8 @@
         <entity class="com.company.hrtrainingplatform.entity.SelectedAnswer">
             <include re=".*"/>
         </entity>
+        <entity class="com.company.hrtrainingplatform.entity.TaskSpan">
+            <include re=".*"/>
+        </entity>
     </entities>
 </fts-config>

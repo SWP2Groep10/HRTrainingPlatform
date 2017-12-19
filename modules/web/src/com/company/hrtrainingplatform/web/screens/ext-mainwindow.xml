@@ -40,6 +40,15 @@ group by t.startDate]]>
                           name="description"/>
             </properties>
         </valueCollectionDatasource>
+        <collectionDatasource id="taskSpansDs"
+                              class="com.company.hrtrainingplatform.entity.TaskSpan"
+                              view="taskSpan-with-dateSegments-view">
+            <query>
+                <![CDATA[select e 
+from hrtrainingplatform$TaskSpan e
+order by e.createTs]]>
+            </query>
+        </collectionDatasource>
     </dsContext>
     <layout responsive="true"
             stylename="c-sidemenu-responsive">
@@ -109,89 +118,47 @@ group by t.startDate]]>
                             <split height="100%"
                                    orientation="horizontal"
                                    width="100%">
-                                <chart:serialChart id="trainingValueChart"
-                                                   autoMarginOffset="20"
-                                                   categoryField="startDate"
-                                                   datasource="trainingValueDs"
-                                                   height="100%"
-                                                   marginLeft="40"
-                                                   marginRight="40"
-                                                   mouseWheelZoomEnabled="true"
-                                                   theme="LIGHT"
-                                                   width="100%">
-                                    <chart:valueAxes>
-                                        <chart:axis id="v1"
-                                                    axisAlpha="0"
-                                                    ignoreAxisWidth="true"
-                                                    position="LEFT"/>
-                                    </chart:valueAxes>
-                                    <chart:balloon borderThickness="1"
-                                                   shadowAlpha="0"/>
-                                    <chart:graphs>
-                                        <chart:graph id="g1"
-                                                     balloonText="&lt;span style=&apos;font-size:18px;&apos;&gt;[[count]]&lt;/span&gt;"
-                                                     bullet="ROUND"
-                                                     bulletBorderAlpha="1"
-                                                     bulletColor="WHITE"
-                                                     bulletSize="5"
-                                                     hideBulletsCount="50"
-                                                     lineThickness="2"
-                                                     title="Red line"
-                                                     useLineColorForBulletBorder="true"
-                                                     valueField="count">
-                                            <chart:balloon adjustBorderColor="false"
-                                                           color="WHITE"
-                                                           drop="true"/>
-                                        </chart:graph>
-                                    </chart:graphs>
-                                    <chart:categoryAxis dashLength="1"
-                                                        minorGridEnabled="true"/>
-                                    <chart:chartCursor cursorAlpha="1"
-                                                       cursorColor="#258cbb"
-                                                       cursorPosition="MOUSE"
-                                                       limitToGraph="g1"
-                                                       pan="true"
-                                                       valueLineAlpha="0.2"
+                                <chart:ganttChart id="ganttChart"
+                                                  additionalSegmentFields="status"
+                                                  balloonDateFormat="JJ:NN"
+                                                  brightnessStep="7"
+                                                  categoryField="category"
+                                                  colorField="color"
+                                                  columnWidth="0.5"
+                                                  datasource="taskSpansDs"
+                                                  endDateField="endDate"
+                                                  height="100%"
+                                                  marginRight="70"
+                                                  period="DAYS"
+                                                  rotate="true"
+                                                  segmentsField="dateSegments"
+                                                  startDate="2017-01-01"
+                                                  startDateField="startDate"
+                                                  theme="LIGHT"
+                                                  width="100%">
+                                    <chart:graph balloonText="&lt;strong&gt;[[status]]&lt;/strong&gt;: [[open]] - [[value]]"
+                                                 fillAlphas="1"
+                                                 lineAlpha="1"
+                                                 lineColor="WHITE"/>
+                                    <chart:valueAxis type="DATE"/>
+                                    <chart:valueScrollbar autoGridCount="true"
+                                                          color="BLACK"/>
+                                    <chart:chartCursor cursorAlpha="0"
+                                                       cursorColor="#55bb76"
+                                                       fullWidth="true"
+                                                       valueBalloonsEnabled="false"
+                                                       valueLineAlpha="0.5"
                                                        valueLineBalloonEnabled="true"
                                                        valueLineEnabled="true"
-                                                       valueZoomable="true"/>
+                                                       valueZoomable="true"
+                                                       zoomable="false"/>
                                     <chart:export/>
-                                    <chart:allLabels>
-                                        <chart:label bold="true"
-                                                     size="14"
-                                                     text="msg://Training amount per date"
-                                                     x="10"
-                                                     y="1"/>
-                                    </chart:allLabels>
-                                </chart:serialChart>
-                                <chart:pieChart id="certificateChart"
-                                                height="100%"
-                                                titleField="employee"
-                                                valueField="count"
-                                                width="100%">
-                                    <chart:legend autoMargins="false"
-                                                  marginRight="40"
-                                                  markerType="CIRCLE"
-                                                  position="RIGHT"/>
-                                    <chart:allLabels>
-                                        <chart:label bold="true"
-                                                     size="14"
-                                                     text="msg://Certificate amount per employee"
-                                                     x="10"
-                                                     y="20"/>
-                                    </chart:allLabels>
-                                    <chart:balloon fixedPosition="true"/>
-                                    <chart:export/>
-                                </chart:pieChart>
+                                </chart:ganttChart>
+                                <chart:pieChart/>
                             </split>
                             <split height="100%"
                                    orientation="horizontal"
-                                   width="100%">
-                                <chart:ganttChart height="100%"
-                                                  width="100%"/>
-                                <chart:serialChart height="100%"
-                                                   width="100%"/>
-                            </split>
+                                   width="100%"/>
                         </split>
                         <cssLayout align="MIDDLE_CENTER"
                                    height="100%"
