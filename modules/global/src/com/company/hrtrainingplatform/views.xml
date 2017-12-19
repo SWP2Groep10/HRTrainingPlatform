@@ -35,12 +35,18 @@
           name="employee-view">
         <property name="user"
                   view="_minimal">
+
             <property name="email"/>
             <property name="group"
                       view="_minimal"/>
+
         </property>
         <property name="manager"
                   view="_minimal">
+            <property name="user"
+                      view="_minimal">
+                <property name="email"/>
+            </property>
         </property>
     </view>
     <view class="com.company.hrtrainingplatform.entity.HREmployee"
@@ -64,26 +70,6 @@
                       view="_minimal"/>
         </property>
     </view>
-<<<<<<< HEAD
-=======
-    <view class="com.company.hrtrainingplatform.entity.Training"
-          extends="_local"
-          name="training-view">
-        <property name="attendingList"
-                  view="_minimal">
-        </property>
-        <property name="location"
-                  view="_minimal">
-            <property name="address"
-                      view="_minimal">
-                <property name="postalcode"/>
-                <property name="number"/>
-            </property>
-        </property>
-        <property name="recBookList"
-                  view="_local"/>
-    </view>
->>>>>>> Tom
     <view class="com.company.hrtrainingplatform.entity.Question"
           extends="_local"
           name="question-view">
@@ -137,6 +123,13 @@
           name="training-view">
         <property name="attendingList"
                   view="_minimal">
+            <property name="manager"
+                      view="_minimal">
+                <property name="user"
+                          view="_minimal">
+                    <property name="email"/>
+                </property>
+            </property>
             <property name="user"
                       view="_minimal">
                 <property name="email"/>
