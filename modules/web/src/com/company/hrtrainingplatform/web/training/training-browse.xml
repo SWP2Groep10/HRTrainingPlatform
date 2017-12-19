@@ -12,6 +12,8 @@
             <query>
                 <![CDATA[select e from hrtrainingplatform$Training e]]>
             </query>
+            <collectionDatasource id="locationDs"
+                                  property="location"/>
         </groupDatasource>
     </dsContext>
     <dialogMode height="600"
@@ -52,6 +54,9 @@
                         action="trainingsTable.remove"/>
                 <button id="ExcelButton"
                         action="trainingsTable.excel"/>
+                <button id="ShowLocation"
+                        caption="Show Location"
+                        invoke="onShowLocationClick"/>
             </buttonsPanel>
         </groupTable>
     </layout>
