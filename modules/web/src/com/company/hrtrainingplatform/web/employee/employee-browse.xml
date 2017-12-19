@@ -67,11 +67,12 @@
                         <action id="create"/>
                         <action id="edit"/>
                         <action id="remove"/>
-                        <action id="excel"/>
                     </actions>
                     <columns>
                         <column id="firstName"/>
                         <column id="lastName"/>
+                        <column id="user"/>
+                        <column id="manager"/>
                     </columns>
                     <rows datasource="employeesODataDs"/>
                     <rowsCount/>
@@ -100,6 +101,7 @@
                             <field property="user"/>
                             <field property="firstName"/>
                             <field property="lastName"/>
+                            <field property="manager"/>
                         </column>
                     </fieldGroup>
                 </vbox>

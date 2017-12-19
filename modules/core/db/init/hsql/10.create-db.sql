@@ -97,6 +97,7 @@ create table HRTRAININGPLATFORM_EMPLOYEE (
     USER_ID varchar(36) not null,
     FIRST_NAME varchar(255),
     LAST_NAME varchar(255),
+    MANAGER_ID varchar(36),
     --
     primary key (ID)
 )^
@@ -145,6 +146,7 @@ create table HRTRAININGPLATFORM_TRAINING (
     DELETE_TS timestamp,
     DELETED_BY varchar(50),
     --
+    SURVEY_ID varchar(36),
     DESCRIPTION longvarchar not null,
     START_DATE timestamp not null,
     END_DATE timestamp not null,
