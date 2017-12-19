@@ -35,11 +35,6 @@ public class Training extends StandardEntity {
     protected List<Employee> attendingList;
 
 
-    @OnDelete(DeletePolicy.CASCADE)
-    @OneToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "SURVEY_ID")
-    protected Survey survey;
-
     @JoinTable(name = "HRTRAININGPLATFORM_TRAINING_ISB_NNR_LINK",
         joinColumns = @JoinColumn(name = "TRAINING_ID"),
         inverseJoinColumns = @JoinColumn(name = "I_S_B_NNR_ID"))
@@ -80,6 +75,11 @@ public class Training extends StandardEntity {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "TASK_SPAN_ID")
     protected TaskSpan taskSpan;
+
+    @OnDelete(DeletePolicy.CASCADE)
+    @OneToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "SURVEY_ID")
+    protected Survey survey;
 
     public void setTaskSpan(TaskSpan taskSpan) {
         this.taskSpan = taskSpan;
