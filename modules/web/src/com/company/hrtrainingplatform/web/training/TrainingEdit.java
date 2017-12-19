@@ -1,10 +1,9 @@
 package com.company.hrtrainingplatform.web.training;
 
-import com.company.hrtrainingplatform.entity.Employee;
-import com.company.hrtrainingplatform.entity.Manager;
+import com.company.hrtrainingplatform.entity.*;
+import com.haulmont.bali.util.ParamsMap;
 import com.haulmont.cuba.gui.components.AbstractWindow;
 import com.haulmont.cuba.gui.components.AbstractEditor;
-import com.company.hrtrainingplatform.entity.Training;
 import com.haulmont.cuba.core.app.EmailService;
 import com.haulmont.cuba.core.global.AppBeans;
 import com.haulmont.cuba.core.global.EmailInfo;
@@ -17,11 +16,14 @@ import javax.inject.Inject;
 import java.util.UUID;
 
 public class TrainingEdit extends AbstractEditor {
-
+    @Inject
+    private Table<Location> locationTable;
     @Inject
     protected EmailService emailService;
     @Inject
     private Datasource<Training> trainingDs;
+    @Inject
+    private Datasource<Address> addressesDs;
     @Inject
     private UserSessionSource userSessionSource;
 
@@ -65,4 +67,17 @@ public class TrainingEdit extends AbstractEditor {
         emailService.sendEmailAsync(emailInfo);
     }
 
+
+
+
+    public void onShowMapClick(Component source) {
+
+            Location a=locationTable.getSingleSelected();
+                locationTable.setEnabled(true);
+                String url = "http://maps.google.com/?q=" + a.getAddress().getCountry() + "+" + a.getAddress().getCity() + "+" + a.getAddress().getStreet() + "+" + a.getAddress().getNumber();
+                showWebPage(url, ParamsMap.of("target", "_blank"));
+
+    }
+    
+    
 }
