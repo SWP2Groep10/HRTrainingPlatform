@@ -95,7 +95,6 @@ create table HRTRAININGPLATFORM_EMPLOYEE (
     DELETED_BY varchar(50),
     --
     USER_ID varchar(32) not null,
-    MANAGER_ID varchar(32),
     --
     primary key (ID)
 )^
@@ -114,7 +113,6 @@ create table HRTRAININGPLATFORM_CERTIFICATE (
     --
     DESCRIPTION varchar(100) not null,
     FILE_ID varchar(32),
-    EMPLOYEE_ID varchar(32),
     --
     primary key (ID)
 )^
@@ -130,10 +128,9 @@ create table HRTRAININGPLATFORM_TRAINING (
     DELETE_TS datetime(3),
     DELETED_BY varchar(50),
     --
-    SURVEY_ID varchar(32),
     DESCRIPTION longtext not null,
-    START_DATE date not null,
-    END_DATE date not null,
+    START_DATE datetime(3) not null,
+    END_DATE datetime(3) not null,
     STATUS varchar(50) not null,
     --
     primary key (ID)

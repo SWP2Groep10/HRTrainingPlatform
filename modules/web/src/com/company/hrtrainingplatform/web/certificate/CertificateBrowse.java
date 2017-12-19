@@ -1,6 +1,6 @@
 package com.company.hrtrainingplatform.web.certificate;
 
-import com.haulmont.cuba.gui.components.EntityCombinedScreen;
+import com.haulmont.cuba.gui.components.AbstractLookup;
 
-public class CertificateBrowse extends EntityCombinedScreen {
+public class CertificateBrowse extends AbstractLookup {
 }
