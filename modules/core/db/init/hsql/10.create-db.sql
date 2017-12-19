@@ -148,8 +148,8 @@ create table HRTRAININGPLATFORM_TRAINING (
     --
     SURVEY_ID varchar(36),
     DESCRIPTION longvarchar not null,
-    START_DATE timestamp not null,
-    END_DATE timestamp not null,
+    START_DATE date not null,
+    END_DATE date not null,
     STATUS varchar(50) not null,
     --
     primary key (ID)
