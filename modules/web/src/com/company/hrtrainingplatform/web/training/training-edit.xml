@@ -108,8 +108,8 @@
                         <button action="locationTable.remove"/>
                         <button id="ShowMap"
                                 caption="Show Map"
-                                trackSelection="true"
-                                invoke="onShowMapClick"/>
+                                invoke="onShowMapClick"
+                                trackSelection="true"/>
                     </buttonsPanel>
                 </table>
             </groupBox>

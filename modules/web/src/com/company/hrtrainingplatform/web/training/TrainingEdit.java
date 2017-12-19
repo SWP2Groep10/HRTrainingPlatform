@@ -23,8 +23,6 @@ public class TrainingEdit extends AbstractEditor {
     @Inject
     private Datasource<Training> trainingDs;
     @Inject
-    private Datasource<Address> addressesDs;
-    @Inject
     private UserSessionSource userSessionSource;
 
     public void onSendRequestClick() {
@@ -72,9 +70,11 @@ public class TrainingEdit extends AbstractEditor {
 
     public void onShowMapClick(Component source) {
 
-            Location a=locationTable.getSingleSelected();
+            Location l =locationTable.getSingleSelected();
+            Address a = l.getAddress();
+
                 locationTable.setEnabled(true);
-                String url = "http://maps.google.com/?q=" + a.getAddress().getCountry() + "+" + a.getAddress().getCity() + "+" + a.getAddress().getStreet() + "+" + a.getAddress().getNumber();
+                String url = "http://maps.google.com/?q=" + a.getCountry() + "+" + a.getCity() + "+" + a.getPostalcode() + "+" + a.getStreet() + "+" + a.getNumber();
                 showWebPage(url, ParamsMap.of("target", "_blank"));
 
     }

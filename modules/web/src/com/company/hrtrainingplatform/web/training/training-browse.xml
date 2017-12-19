@@ -40,7 +40,7 @@
                 <column id="startDate"/>
                 <column id="endDate"/>
                 <column id="status"/>
-                <column id="survey"/>
+                <column id="location"/>
             </columns>
             <rows datasource="trainingsDs"/>
             <rowsCount/>
