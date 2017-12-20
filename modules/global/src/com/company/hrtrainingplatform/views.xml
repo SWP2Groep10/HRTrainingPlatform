@@ -116,12 +116,6 @@
         <property name="answers"
                   view="answer-view"/>
     </view>
-    <view class="com.company.hrtrainingplatform.entity.TaskSpan"
-          extends="_local"
-          name="taskSpan-with-dateSegments-view">
-        <property name="dateSegments"
-                  view="_minimal"/>
-    </view>
     <view class="com.company.hrtrainingplatform.entity.Training"
           extends="_local"
           name="training-view">

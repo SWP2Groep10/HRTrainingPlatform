@@ -72,22 +72,13 @@ public class Training extends StandardEntity {
 
 
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "TASK_SPAN_ID")
-    protected TaskSpan taskSpan;
 
     @OnDelete(DeletePolicy.CASCADE)
     @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "SURVEY_ID")
     protected Survey survey;
 
-    public void setTaskSpan(TaskSpan taskSpan) {
-        this.taskSpan = taskSpan;
-    }
 
-    public TaskSpan getTaskSpan() {
-        return taskSpan;
-    }
 
 
     public void setSurvey(Survey survey) {

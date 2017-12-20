@@ -40,15 +40,6 @@ group by t.startDate]]>
                           name="description"/>
             </properties>
         </valueCollectionDatasource>
-        <collectionDatasource id="taskSpansDs"
-                              class="com.company.hrtrainingplatform.entity.TaskSpan"
-                              view="taskSpan-with-dateSegments-view">
-            <query>
-                <![CDATA[select e 
-from hrtrainingplatform$TaskSpan e
-order by e.createTs]]>
-            </query>
-        </collectionDatasource>
     </dsContext>
     <layout responsive="true"
             stylename="c-sidemenu-responsive">
@@ -117,45 +108,7 @@ order by e.createTs]]>
                                width="100%">
                             <split height="100%"
                                    orientation="horizontal"
-                                   width="100%">
-                                <chart:ganttChart id="ganttChart"
-                                                  additionalSegmentFields="status"
-                                                  balloonDateFormat="JJ:NN"
-                                                  brightnessStep="7"
-                                                  categoryField="category"
-                                                  colorField="color"
-                                                  columnWidth="0.5"
-                                                  datasource="taskSpansDs"
-                                                  endDateField="endDate"
-                                                  height="100%"
-                                                  marginRight="70"
-                                                  period="DAYS"
-                                                  rotate="true"
-                                                  segmentsField="dateSegments"
-                                                  startDate="2017-01-01"
-                                                  startDateField="startDate"
-                                                  theme="LIGHT"
-                                                  width="100%">
-                                    <chart:graph balloonText="&lt;strong&gt;[[status]]&lt;/strong&gt;: [[open]] - [[value]]"
-                                                 fillAlphas="1"
-                                                 lineAlpha="1"
-                                                 lineColor="WHITE"/>
-                                    <chart:valueAxis type="DATE"/>
-                                    <chart:valueScrollbar autoGridCount="true"
-                                                          color="BLACK"/>
-                                    <chart:chartCursor cursorAlpha="0"
-                                                       cursorColor="#55bb76"
-                                                       fullWidth="true"
-                                                       valueBalloonsEnabled="false"
-                                                       valueLineAlpha="0.5"
-                                                       valueLineBalloonEnabled="true"
-                                                       valueLineEnabled="true"
-                                                       valueZoomable="true"
-                                                       zoomable="false"/>
-                                    <chart:export/>
-                                </chart:ganttChart>
-                                <chart:pieChart/>
-                            </split>
+                                   width="100%"/>
                             <split height="100%"
                                    orientation="horizontal"
                                    width="100%"/>
