@@ -42,6 +42,20 @@ order by c.description]]>
                           name="count"/>
             </properties>
         </valueCollectionDatasource>
+        <valueCollectionDatasource id="statusDs">
+            <query>
+                <![CDATA[select t.status, count(t.status)
+from hrtrainingplatform$Training t
+group by t.status
+order by t.status]]>
+            </query>
+            <properties>
+                <property class="com.company.hrtrainingplatform.entity.STATUS"
+                          name="status"/>
+                <property datatype="long"
+                          name="count"/>
+            </properties>
+        </valueCollectionDatasource>
     </dsContext>
     <layout responsive="true"
             stylename="c-sidemenu-responsive">
@@ -144,7 +158,7 @@ order by c.description]]>
                                     <chart:allLabels>
                                         <chart:label bold="true"
                                                      size="14"
-                                                     text="msg://Top 10: most populair training citys"
+                                                     text="msg://Top 10: most populair training cities"
                                                      x="10"
                                                      y="20"/>
                                     </chart:allLabels>
@@ -163,7 +177,7 @@ order by c.description]]>
                                        width="100%">
                                 <label id="welcomeLabel"
                                        align="MIDDLE_CENTER"
-                                       height="47px"
+                                       height="100%"
                                        stylename="c-welcome-text"
                                        value="mainMsg://application.welcomeText"
                                        width="100%"/>
@@ -171,24 +185,27 @@ order by c.description]]>
                             <split height="100%"
                                    orientation="horizontal"
                                    width="100%">
+                                <chart:pieChart id="trainingChart"
+                                                datasource="statusDs"
+                                                height="100%"
+                                                titleField="status"
+                                                valueField="count"
+                                                width="100%">
+                                    <chart:legend autoMargins="false"
+                                                  marginRight="40"
+                                                  markerType="CIRCLE"
+                                                  position="RIGHT"/>
+                                    <chart:allLabels>
+                                        <chart:label bold="true"
+                                                     size="14"
+                                                     text="msg://Training amount per status"
+                                                     x="10"
+                                                     y="20"/>
+                                    </chart:allLabels>
+                                    <chart:balloon fixedPosition="true"/>
+                                    <chart:export/>
+                                </chart:pieChart>
                                 <chart:pivotTable id="trainingTable"
-                                                  datasource="trainingsDs"
-                                                  editable="true"
-                                                  height="100%"
-                                                  responsive="true"
-                                                  width="100%">
-                                    <chart:columns>
-                                        <chart:column value="status"/>
-                                    </chart:columns>
-                                    <chart:properties>
-                                        <chart:property name="description"/>
-                                        <chart:property name="status"/>
-                                    </chart:properties>
-                                    <chart:rows>
-                                        <chart:row value="description"/>
-                                    </chart:rows>
-                                </chart:pivotTable>
-                                <chart:pivotTable id="pivottable_1"
                                                   datasource="trainingsDs"
                                                   editable="true"
                                                   height="100%"
