@@ -130,7 +130,6 @@ create table HRTRAININGPLATFORM_CERTIFICATE (
     DELETED_BY varchar(50),
     --
     DESCRIPTION varchar(100) not null,
-    EMPLOYEE_ID varchar(36),
     FILE_ID varchar(36),
     --
     primary key (ID)
@@ -152,7 +151,6 @@ create table HRTRAININGPLATFORM_TRAINING (
     START_DATE date not null,
     END_DATE date not null,
     STATUS varchar(50) not null,
-    SURVEY_ID varchar(36),
     --
     primary key (ID)
 )^

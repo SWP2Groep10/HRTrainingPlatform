@@ -22,6 +22,8 @@ public class ODataServiceBean implements ODataService {
     @Inject
     private Metadata metadata;
 
+    public static String oDataLink = "";
+
     @Override
     public ArrayList<Employee> getEmployees(String ODataURL){
         ArrayList<Employee> result = new ArrayList<>();
@@ -29,6 +31,7 @@ public class ODataServiceBean implements ODataService {
         try{
             URL url = new URL(ODataURL);
             URLConnection connection = url.openConnection();
+            connection.connect();
             try(InputStream in = connection.getInputStream()){
                 BufferedReader reader = new BufferedReader(new InputStreamReader(in));
                 String line;
@@ -58,6 +61,7 @@ public class ODataServiceBean implements ODataService {
                 e.getUser().setLastName(employee.getString("LastName"));
                 e.setFirstName(employee.getString("FirstName"));
                 e.setLastName(employee.getString("LastName"));
+                e.getUser().setPosition(employee.getString("Title"));
                 e.getUser().setLogin(employee.getInt("EmployeeID")+"");
                 result.add(e);
                 System.out.println(e.getFirstName());
@@ -82,6 +86,7 @@ public class ODataServiceBean implements ODataService {
         try{
             URL url = new URL(ODataQuery + "$filter=EmployeeID eq " + EmployeeID);
             URLConnection connection = url.openConnection();
+            connection.connect();
             try(InputStream in = connection.getInputStream()){
                 BufferedReader reader = new BufferedReader(new InputStreamReader(in));
                 String line;
