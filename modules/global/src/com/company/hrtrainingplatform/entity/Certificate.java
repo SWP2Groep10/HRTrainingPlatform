@@ -34,20 +34,6 @@ public class Certificate extends StandardEntity {
     @JoinColumn(name = "FILE_ID")
     protected FileDescriptor file;
 
-
-
-
-
-
-    public void setEmployee(Employee employee) {
-        this.employee = employee;
-    }
-
-    public Employee getEmployee() {
-        return employee;
-    }
-
-
     public void setFile(FileDescriptor file) {
         this.file = file;
     }

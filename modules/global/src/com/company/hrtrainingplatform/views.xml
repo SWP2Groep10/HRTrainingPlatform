@@ -124,13 +124,23 @@
         <property name="attendingList"
                   view="_minimal">
             <property name="manager"
-                      view="_minimal"/>
+                      view="_minimal">
+                <property name="user"
+                          view="_minimal">
+                    <property name="email"/>
+                </property>
+            </property>
         </property>
+        <property name="survey"
+                  view="_minimal"/>
         <property name="recBookList"
                   view="_minimal"/>
         <property name="location"
-                  view="_minimal"/>
-        <property name="survey"
-                  view="_minimal"/>
+                  view="_minimal">
+            <property name="address"
+                      view="_minimal">
+                <property name="postalcode"/>
+            </property>
+        </property>
     </view>
 </views>

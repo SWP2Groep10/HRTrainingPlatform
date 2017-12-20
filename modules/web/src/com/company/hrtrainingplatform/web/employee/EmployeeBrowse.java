@@ -2,12 +2,7 @@ package com.company.hrtrainingplatform.web.employee;
 
 import com.haulmont.cuba.gui.components.AbstractWindow;
 import com.haulmont.cuba.gui.components.EntityCombinedScreen;
-import com.haulmont.cuba.gui.components.Component;
-
 public class EmployeeBrowse extends EntityCombinedScreen {
-
-    public void onExcel(Component source) {
-    }
 }
 
 /*

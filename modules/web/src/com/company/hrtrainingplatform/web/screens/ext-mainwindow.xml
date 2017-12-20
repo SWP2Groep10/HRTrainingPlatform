@@ -12,6 +12,7 @@
 from hrtrainingplatform$Address a
 group by a.city
 order by a.city]]>
+
             </query>
             <properties>
                 <property datatype="string"

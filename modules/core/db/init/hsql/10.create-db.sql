@@ -147,6 +147,7 @@ create table HRTRAININGPLATFORM_TRAINING (
     DELETE_TS timestamp,
     DELETED_BY varchar(50),
     --
+    SURVEY_ID varchar(36),
     DESCRIPTION longvarchar not null,
     START_DATE date not null,
     END_DATE date not null,

@@ -1,10 +1,11 @@
 package com.company.hrtrainingplatform.web.training;
 
+import com.company.hrtrainingplatform.entity.Address;
 import com.company.hrtrainingplatform.entity.Employee;
-import com.company.hrtrainingplatform.entity.Manager;
-import com.haulmont.cuba.gui.components.AbstractWindow;
-import com.haulmont.cuba.gui.components.AbstractEditor;
+import com.company.hrtrainingplatform.entity.Location;
 import com.company.hrtrainingplatform.entity.Training;
+import com.haulmont.bali.util.ParamsMap;
+import com.haulmont.cuba.gui.components.AbstractEditor;
 import com.haulmont.cuba.core.app.EmailService;
 import com.haulmont.cuba.core.global.AppBeans;
 import com.haulmont.cuba.core.global.EmailInfo;
@@ -17,7 +18,8 @@ import javax.inject.Inject;
 import java.util.UUID;
 
 public class TrainingEdit extends AbstractEditor {
-
+    @Inject
+    private Table<Location> locationTable;
     @Inject
     protected EmailService emailService;
     @Inject
@@ -26,30 +28,30 @@ public class TrainingEdit extends AbstractEditor {
     private UserSessionSource userSessionSource;
 
     public void onSendRequestClick() {
+        try {
+            Employee userSessionEmp = userSessionSource.getUserSession().getAttribute("employee");
+            User curManagerUser = userSessionEmp.getManager().getUser();
 
-        Employee userSessionEmp = userSessionSource.getUserSession().getAttribute("employee");
-        User curManagerUser = userSessionEmp.getManager().getUser();
-
-        showOptionDialog(
-                "Email",
-                "Send a training request email to your manager -" + curManagerUser.getName() + "- ?",
-                MessageType.CONFIRMATION,
-                new Action[] {
-                        new DialogAction(DialogAction.Type.YES) {
-                            @Override
-                            public void actionPerform(Component component) {
-                                sendByEmail(curManagerUser.getEmail());
-                            }
-                        },
-                        new DialogAction(DialogAction.Type.NO)
-                }
-        );
+            showOptionDialog(
+                    "Email",
+                    "Send a training request email to your manager -" + curManagerUser.getName() + "- ?",
+                    MessageType.CONFIRMATION,
+                    new Action[]{
+                            new DialogAction(DialogAction.Type.YES) {
+                                @Override
+                                public void actionPerform(Component component) {
+                                    sendByEmail(curManagerUser.getEmail());
+                                }
+                            },
+                            new DialogAction(DialogAction.Type.NO)
+                    }
+            );
+        } catch (NullPointerException e){showNotification("No selection has been made or current user is not an Employee");}
     }
 
     private void sendByEmail(String requestmail) {
 
         User curUser= AppBeans.get(UserSessionSource.class).getUserSession().getUser();
-
         String trainingDesc = trainingDs.getItem().getDescription();
         UUID trainingUUID = trainingDs.getItem().getId();
 
@@ -64,5 +66,16 @@ public class TrainingEdit extends AbstractEditor {
         );
         emailService.sendEmailAsync(emailInfo);
     }
+
+    public void onShowMapClick() {
+        try {
+            Location l = locationTable.getSingleSelected();
+            Address a = l.getAddress();
+            String url = "http://maps.google.com/?q=" + a.getCountry() + "+" + a.getCity() + "+" + a.getPostalcode() + "+" + a.getStreet() + "+" + a.getNumber();
+            showWebPage(url, ParamsMap.of("target", "_blank"));
+        }
+        catch (NullPointerException e){showNotification("No selection has been made.");}
+    }
+
 
 }
