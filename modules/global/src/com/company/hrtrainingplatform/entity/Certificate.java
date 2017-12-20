@@ -26,14 +26,13 @@ public class Certificate extends StandardEntity {
     protected String description;
 
 
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "EMPLOYEE_ID")
+    protected Employee employee;
+
     @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "FILE_ID")
     protected FileDescriptor file;
-
-
-
-
-
 
     public void setFile(FileDescriptor file) {
         this.file = file;
