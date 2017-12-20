@@ -67,6 +67,9 @@
                         <action id="create"/>
                         <action id="edit"/>
                         <action id="remove"/>
+                        <action id="excel"
+                                caption="Excel"
+                                icon="icons/excel.png"/>
                     </actions>
                     <columns>
                         <column id="firstName"/>

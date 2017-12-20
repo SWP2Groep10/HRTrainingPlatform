@@ -13,6 +13,8 @@
             <query>
                 <![CDATA[select e from hrtrainingplatform$Training e]]>
             </query>
+            <collectionDatasource id="locationDs"
+                                  property="location"/>
         </groupDatasource>
     </dsContext>
     <dialogMode height="600"
@@ -42,7 +44,7 @@
                 <column id="startDate"/>
                 <column id="endDate"/>
                 <column id="status"/>
-                <column id="survey"/>
+                <column id="location"/>
             </columns>
             <rows datasource="trainingsDs"/>
             <rowsCount/>
@@ -56,6 +58,10 @@
                         action="trainingsTable.remove"/>
                 <button id="ExcelButton"
                         action="trainingsTable.excel"/>
+                <button id="SendRequest"
+                        caption="Send Training Request"
+                        icon="font-icon:SEND"
+                        invoke="onSendRequestClick"/>
             </buttonsPanel>
         </groupTable>
     </layout>

@@ -51,6 +51,10 @@
                         action="addressesTable.edit"/>
                 <button id="removeBtn"
                         action="addressesTable.remove"/>
+                <button id="ShowMap"
+                        caption="Show Map"
+                        icon="font-icon:MAP_O"
+                        invoke="onShowMapClick"/>
             </buttonsPanel>
         </groupTable>
     </layout>

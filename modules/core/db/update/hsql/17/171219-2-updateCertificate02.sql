@@ -1,0 +1,1 @@
+alter table HRTRAININGPLATFORM_CERTIFICATE drop column EMPLOYEE_ID cascade ;

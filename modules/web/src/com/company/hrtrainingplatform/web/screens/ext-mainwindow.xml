@@ -5,11 +5,14 @@
         xmlns:chart="http://schemas.haulmont.com/charts/charts.xsd"
         xmlns:main="http://schemas.haulmont.com/cuba/mainwindow.xsd">
     <dsContext>
-        <valueCollectionDatasource id="cityDs">
+        <valueCollectionDatasource id="cityDs"
+                                   maxResults="10">
             <query>
                 <![CDATA[select a.city, count(a.city)
 from hrtrainingplatform$Address a
-group by a.city]]>
+group by a.city
+order by a.city]]>
+
             </query>
             <properties>
                 <property datatype="string"
@@ -25,19 +28,33 @@ group by a.city]]>
                 <![CDATA[select e from hrtrainingplatform$Training e]]>
             </query>
         </collectionDatasource>
-        <valueCollectionDatasource id="trainingValueDs">
+        <valueCollectionDatasource id="certificateDs"
+                                   maxResults="10">
             <query>
-                <![CDATA[select t.startDate, count(DISTINCT t.description)
-from hrtrainingplatform$Training t
-group by t.startDate]]>
+                <![CDATA[select c.description, count(c.description)
+from hrtrainingplatform$Certificate c
+group by c.description
+order by c.description]]>
             </query>
             <properties>
-                <property datatype="date"
-                          name="startDate"/>
-                <property datatype="long"
-                          name="count"/>
                 <property datatype="string"
                           name="description"/>
+                <property datatype="long"
+                          name="count"/>
+            </properties>
+        </valueCollectionDatasource>
+        <valueCollectionDatasource id="statusDs">
+            <query>
+                <![CDATA[select t.status, count(t.status)
+from hrtrainingplatform$Training t
+group by t.status
+order by t.status]]>
+            </query>
+            <properties>
+                <property class="com.company.hrtrainingplatform.entity.STATUS"
+                          name="status"/>
+                <property datatype="long"
+                          name="count"/>
             </properties>
         </valueCollectionDatasource>
     </dsContext>
@@ -101,72 +118,18 @@ group by t.startDate]]>
                            height="100%">
                 <main:initialLayout margin="true"
                                     spacing="true">
-                    <vbox height="100%"
-                          spacing="true">
+                    <vbox height="100%">
                         <split height="100%"
                                orientation="vertical"
+                               pos="70"
                                width="100%">
                             <split height="100%"
                                    orientation="horizontal"
                                    width="100%">
-                                <chart:serialChart id="trainingValueChart"
-                                                   autoMarginOffset="20"
-                                                   categoryField="startDate"
-                                                   datasource="trainingValueDs"
-                                                   height="100%"
-                                                   marginLeft="40"
-                                                   marginRight="40"
-                                                   mouseWheelZoomEnabled="true"
-                                                   theme="LIGHT"
-                                                   width="100%">
-                                    <chart:valueAxes>
-                                        <chart:axis id="v1"
-                                                    axisAlpha="0"
-                                                    ignoreAxisWidth="true"
-                                                    position="LEFT"/>
-                                    </chart:valueAxes>
-                                    <chart:balloon borderThickness="1"
-                                                   shadowAlpha="0"/>
-                                    <chart:graphs>
-                                        <chart:graph id="g1"
-                                                     balloonText="&lt;span style=&apos;font-size:18px;&apos;&gt;[[count]]&lt;/span&gt;"
-                                                     bullet="ROUND"
-                                                     bulletBorderAlpha="1"
-                                                     bulletColor="WHITE"
-                                                     bulletSize="5"
-                                                     hideBulletsCount="50"
-                                                     lineThickness="2"
-                                                     title="Red line"
-                                                     useLineColorForBulletBorder="true"
-                                                     valueField="count">
-                                            <chart:balloon adjustBorderColor="false"
-                                                           color="WHITE"
-                                                           drop="true"/>
-                                        </chart:graph>
-                                    </chart:graphs>
-                                    <chart:categoryAxis dashLength="1"
-                                                        minorGridEnabled="true"/>
-                                    <chart:chartCursor cursorAlpha="1"
-                                                       cursorColor="#258cbb"
-                                                       cursorPosition="MOUSE"
-                                                       limitToGraph="g1"
-                                                       pan="true"
-                                                       valueLineAlpha="0.2"
-                                                       valueLineBalloonEnabled="true"
-                                                       valueLineEnabled="true"
-                                                       valueZoomable="true"/>
-                                    <chart:export/>
-                                    <chart:allLabels>
-                                        <chart:label bold="true"
-                                                     size="14"
-                                                     text="msg://Training amount per date"
-                                                     x="10"
-                                                     y="1"/>
-                                    </chart:allLabels>
-                                </chart:serialChart>
                                 <chart:pieChart id="certificateChart"
+                                                datasource="certificateDs"
                                                 height="100%"
-                                                titleField="employee"
+                                                titleField="description"
                                                 valueField="count"
                                                 width="100%">
                                     <chart:legend autoMargins="false"
@@ -176,7 +139,27 @@ group by t.startDate]]>
                                     <chart:allLabels>
                                         <chart:label bold="true"
                                                      size="14"
-                                                     text="msg://Certificate amount per employee"
+                                                     text="msg://Top 10: most uploaded training certificates"
+                                                     x="10"
+                                                     y="20"/>
+                                    </chart:allLabels>
+                                    <chart:balloon fixedPosition="true"/>
+                                    <chart:export/>
+                                </chart:pieChart>
+                                <chart:pieChart id="cityChart"
+                                                datasource="cityDs"
+                                                height="100%"
+                                                titleField="city"
+                                                valueField="count"
+                                                width="100%">
+                                    <chart:legend autoMargins="false"
+                                                  marginRight="40"
+                                                  markerType="CIRCLE"
+                                                  position="RIGHT"/>
+                                    <chart:allLabels>
+                                        <chart:label bold="true"
+                                                     size="14"
+                                                     text="msg://Top 10: most populair training cities"
                                                      x="10"
                                                      y="20"/>
                                     </chart:allLabels>
@@ -184,65 +167,63 @@ group by t.startDate]]>
                                     <chart:export/>
                                 </chart:pieChart>
                             </split>
+                            <cssLayout height="100%"
+                                       width="100%"/>
+                        </split>
+                        <split height="100%"
+                               orientation="vertical"
+                               pos="20"
+                               width="100%">
+                            <cssLayout height="100%"
+                                       width="100%">
+                                <label id="welcomeLabel"
+                                       align="MIDDLE_CENTER"
+                                       height="100%"
+                                       stylename="c-welcome-text"
+                                       value="mainMsg://application.welcomeText"
+                                       width="100%"/>
+                            </cssLayout>
                             <split height="100%"
                                    orientation="horizontal"
                                    width="100%">
-                                <chart:ganttChart height="100%"
-                                                  width="100%"/>
-                                <chart:serialChart height="100%"
-                                                   width="100%"/>
+                                <chart:pieChart id="trainingChart"
+                                                datasource="statusDs"
+                                                height="100%"
+                                                titleField="status"
+                                                valueField="count"
+                                                width="100%">
+                                    <chart:legend autoMargins="false"
+                                                  marginRight="40"
+                                                  markerType="CIRCLE"
+                                                  position="RIGHT"/>
+                                    <chart:allLabels>
+                                        <chart:label bold="true"
+                                                     size="14"
+                                                     text="msg://Training amount per status"
+                                                     x="10"
+                                                     y="20"/>
+                                    </chart:allLabels>
+                                    <chart:balloon fixedPosition="true"/>
+                                    <chart:export/>
+                                </chart:pieChart>
+                                <chart:pivotTable id="trainingTable"
+                                                  datasource="trainingsDs"
+                                                  editable="true"
+                                                  height="100%"
+                                                  responsive="true"
+                                                  width="100%">
+                                    <chart:columns>
+                                        <chart:column value="status"/>
+                                    </chart:columns>
+                                    <chart:properties>
+                                        <chart:property name="description"/>
+                                        <chart:property name="status"/>
+                                    </chart:properties>
+                                    <chart:rows>
+                                        <chart:row value="description"/>
+                                    </chart:rows>
+                                </chart:pivotTable>
                             </split>
-                        </split>
-                        <cssLayout align="MIDDLE_CENTER"
-                                   height="100%"
-                                   width="100%">
-                            <label id="welcomeLabel"
-                                   align="MIDDLE_CENTER"
-                                   height="47px"
-                                   stylename="c-welcome-text"
-                                   value="mainMsg://application.welcomeText"
-                                   width="100%"/>
-                        </cssLayout>
-                        <split height="120%"
-                               orientation="horizontal"
-                               width="100%">
-                            <chart:pieChart id="cityChart"
-                                            datasource="cityDs"
-                                            height="100%"
-                                            titleField="city"
-                                            valueField="count"
-                                            width="100%">
-                                <chart:legend autoMargins="false"
-                                              marginRight="40"
-                                              markerType="CIRCLE"
-                                              position="RIGHT"/>
-                                <chart:allLabels>
-                                    <chart:label bold="true"
-                                                 size="14"
-                                                 text="msg://Training locaties"
-                                                 x="10"
-                                                 y="20"/>
-                                </chart:allLabels>
-                                <chart:balloon fixedPosition="true"/>
-                                <chart:export/>
-                            </chart:pieChart>
-                            <chart:pivotTable id="trainingTable"
-                                              datasource="trainingsDs"
-                                              editable="true"
-                                              height="100%"
-                                              responsive="true"
-                                              width="100%">
-                                <chart:columns>
-                                    <chart:column value="status"/>
-                                </chart:columns>
-                                <chart:properties>
-                                    <chart:property name="description"/>
-                                    <chart:property name="status"/>
-                                </chart:properties>
-                                <chart:rows>
-                                    <chart:row value="description"/>
-                                </chart:rows>
-                            </chart:pivotTable>
                         </split>
                     </vbox>
                 </main:initialLayout>
