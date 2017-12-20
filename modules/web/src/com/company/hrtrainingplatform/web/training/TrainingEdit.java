@@ -19,7 +19,7 @@ import java.util.UUID;
 
 public class TrainingEdit extends AbstractEditor {
     @Inject
-    private Table<Location> locationsTable;
+    private Table<Location> locationTable;
     @Inject
     protected EmailService emailService;
     @Inject
@@ -28,24 +28,25 @@ public class TrainingEdit extends AbstractEditor {
     private UserSessionSource userSessionSource;
 
     public void onSendRequestClick() {
+        try {
+            Employee userSessionEmp = userSessionSource.getUserSession().getAttribute("employee");
+            User curManagerUser = userSessionEmp.getManager().getUser();
 
-        Employee userSessionEmp = userSessionSource.getUserSession().getAttribute("employee");
-        User curManagerUser = userSessionEmp.getManager().getUser();
-
-        showOptionDialog(
-                "Email",
-                "Send a training request email to your manager -" + curManagerUser.getName() + "- ?",
-                MessageType.CONFIRMATION,
-                new Action[] {
-                        new DialogAction(DialogAction.Type.YES) {
-                            @Override
-                            public void actionPerform(Component component) {
-                                sendByEmail(curManagerUser.getEmail());
-                            }
-                        },
-                        new DialogAction(DialogAction.Type.NO)
-                }
-        );
+            showOptionDialog(
+                    "Email",
+                    "Send a training request email to your manager -" + curManagerUser.getName() + "- ?",
+                    MessageType.CONFIRMATION,
+                    new Action[]{
+                            new DialogAction(DialogAction.Type.YES) {
+                                @Override
+                                public void actionPerform(Component component) {
+                                    sendByEmail(curManagerUser.getEmail());
+                                }
+                            },
+                            new DialogAction(DialogAction.Type.NO)
+                    }
+            );
+        } catch (NullPointerException e){showNotification("No selection has been made or current user is not an Employee");}
     }
 
     private void sendByEmail(String requestmail) {
@@ -68,11 +69,13 @@ public class TrainingEdit extends AbstractEditor {
 
     public void onShowMapClick() {
         try {
-            Location l = locationsTable.getSingleSelected();
+            Location l = locationTable.getSingleSelected();
             Address a = l.getAddress();
             String url = "http://maps.google.com/?q=" + a.getCountry() + "+" + a.getCity() + "+" + a.getPostalcode() + "+" + a.getStreet() + "+" + a.getNumber();
             showWebPage(url, ParamsMap.of("target", "_blank"));
         }
         catch (NullPointerException e){showNotification("No selection has been made.");}
     }
+
+
 }

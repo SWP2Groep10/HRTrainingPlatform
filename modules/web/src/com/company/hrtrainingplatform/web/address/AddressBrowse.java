@@ -12,8 +12,6 @@ public class AddressBrowse extends AbstractLookup {
 
     @Inject
     private Table<Address> addressesTable;
-    @Inject
-    private Datasource<Address> addressesDs;
 
     public void onShowMapClick() {
 

@@ -56,6 +56,7 @@
                         action="trainingsTable.excel"/>
                 <button id="SendRequest"
                         caption="Send Training Request"
+                        icon="font-icon:SEND"
                         invoke="onSendRequestClick"/>
             </buttonsPanel>
         </groupTable>

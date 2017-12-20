@@ -21,11 +21,16 @@
                 width="800"/>
     <layout spacing="true">
         <scrollBox height="100%"
-                   margin="true">
+                   margin="true"
+                   responsive="true">
             <fieldGroup id="fieldGroup"
-                        datasource="trainingDs">
-                <column width="250px">
-                    <field property="description"
+                        datasource="trainingDs"
+                        height="284px"
+                        responsive="true"
+                        width="100%">
+                <column width="300px">
+                    <field maxLength="50"
+                           property="description"
                            rows="5"/>
                     <field property="startDate"/>
                     <field property="endDate"/>
@@ -33,88 +38,109 @@
                     <field property="survey"/>
                 </column>
             </fieldGroup>
-            <buttonsPanel margin="true,true,true,false">
+            <buttonsPanel id="SendRequestPanel"
+                          align="MIDDLE_LEFT"
+                          alwaysVisible="true"
+                          height="70px"
+                          margin="true"
+                          responsive="true"
+                          width="100%">
                 <button id="SendRequest"
+                        action="attendingListTable.SendRequest"
+                        align="MIDDLE_LEFT"
                         caption="Send Training Request"
                         description="Send Training Request"
                         disableOnClick="true"
+                        height="30px"
+                        icon="font-icon:SEND"
                         invoke="onSendRequestClick"/>
             </buttonsPanel>
-            <groupBox id="attendingListBox"
-                      caption="msg://com.company.hrtrainingplatform.entity/Training.attendingList"
-                      collapsable="true"
-                      spacing="true">
-                <table id="attendingListTable"
-                       height="200px"
-                       width="100%">
-                    <actions>
-                        <action id="add"/>
-                        <action id="remove"/>
-                        <action id="SendRequest"
-                                invoke="onSendRequestClick"/>
-                    </actions>
-                    <columns>
-                        <column id="user"/>
-                        <column id="manager"/>
-                    </columns>
-                    <rows datasource="attendingListDs"/>
-                    <buttonsPanel>
-                        <button action="attendingListTable.add"/>
-                        <button action="attendingListTable.remove"/>
-                    </buttonsPanel>
-                </table>
-            </groupBox>
-            <groupBox id="recBookListBox"
-                      caption="msg://com.company.hrtrainingplatform.entity/Training.recBookList"
-                      collapsable="true"
-                      collapsed="true">
-                <table id="recBookListTable"
-                       height="200px"
-                       width="100%">
-                    <actions>
-                        <action id="add"/>
-                        <action id="remove"/>
-                    </actions>
-                    <columns>
-                        <column id="isbn"/>
-                    </columns>
-                    <rows datasource="recBookListDs"/>
-                    <buttonsPanel>
-                        <button action="recBookListTable.add"/>
-                        <button action="recBookListTable.remove"/>
-                    </buttonsPanel>
-                </table>
-            </groupBox>
-            <groupBox id="locationBox"
-                      caption="msg://com.company.hrtrainingplatform.entity/Training.location"
-                      collapsable="true"
-                      collapsed="true"
-                      spacing="true">
-                <table id="locationTable"
-                       height="200px"
-                       width="100%">
-                    <actions>
-                        <action id="add"/>
-                        <action id="remove"/>
-                    </actions>
-                    <columns>
-                        <column id="locationName"/>
-                        <column id="address"/>
-                    </columns>
-                    <rows datasource="locationDs"/>
-                    <rowsCount/>
-                    <buttonsPanel>
-                        <button action="locationTable.add"/>
-                        <button action="locationTable.remove"/>
-                        <button id="ShowMap"
-                                caption="Show Map"
-                                icon="font-icon:MAP_O"
-                                invoke="onShowMapClick"
-                                trackSelection="true"/>
-                    </buttonsPanel>
-                </table>
-            </groupBox>
+            <tabSheet id="Lists"
+                      height="330px"
+                      responsive="true">
+                <tab id="AttendingList"
+                     caption="Attending List"
+                     margin="true,false,false,false"
+                     spacing="true">
+                    <table id="attendingListTable"
+                           align="TOP_RIGHT"
+                           height="250px"
+                           width="100%">
+                        <actions>
+                            <action id="add"/>
+                            <action id="remove"/>
+                            <action id="SendRequest"
+                                    invoke="onSendRequestClick"/>
+                        </actions>
+                        <columns>
+                            <column id="user"/>
+                            <column id="manager"/>
+                        </columns>
+                        <rows datasource="attendingListDs"/>
+                        <buttonsPanel>
+                            <button action="attendingListTable.add"/>
+                            <button action="attendingListTable.remove"/>
+                        </buttonsPanel>
+                    </table>
+                </tab>
+                <tab id="Locations"
+                     caption="Locations"
+                     margin="true,false,false,false"
+                     spacing="true">
+                    <table id="locationTable"
+                           height="250px"
+                           width="100%">
+                        <actions>
+                            <action id="add"/>
+                            <action id="remove"/>
+                            <action id="ShowMap"
+                                    caption="Show Map"
+                                    description="Shows selected row in google maps."
+                                    icon="font-icon:MAP_O"
+                                    invoke="onShowMapClick"/>
+                        </actions>
+                        <columns>
+                            <column id="locationName"/>
+                            <column id="address"/>
+                        </columns>
+                        <rows datasource="locationDs"/>
+                        <rowsCount/>
+                        <buttonsPanel>
+                            <button action="locationTable.add"/>
+                            <button action="locationTable.remove"/>
+                            <button id="ShowMap"
+                                    action="locationTable.ShowMap"
+                                    caption="Show Map"
+                                    trackSelection="true"/>
+                        </buttonsPanel>
+                    </table>
+                </tab>
+                <tab id="RecommendedBooks"
+                     caption="Recommended Books"
+                     margin="true,false,false,false"
+                     spacing="true">
+                    <table id="recBookListTable"
+                           height="250px"
+                           responsive="true"
+                           width="100%">
+                        <actions>
+                            <action id="add"/>
+                            <action id="remove"/>
+                        </actions>
+                        <columns>
+                            <column id="isbn"/>
+                        </columns>
+                        <rows datasource="recBookListDs"/>
+                        <buttonsPanel alwaysVisible="true">
+                            <button action="recBookListTable.add"/>
+                            <button action="recBookListTable.remove"/>
+                        </buttonsPanel>
+                    </table>
+                </tab>
+            </tabSheet>
             <frame id="windowActions"
+                   height="32px"
+                   responsive="true"
                    screen="editWindowActions"/>
         </scrollBox>
     </layout>

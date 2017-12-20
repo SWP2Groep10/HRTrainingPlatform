@@ -26,26 +26,27 @@ public class TrainingBrowse extends AbstractLookup {
     }
     
     public void onSendRequestClick() {
+        try {
+            Employee userSessionEmp = userSessionSource.getUserSession().getAttribute("employee");
+            User curManagerUser = userSessionEmp.getManager().getUser();
+            Training prev = trainingsTable.getSingleSelected();
 
-        Employee userSessionEmp = userSessionSource.getUserSession().getAttribute("employee");
-        User curManagerUser = userSessionEmp.getManager().getUser();
-        Training prev = trainingsTable.getSingleSelected();
-
-        showOptionDialog(
-                "Email",
-                "Send a training request email to your manager -" + curManagerUser.getName() + "- ?",
-                MessageType.CONFIRMATION,
-                new Action[] {
-                        new DialogAction(DialogAction.Type.YES) {
-                            @Override
-                            public void actionPerform(Component component) {
-                                sendByEmail(curManagerUser.getEmail());
-                                showNotification("Email has been added to que.");
-                            }
-                        },
-                        new DialogAction(DialogAction.Type.NO)
-                }
-        );
+            showOptionDialog(
+                    "Email",
+                    "Send a training request email to your manager -" + curManagerUser.getName() + "- ?",
+                    MessageType.CONFIRMATION,
+                    new Action[]{
+                            new DialogAction(DialogAction.Type.YES) {
+                                @Override
+                                public void actionPerform(Component component) {
+                                    sendByEmail(curManagerUser.getEmail());
+                                    showNotification("Email has been added to que.");
+                                }
+                            },
+                            new DialogAction(DialogAction.Type.NO)
+                    }
+            );
+        } catch (NullPointerException e){showNotification("No selection has been made or current user is not an Employee");}
     }
 
     private void sendByEmail(String requestmail) {
