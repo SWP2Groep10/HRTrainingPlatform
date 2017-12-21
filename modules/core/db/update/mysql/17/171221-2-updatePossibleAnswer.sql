@@ -1,0 +1,2 @@
+update HRTRAININGPLATFORM_POSSIBLE_ANSWER set ANSWER_TEXT = '' where ANSWER_TEXT is null ;
+alter table HRTRAININGPLATFORM_POSSIBLE_ANSWER modify column ANSWER_TEXT varchar(255) not null ;
