@@ -230,7 +230,7 @@ create table HRTRAININGPLATFORM_POSSIBLE_ANSWER (
     DELETED_BY varchar(50),
     --
     CODE varchar(255),
-    ANSWER_TEXT varchar(255),
+    ANSWER_TEXT varchar(255) not null,
     QUESTION_ID varchar(36) not null,
     ACTIVE boolean,
     --
