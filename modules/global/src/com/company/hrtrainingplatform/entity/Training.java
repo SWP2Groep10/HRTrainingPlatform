@@ -39,7 +39,6 @@ public class Training extends StandardEntity {
     @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "SURVEY_ID")
     protected Survey survey;
-
     @JoinTable(name = "HRTRAININGPLATFORM_TRAINING_ISB_NNR_LINK",
         joinColumns = @JoinColumn(name = "TRAINING_ID"),
         inverseJoinColumns = @JoinColumn(name = "I_S_B_NNR_ID"))
@@ -53,12 +52,12 @@ public class Training extends StandardEntity {
     @Column(name = "DESCRIPTION", nullable = false)
     protected String description;
 
-    @Temporal(TemporalType.TIMESTAMP)
+    @Temporal(TemporalType.DATE)
     @NotNull(message = "This value can not be null")
     @Column(name = "START_DATE", nullable = false)
     protected Date startDate;
 
-    @Temporal(TemporalType.TIMESTAMP)
+    @Temporal(TemporalType.DATE)
     @NotNull(message = "This value can not be null")
     @Column(name = "END_DATE", nullable = false)
     protected Date endDate;
@@ -72,9 +71,6 @@ public class Training extends StandardEntity {
 
     @Column(name = "STATUS", nullable = false)
     protected String status;
-
-
-
 
 
     public void setSurvey(Survey survey) {

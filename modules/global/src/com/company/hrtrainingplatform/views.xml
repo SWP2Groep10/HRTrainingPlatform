@@ -128,10 +128,6 @@
                     <property name="email"/>
                 </property>
             </property>
-            <property name="user"
-                      view="_minimal">
-                <property name="email"/>
-            </property>
         </property>
         <property name="survey"
                   view="_minimal"/>

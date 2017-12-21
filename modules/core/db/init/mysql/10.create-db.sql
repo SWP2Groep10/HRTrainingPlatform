@@ -114,6 +114,7 @@ create table HRTRAININGPLATFORM_CERTIFICATE (
     --
     DESCRIPTION varchar(100) not null,
     FILE_ID varchar(32),
+    EMPLOYEE_ID varchar(32),
     --
     primary key (ID)
 )^
@@ -131,8 +132,8 @@ create table HRTRAININGPLATFORM_TRAINING (
     --
     SURVEY_ID varchar(32),
     DESCRIPTION longtext not null,
-    START_DATE datetime(3) not null,
-    END_DATE datetime(3) not null,
+    START_DATE date not null,
+    END_DATE date not null,
     STATUS varchar(50) not null,
     --
     primary key (ID)
