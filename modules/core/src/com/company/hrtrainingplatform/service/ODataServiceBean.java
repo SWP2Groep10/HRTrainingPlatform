@@ -61,6 +61,7 @@ public class ODataServiceBean implements ODataService {
                 e.getUser().setLastName(employee.getString("LastName"));
                 e.setFirstName(employee.getString("FirstName"));
                 e.setLastName(employee.getString("LastName"));
+                e.setEmployeeId(employee.getInt("EmployeeID"));
                 e.getUser().setPosition(employee.getString("Title"));
                 e.getUser().setLogin(employee.getInt("EmployeeID")+"");
                 result.add(e);

@@ -72,7 +72,7 @@
                                 icon="icons/excel.png"/>
                     </actions>
                     <columns>
-                        <column id="user"/>
+                        <column id="employeeId"/>
                         <column id="firstName"/>
                         <column id="lastName"/>
                         <column id="manager"/>

@@ -14,6 +14,7 @@ import javax.persistence.ManyToOne;
 import com.haulmont.cuba.core.entity.annotation.OnDelete;
 import com.haulmont.cuba.core.entity.annotation.OnDeleteInverse;
 import com.haulmont.cuba.core.global.DeletePolicy;
+import com.haulmont.cuba.security.entity.User;
 
 @NamePattern(" %s|description")
 @Table(name = "HRTRAININGPLATFORM_CERTIFICATE")
@@ -28,8 +29,22 @@ public class Certificate extends StandardEntity {
 
 
     @OneToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "EMPLOYEE_ID")
+    protected User employee;
+
+    @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "FILE_ID")
     protected FileDescriptor file;
+
+
+    public void setEmployee(User employee) {
+        this.employee = employee;
+    }
+
+    public User getEmployee() {
+        return employee;
+    }
+
 
     public void setFile(FileDescriptor file) {
         this.file = file;
