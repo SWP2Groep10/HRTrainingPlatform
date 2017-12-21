@@ -57,7 +57,7 @@
                   spacing="true">
                 <filter id="filter"
                         applyTo="table"
-                        datasource="employeesDs">
+                        datasource="employeesODataDs">
                     <properties include=".*"/>
                 </filter>
                 <table id="table"
@@ -72,23 +72,20 @@
                                 icon="icons/excel.png"/>
                     </actions>
                     <columns>
+                        <column id="employeeId"/>
                         <column id="firstName"/>
                         <column id="lastName"/>
-                        <column id="user"/>
                         <column id="manager"/>
                     </columns>
                     <rows datasource="employeesODataDs"/>
                     <rowsCount/>
                     <buttonsPanel id="buttonsPanel"
                                   alwaysVisible="true">
-                        <button id="createBtn"
-                                action="table.create"/>
-                        <button id="editBtn"
-                                action="table.edit"/>
-                        <button id="removeBtn"
-                                action="table.remove"/>
                         <button id="excelBtn"
                                 action="table.excel"/>
+                        <button id="oDataBtn"
+                                caption="OData Link"
+                                invoke="onODataBtnClick"/>
                     </buttonsPanel>
                 </table>
             </vbox>
@@ -99,12 +96,10 @@
                   spacing="true">
                 <vbox id="fieldGroupBox">
                     <fieldGroup id="fieldGroup"
-                                datasource="employeeDs">
+                                datasource="employeesODataDs">
                         <column width="250px">
-                            <field property="user"/>
                             <field property="firstName"/>
                             <field property="lastName"/>
-                            <field property="manager"/>
                         </column>
                     </fieldGroup>
                 </vbox>

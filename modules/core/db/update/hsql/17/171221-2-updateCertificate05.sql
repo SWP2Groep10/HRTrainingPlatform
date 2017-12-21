@@ -1,1 +1,2 @@
 alter table HRTRAININGPLATFORM_CERTIFICATE drop column EMPLOYEE_ID cascade ;
+alter table HRTRAININGPLATFORM_CERTIFICATE add column EMPLOYEE_ID integer ;

@@ -25,6 +25,9 @@ public class Employee extends StandardEntity {
     @JoinColumn(name = "USER_ID")
     protected User user;
 
+    @Column(name = "EMPLOYEE_ID")
+    protected Integer employeeId;
+
     @Column(name = "FIRST_NAME")
     protected String firstName;
 
@@ -34,6 +37,15 @@ public class Employee extends StandardEntity {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "MANAGER_ID")
     protected Manager manager;
+
+    public void setEmployeeId(Integer employeeId) {
+        this.employeeId = employeeId;
+    }
+
+    public Integer getEmployeeId() {
+        return employeeId;
+    }
+
 
     public Employee(){
         user = new User();

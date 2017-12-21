@@ -1,0 +1,1 @@
+alter table HRTRAININGPLATFORM_CERTIFICATE add column EMPLOYEE_ID varchar(36) ;

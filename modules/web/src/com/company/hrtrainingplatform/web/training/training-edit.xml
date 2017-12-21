@@ -37,7 +37,7 @@
                     <field property="status"/>
                     <field property="survey"/>
                 </column>
-          </fieldGroup>
+            </fieldGroup>
             <buttonsPanel id="SendRequestPanel"
                           align="MIDDLE_LEFT"
                           alwaysVisible="true"
@@ -75,6 +75,7 @@
                         <columns>
                             <column id="user"/>
                             <column id="manager"/>
+                            <column id="employeeId"/>
                         </columns>
                         <rows datasource="attendingListDs"/>
                         <buttonsPanel>

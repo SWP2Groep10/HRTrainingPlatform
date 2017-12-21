@@ -95,6 +95,7 @@ create table HRTRAININGPLATFORM_EMPLOYEE (
     DELETED_BY varchar(50),
     --
     USER_ID varchar(36) not null,
+    EMPLOYEE_ID integer,
     FIRST_NAME varchar(255),
     LAST_NAME varchar(255),
     MANAGER_ID varchar(36),
