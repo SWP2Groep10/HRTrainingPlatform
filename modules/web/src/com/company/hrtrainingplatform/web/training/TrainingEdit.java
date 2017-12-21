@@ -1,9 +1,6 @@
 package com.company.hrtrainingplatform.web.training;
 
-import com.company.hrtrainingplatform.entity.Address;
-import com.company.hrtrainingplatform.entity.Employee;
-import com.company.hrtrainingplatform.entity.Location;
-import com.company.hrtrainingplatform.entity.Training;
+import com.company.hrtrainingplatform.entity.*;
 import com.haulmont.bali.util.ParamsMap;
 import com.haulmont.cuba.gui.components.AbstractEditor;
 import com.haulmont.cuba.core.app.EmailService;
@@ -26,6 +23,8 @@ public class TrainingEdit extends AbstractEditor {
     private Datasource<Training> trainingDs;
     @Inject
     private UserSessionSource userSessionSource;
+    @Inject
+    private Table<ISBNnr> recBookListTable;
 
     public void onSendRequestClick() {
         try {
@@ -77,5 +76,12 @@ public class TrainingEdit extends AbstractEditor {
         catch (NullPointerException e){showNotification("No selection has been made.");}
     }
 
-
+    public void onShowBookClick(Component source) {
+        try {
+            ISBNnr i = recBookListTable.getSingleSelected();
+            String url = "https://books.google.com/books?vid=ISBN" + i.getIsbn();
+            showWebPage(url, ParamsMap.of("target", "_blank"));
+        }
+        catch (NullPointerException e){showNotification("No selection has been made.");}
+    }
 }

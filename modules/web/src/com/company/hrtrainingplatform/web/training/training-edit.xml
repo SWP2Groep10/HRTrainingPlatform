@@ -126,6 +126,10 @@
                         <actions>
                             <action id="add"/>
                             <action id="remove"/>
+                            <action id="ShowBook"
+                                    caption="View or Buy Book"
+                                    icon="font-icon:BOOK"
+                                    invoke="onShowBookClick"/>
                         </actions>
                         <columns>
                             <column id="isbn"/>
@@ -134,6 +138,10 @@
                         <buttonsPanel alwaysVisible="true">
                             <button action="recBookListTable.add"/>
                             <button action="recBookListTable.remove"/>
+                            <button id="ShowBook"
+                                    action="recBookListTable.ShowBook"
+                                    caption="View or Buy Book"
+                                    trackSelection="true"/>
                         </buttonsPanel>
                     </table>
                 </tab>
