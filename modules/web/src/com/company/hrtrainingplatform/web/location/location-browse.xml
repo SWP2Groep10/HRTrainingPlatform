@@ -4,7 +4,8 @@
         class="com.company.hrtrainingplatform.web.location.LocationBrowse"
         focusComponent="locationsTable"
         lookupComponent="locationsTable"
-        messagesPack="com.company.hrtrainingplatform.web.location">
+        messagesPack="com.company.hrtrainingplatform.web.location"
+        xmlns:chart="http://schemas.haulmont.com/charts/charts.xsd">
     <dsContext>
         <groupDatasource id="locationsDs"
                          class="com.company.hrtrainingplatform.entity.Location"
@@ -18,6 +19,9 @@
                 width="800"/>
     <layout expand="locationsTable"
             spacing="true">
+        <chart:mapViewer id="locationMap"
+                         height="250px"
+                         width="100%"/>
         <filter id="filter"
                 applyTo="locationsTable"
                 datasource="locationsDs">

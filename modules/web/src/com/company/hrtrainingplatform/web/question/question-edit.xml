@@ -15,39 +15,43 @@
     </dsContext>
     <dialogMode height="600"
                 width="800"/>
-    <layout expand="windowActions"
+    <layout margin="true"
             spacing="true">
-        <fieldGroup id="fieldGroup"
-                    datasource="questionDs">
-            <column width="250px">
-                <field property="questionText"/>
-                <field property="description"/>
-                <field property="category"/>
-            </column>
-        </fieldGroup>
-        <groupBox id="possibleAnswersBox"
-                  caption="msg://com.company.hrtrainingplatform.entity/Question.possibleAnswers">
-            <table id="possibleAnswersTable"
-                   height="200px"
-                   width="100%">
-                <actions>
-                    <action id="create"/>
-                    <action id="edit"/>
-                    <action id="remove"/>
-                </actions>
-                <columns>
-                    <column id="answerText"/>
-                    <column id="active"/>
-                </columns>
-                <rows datasource="possibleAnswersDs"/>
-                <buttonsPanel>
-                    <button action="possibleAnswersTable.create"/>
-                    <button action="possibleAnswersTable.edit"/>
-                    <button action="possibleAnswersTable.remove"/>
-                </buttonsPanel>
-            </table>
-        </groupBox>
-        <frame id="windowActions"
-               screen="editWindowActions"/>
+        <scrollBox height="100%"
+                   responsive="true"
+                   spacing="true">
+            <fieldGroup id="fieldGroup"
+                        datasource="questionDs">
+                <column width="250px">
+                    <field property="questionText"/>
+                    <field property="description"/>
+                    <field property="category"/>
+                </column>
+            </fieldGroup>
+            <groupBox id="possibleAnswersBox"
+                      caption="msg://com.company.hrtrainingplatform.entity/Question.possibleAnswers">
+                <table id="possibleAnswersTable"
+                       height="200px"
+                       width="100%">
+                    <actions>
+                        <action id="create"/>
+                        <action id="edit"/>
+                        <action id="remove"/>
+                    </actions>
+                    <columns>
+                        <column id="answerText"/>
+                        <column id="active"/>
+                    </columns>
+                    <rows datasource="possibleAnswersDs"/>
+                    <buttonsPanel>
+                        <button action="possibleAnswersTable.create"/>
+                        <button action="possibleAnswersTable.edit"/>
+                        <button action="possibleAnswersTable.remove"/>
+                    </buttonsPanel>
+                </table>
+            </groupBox>
+            <frame id="windowActions"
+                   screen="editWindowActions"/>
+        </scrollBox>
     </layout>
 </window>

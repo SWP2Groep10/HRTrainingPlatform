@@ -6,25 +6,35 @@ import javax.persistence.Column;
 import javax.validation.constraints.NotNull;
 import com.haulmont.cuba.core.entity.StandardEntity;
 import com.haulmont.chile.core.annotations.NamePattern;
+import javax.validation.constraints.Pattern;
+import com.haulmont.cuba.core.entity.annotation.CaseConversion;
+import com.haulmont.cuba.core.entity.annotation.ConversionType;
+import org.hibernate.validator.constraints.Length;
 
-@NamePattern("%s %s %s|street,city,country")
+
+@NamePattern("%s %s %s %s|street,city,country,number")
 @Table(name = "HRTRAININGPLATFORM_ADDRESS")
 @Entity(name = "hrtrainingplatform$Address")
 public class Address extends StandardEntity {
     private static final long serialVersionUID = -4607488382137891335L;
 
+    @Pattern(message = "Must start with a capital letter", regexp = "[A-Z][a-zA-Z]*")
     @NotNull(message = "This value can not be null")
     @Column(name = "COUNTRY", nullable = false, length = 100)
     protected String country;
 
+    @Pattern(message = "Must start with a capital letter", regexp = "[A-Z][a-zA-Z\\- ]*")
     @NotNull(message = "This value can not be null")
     @Column(name = "CITY", nullable = false, length = 100)
     protected String city;
 
+    @Length(message = "min 3, max 8 digits", min = 3, max = 8)
     @NotNull(message = "This value can not be null")
     @Column(name = "POSTALCODE", nullable = false)
     protected String postalcode;
 
+    @CaseConversion(type = ConversionType.LOWER)
+    @Pattern(message = "street name without number", regexp = "[a-zA-Z]*")
     @NotNull(message = "This value can not be null")
     @Column(name = "STREET", nullable = false, length = 100)
     protected String street;

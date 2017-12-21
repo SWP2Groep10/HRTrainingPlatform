@@ -1,0 +1,1 @@
+drop table if exists HRTRAININGPLATFORM_SURVEY_QUESTION_LINK cascade ;

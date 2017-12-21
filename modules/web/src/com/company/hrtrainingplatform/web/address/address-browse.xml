@@ -4,7 +4,8 @@
         class="com.company.hrtrainingplatform.web.address.AddressBrowse"
         focusComponent="addressesTable"
         lookupComponent="addressesTable"
-        messagesPack="com.company.hrtrainingplatform.web.address">
+        messagesPack="com.company.hrtrainingplatform.web.address"
+        xmlns:chart="http://schemas.haulmont.com/charts/charts.xsd">
     <dsContext>
         <groupDatasource id="addressesDs"
                          class="com.company.hrtrainingplatform.entity.Address"
@@ -18,6 +19,9 @@
                 width="800"/>
     <layout expand="addressesTable"
             spacing="true">
+        <chart:mapViewer id="locationMap"
+                         height="250px"
+                         width="100%"/>
         <filter id="filter"
                 applyTo="addressesTable"
                 datasource="addressesDs">
@@ -47,6 +51,10 @@
                         action="addressesTable.edit"/>
                 <button id="removeBtn"
                         action="addressesTable.remove"/>
+                <button id="ShowMap"
+                        caption="Show Map"
+                        icon="font-icon:MAP_O"
+                        invoke="onShowMapClick"/>
             </buttonsPanel>
         </groupTable>
     </layout>
