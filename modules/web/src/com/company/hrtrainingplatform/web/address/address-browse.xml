@@ -29,6 +29,7 @@
                 <action id="create"/>
                 <action id="edit"/>
                 <action id="remove"/>
+                <action id="excel"/>
             </actions>
             <columns>
                 <column id="city"/>
@@ -47,6 +48,9 @@
                         action="addressesTable.edit"/>
                 <button id="removeBtn"
                         action="addressesTable.remove"/>
+                <button id="excelButton"
+                        action="addressesTable.excel"
+                        icon="icons/excel.png"/>
                 <button id="ShowMap"
                         caption="Show Map"
                         icon="font-icon:MAP_O"
