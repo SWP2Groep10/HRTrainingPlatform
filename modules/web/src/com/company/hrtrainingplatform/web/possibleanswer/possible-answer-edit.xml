@@ -18,7 +18,8 @@
         <fieldGroup id="fieldGroup"
                     datasource="possibleAnswerDs">
             <column width="250px">
-                <field property="code"/>
+                <field property="code"
+                       visible="false"/>
                 <field property="answerText"/>
                 <field property="question"/>
                 <field property="active"/>
