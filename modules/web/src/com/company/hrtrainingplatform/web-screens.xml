@@ -49,4 +49,6 @@
             template="com/company/hrtrainingplatform/web/certificate/certificate-browse.xml"/>
     <screen id="hrtrainingplatform$Employee.browse"
             template="com/company/hrtrainingplatform/web/employee/employee-browse.xml"/>
+    <screen id="hrtrainingplatform$ISBNnr.browse"
+            template="com/company/hrtrainingplatform/web/isbnnr/isb-nnr-browse.xml"/>
 </screen-config>

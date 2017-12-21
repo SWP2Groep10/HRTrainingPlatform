@@ -22,8 +22,6 @@ public class TrainingBrowse extends AbstractLookup {
   @Inject
   private UserSessionSource userSessionSource;
 
-    public void onExcel(Component source) {
-    }
     
     public void onSendRequestClick() {
         try {
