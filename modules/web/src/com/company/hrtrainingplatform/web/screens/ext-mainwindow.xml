@@ -2,62 +2,7 @@
 <window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
         caption="mainMsg://application.caption"
         class="com.company.hrtrainingplatform.web.screens.ExtAppMainWindow"
-        xmlns:chart="http://schemas.haulmont.com/charts/charts.xsd"
         xmlns:main="http://schemas.haulmont.com/cuba/mainwindow.xsd">
-    <dsContext>
-        <valueCollectionDatasource id="cityDs"
-                                   maxResults="10">
-            <query>
-                <![CDATA[select a.city, count(a.city)
-from hrtrainingplatform$Address a
-group by a.city
-order by a.city]]>
-
-            </query>
-            <properties>
-                <property datatype="string"
-                          name="city"/>
-                <property datatype="long"
-                          name="count"/>
-            </properties>
-        </valueCollectionDatasource>
-        <collectionDatasource id="trainingsDs"
-                              class="com.company.hrtrainingplatform.entity.Training"
-                              view="_local">
-            <query>
-                <![CDATA[select e from hrtrainingplatform$Training e]]>
-            </query>
-        </collectionDatasource>
-        <valueCollectionDatasource id="certificateDs"
-                                   maxResults="10">
-            <query>
-                <![CDATA[select c.description, count(c.description)
-from hrtrainingplatform$Certificate c
-group by c.description
-order by c.description]]>
-            </query>
-            <properties>
-                <property datatype="string"
-                          name="description"/>
-                <property datatype="long"
-                          name="count"/>
-            </properties>
-        </valueCollectionDatasource>
-        <valueCollectionDatasource id="statusDs">
-            <query>
-                <![CDATA[select t.status, count(t.status)
-from hrtrainingplatform$Training t
-group by t.status
-order by t.status]]>
-            </query>
-            <properties>
-                <property class="com.company.hrtrainingplatform.entity.STATUS"
-                          name="status"/>
-                <property datatype="long"
-                          name="count"/>
-            </properties>
-        </valueCollectionDatasource>
-    </dsContext>
     <layout responsive="true"
             stylename="c-sidemenu-responsive">
         <hbox id="horizontalWrap"
@@ -118,114 +63,11 @@ order by t.status]]>
                            height="100%">
                 <main:initialLayout margin="true"
                                     spacing="true">
-                    <vbox height="100%">
-                        <split height="100%"
-                               orientation="vertical"
-                               pos="70"
-                               width="100%">
-                            <split height="100%"
-                                   orientation="horizontal"
-                                   width="100%">
-                                <chart:pieChart id="certificateChart"
-                                                datasource="certificateDs"
-                                                height="100%"
-                                                titleField="description"
-                                                valueField="count"
-                                                width="100%">
-                                    <chart:legend autoMargins="false"
-                                                  marginRight="40"
-                                                  markerType="CIRCLE"
-                                                  position="RIGHT"/>
-                                    <chart:allLabels>
-                                        <chart:label bold="true"
-                                                     size="14"
-                                                     text="msg://Top 10: most uploaded training certificates"
-                                                     x="10"
-                                                     y="20"/>
-                                    </chart:allLabels>
-                                    <chart:balloon fixedPosition="true"/>
-                                    <chart:export/>
-                                </chart:pieChart>
-                                <chart:pieChart id="cityChart"
-                                                datasource="cityDs"
-                                                height="100%"
-                                                titleField="city"
-                                                valueField="count"
-                                                width="100%">
-                                    <chart:legend autoMargins="false"
-                                                  marginRight="40"
-                                                  markerType="CIRCLE"
-                                                  position="RIGHT"/>
-                                    <chart:allLabels>
-                                        <chart:label bold="true"
-                                                     size="14"
-                                                     text="msg://Top 10: most populair training cities"
-                                                     x="10"
-                                                     y="20"/>
-                                    </chart:allLabels>
-                                    <chart:balloon fixedPosition="true"/>
-                                    <chart:export/>
-                                </chart:pieChart>
-                            </split>
-                            <cssLayout height="100%"
-                                       width="100%"/>
-                        </split>
-                        <split height="100%"
-                               orientation="vertical"
-                               pos="20"
-                               width="100%">
-                            <cssLayout height="100%"
-                                       width="100%">
-                                <label id="welcomeLabel"
-                                       align="MIDDLE_CENTER"
-                                       height="100%"
-                                       stylename="c-welcome-text"
-                                       value="mainMsg://application.welcomeText"
-                                       width="100%"/>
-                            </cssLayout>
-                            <split height="100%"
-                                   orientation="horizontal"
-                                   width="100%">
-                                <chart:pieChart id="trainingChart"
-                                                datasource="statusDs"
-                                                height="100%"
-                                                titleField="status"
-                                                valueField="count"
-                                                width="100%">
-                                    <chart:legend autoMargins="false"
-                                                  marginRight="40"
-                                                  markerType="CIRCLE"
-                                                  position="RIGHT"/>
-                                    <chart:allLabels>
-                                        <chart:label bold="true"
-                                                     size="14"
-                                                     text="msg://Training amount per status"
-                                                     x="10"
-                                                     y="20"/>
-                                    </chart:allLabels>
-                                    <chart:balloon fixedPosition="true"/>
-                                    <chart:export/>
-                                </chart:pieChart>
-                                <chart:pivotTable id="trainingTable"
-                                                  datasource="trainingsDs"
-                                                  editable="true"
-                                                  height="100%"
-                                                  responsive="true"
-                                                  width="100%">
-                                    <chart:columns>
-                                        <chart:column value="status"/>
-                                    </chart:columns>
-                                    <chart:properties>
-                                        <chart:property name="description"/>
-                                        <chart:property name="status"/>
-                                    </chart:properties>
-                                    <chart:rows>
-                                        <chart:row value="description"/>
-                                    </chart:rows>
-                                </chart:pivotTable>
-                            </split>
-                        </split>
-                    </vbox>
+                    <label id="welcomeLabel"
+                           align="MIDDLE_CENTER"
+                           stylename="c-welcome-text"
+                           value="mainMsg://application.welcomeText"
+                           width="100%"/>
                 </main:initialLayout>
             </main:workArea>
         </hbox>

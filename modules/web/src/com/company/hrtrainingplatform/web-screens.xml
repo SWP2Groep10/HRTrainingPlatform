@@ -35,12 +35,6 @@
             template="com/company/hrtrainingplatform/web/filledsurvey/filled-survey-browse.xml"/>
     <screen id="hrtrainingplatform$FilledSurvey.edit"
             template="com/company/hrtrainingplatform/web/filledsurvey/filled-survey-edit.xml"/>
-    <screen id="register-screen"
-            template="com/company/hrtrainingplatform/web/login/register-screen.xml"/>
-    <screen id="restore-password-screen"
-            template="com/company/hrtrainingplatform/web/login/restore-password-screen.xml"/>
-    <screen id="loginWindow"
-            template="com/company/hrtrainingplatform/web/login/ext-loginWindow.xml"/>
     <screen id="hrtrainingplatform$Training.browse"
             template="com/company/hrtrainingplatform/web/training/training-browse.xml"/>
     <screen id="hrtrainingplatform$Training.edit"

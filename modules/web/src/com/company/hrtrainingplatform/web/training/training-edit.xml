@@ -37,7 +37,7 @@
                     <field property="status"/>
                     <field property="survey"/>
                 </column>
-          </fieldGroup>
+            </fieldGroup>
             <buttonsPanel id="SendRequestPanel"
                           align="MIDDLE_LEFT"
                           alwaysVisible="true"

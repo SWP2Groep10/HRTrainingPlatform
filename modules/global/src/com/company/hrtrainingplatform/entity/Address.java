@@ -11,7 +11,6 @@ import com.haulmont.cuba.core.entity.annotation.CaseConversion;
 import com.haulmont.cuba.core.entity.annotation.ConversionType;
 import org.hibernate.validator.constraints.Length;
 
-
 @NamePattern("%s %s %s %s|street,city,country,number")
 @Table(name = "HRTRAININGPLATFORM_ADDRESS")
 @Entity(name = "hrtrainingplatform$Address")
