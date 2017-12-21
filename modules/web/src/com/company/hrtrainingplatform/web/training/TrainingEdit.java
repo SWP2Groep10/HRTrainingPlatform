@@ -26,6 +26,7 @@ public class TrainingEdit extends AbstractEditor {
     @Inject
     private Table<ISBNnr> recBookListTable;
 
+    // REQUEST BUTTON FUNCTIONALITY
     public void onSendRequestClick() {
         try {
             Employee userSessionEmp = userSessionSource.getUserSession().getAttribute("employee");
@@ -48,6 +49,7 @@ public class TrainingEdit extends AbstractEditor {
         } catch (NullPointerException e){showNotification("No selection has been made or current user is not an Employee");}
     }
 
+    // MAIL FUNCTIONALITY
     private void sendByEmail(String requestmail) {
 
         User curUser= AppBeans.get(UserSessionSource.class).getUserSession().getUser();
@@ -66,6 +68,7 @@ public class TrainingEdit extends AbstractEditor {
         emailService.sendEmailAsync(emailInfo);
     }
 
+    // MAP BUTTON FUNCTIONALITY
     public void onShowMapClick() {
         try {
             Location l = locationTable.getSingleSelected();
@@ -76,6 +79,7 @@ public class TrainingEdit extends AbstractEditor {
         catch (NullPointerException e){showNotification("No selection has been made.");}
     }
 
+    // SHOW BOOK BUTTON FUNCTIONALITY
     public void onShowBookClick(Component source) {
         try {
             ISBNnr i = recBookListTable.getSingleSelected();

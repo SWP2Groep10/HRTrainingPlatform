@@ -47,6 +47,8 @@ public class TrainingBrowse extends AbstractLookup {
         } catch (NullPointerException e){showNotification("No selection has been made or current user is not an Employee");}
     }
 
+    // MAIL FUNCTIONALITY
+
     private void sendByEmail(String requestmail) {
 
         User curUser= AppBeans.get(UserSessionSource.class).getUserSession().getUser();
