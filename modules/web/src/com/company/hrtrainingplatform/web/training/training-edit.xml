@@ -73,8 +73,11 @@
                                     invoke="onSendRequestClick"/>
                         </actions>
                         <columns>
-                            <column id="user"/>
+                            <column id="user"
+                                    caption="Attending Employee"/>
                             <column id="manager"/>
+                            <column id="hrEmployee"
+                                    caption="HR Employee"/>
                         </columns>
                         <rows datasource="attendingListDs"/>
                         <buttonsPanel>

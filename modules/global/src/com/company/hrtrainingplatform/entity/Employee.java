@@ -20,14 +20,33 @@ import javax.persistence.OneToMany;
 public class Employee extends StandardEntity {
     private static final long serialVersionUID = 3647698373319442419L;
 
+    @OnDeleteInverse(DeletePolicy.UNLINK)
+    @OnDelete(DeletePolicy.CASCADE)
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "USER_ID")
     protected User user;
 
+    @OnDeleteInverse(DeletePolicy.UNLINK)
+    @OnDelete(DeletePolicy.UNLINK)
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "HR_EMPLOYEE_ID")
+    protected HREmployee hrEmployee;
+
+    @OnDeleteInverse(DeletePolicy.UNLINK)
+    @OnDelete(DeletePolicy.UNLINK)
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "MANAGER_ID")
     protected Manager manager;
 
+
+
+    public void setHrEmployee(HREmployee hrEmployee) {
+        this.hrEmployee = hrEmployee;
+    }
+
+    public HREmployee getHrEmployee() {
+        return hrEmployee;
+    }
 
 
     public void setManager(Manager manager) {

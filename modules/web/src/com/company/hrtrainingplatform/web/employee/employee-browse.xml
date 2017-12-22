@@ -63,6 +63,7 @@
                     <columns>
                         <column id="user"/>
                         <column id="manager"/>
+                        <column id="hrEmployee"/>
                     </columns>
                     <rows datasource="employeesDs"/>
                     <rowsCount/>
@@ -91,6 +92,7 @@
                         <column width="250px">
                             <field property="user"/>
                             <field property="manager"/>
+                            <field property="hrEmployee"/>
                         </column>
                     </fieldGroup>
                 </vbox>

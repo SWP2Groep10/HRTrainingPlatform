@@ -34,7 +34,7 @@ public class TrainingEdit extends AbstractEditor {
 
             showOptionDialog(
                     "Email",
-                    "Send a training request email to your manager -" + curManagerUser.getName() + "- ?",
+                    "Send a training request email to your manager: "+curManagerUser.getName()+" ?",
                     MessageType.CONFIRMATION,
                     new Action[]{
                             new DialogAction(DialogAction.Type.YES) {
@@ -52,7 +52,10 @@ public class TrainingEdit extends AbstractEditor {
     // MAIL FUNCTIONALITY
     private void sendByEmail(String requestmail) {
 
-        User curUser= AppBeans.get(UserSessionSource.class).getUserSession().getUser();
+        Employee userSessionEmp = userSessionSource.getUserSession().getAttribute("employee");
+        User curEmpUser = userSessionEmp.getUser();
+        User curManagerUser = userSessionEmp.getManager().getUser();
+        User curHRUser = userSessionEmp.getHrEmployee().getUser();
         String trainingDesc = trainingDs.getItem().getDescription();
         UUID trainingUUID = trainingDs.getItem().getId();
 
@@ -62,8 +65,11 @@ public class TrainingEdit extends AbstractEditor {
                 "Training Request: "+ trainingDesc, // subject
                 null, // the "from" address will be taken from the "cuba.email.fromAddress" app property
 
-                "Training request for: \n"+"Full name: " + curUser.getName()
-                        +"\nuser ID: "+ curUser.getLogin() + "\n Training :" + trainingDesc + "\n Training UUID:" + trainingUUID// body template
+                "Hello "+curManagerUser.getName()+",\n\nTraining request for Employee:\n"+"Full Name: "+curEmpUser.getName()
+                        +"\nuser ID: "+curEmpUser.getLogin()+"\nEmail: "+curEmpUser.getEmail()+"\nTraining :"+trainingDesc+"\nTraining UUID:"+trainingUUID
+                        +"\n\nResposible HR Employee:"+"\nFull Name: "+curHRUser.getName()+"\nEmail: "+curHRUser.getEmail()
+                        +"\n\nIf you approve to let this employee attend "+trainingDesc+" please report to the resposible HR Employee."
+                        +"\n\n This is a no-reply email.\nHave a nice day."// body template
         );
         emailService.sendEmailAsync(emailInfo);
     }

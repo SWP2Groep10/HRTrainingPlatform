@@ -46,6 +46,8 @@
                 <property name="email"/>
             </property>
         </property>
+        <property name="hrEmployee"
+                  view="_minimal"/>
     </view>
     <view class="com.company.hrtrainingplatform.entity.HREmployee"
           extends="_local"
@@ -131,6 +133,13 @@
             <property name="user"
                       view="_minimal">
                 <property name="email"/>
+            </property>
+            <property name="hrEmployee"
+                      view="_minimal">
+                <property name="user"
+                          view="_minimal">
+                    <property name="email"/>
+                </property>
             </property>
         </property>
         <property name="survey"

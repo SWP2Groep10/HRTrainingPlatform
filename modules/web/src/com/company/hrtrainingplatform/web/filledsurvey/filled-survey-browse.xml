@@ -29,6 +29,7 @@
                 <action id="create"/>
                 <action id="edit"/>
                 <action id="remove"/>
+                <action id="excel"/>
             </actions>
             <columns>
                 <column id="survey"/>
@@ -45,6 +46,9 @@
                         action="filledSurveysTable.edit"/>
                 <button id="removeBtn"
                         action="filledSurveysTable.remove"/>
+                <button id="excelButton"
+                        action="filledSurveysTable.excel"
+                        icon="icons/excel.png"/>
             </buttonsPanel>
         </table>
     </layout>
