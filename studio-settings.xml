@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <studio>
     <screenDesigner>
+        <screen module="web"
+                presentSize="1680x1050"
+                reference="com/company/hrtrainingplatform/web/filledsurvey/filled-survey-edit.xml"/>
     </screenDesigner>
 </studio>

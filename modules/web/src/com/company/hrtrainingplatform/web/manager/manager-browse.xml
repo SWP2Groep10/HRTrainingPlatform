@@ -37,14 +37,35 @@
     <dialogMode height="600"
                 width="800"/>
     <layout>
-        <split id="split"
-               height="100%"
-               orientation="horizontal"
-               reversePosition="true"
+        <split height="100%"
+               orientation="vertical"
+               pos="14"
                width="100%">
+            <vbox id="editBox"
+                  expand="fieldGroupBox"
+                  margin="true,true,false,true"
+                  spacing="true">
+                <vbox id="fieldGroupBox">
+                    <fieldGroup id="fieldGroup"
+                                datasource="managerDs">
+                        <column width="250px">
+                            <field caption="Manager"
+                                   property="user"/>
+                        </column>
+                    </fieldGroup>
+                </vbox>
+                <hbox id="actionsPane"
+                      spacing="true"
+                      visible="false">
+                    <button id="saveBtn"
+                            action="save"/>
+                    <button id="cancelBtn"
+                            action="cancel"/>
+                </hbox>
+            </vbox>
             <vbox id="lookupBox"
                   expand="table"
-                  height="100%"
+                  height="463px"
                   margin="false,true,false,false"
                   spacing="true">
                 <filter id="filter"
@@ -62,7 +83,8 @@
                         <action id="excel"/>
                     </actions>
                     <columns>
-                        <column id="user"/>
+                        <column id="user"
+                                caption="Managers"/>
                     </columns>
                     <rows datasource="managersDs"/>
                     <rowsCount/>
@@ -78,28 +100,6 @@
                                 action="table.excel"/>
                     </buttonsPanel>
                 </groupTable>
-            </vbox>
-            <vbox id="editBox"
-                  expand="fieldGroupBox"
-                  height="100%"
-                  margin="false,false,false,true"
-                  spacing="true">
-                <vbox id="fieldGroupBox">
-                    <fieldGroup id="fieldGroup"
-                                datasource="managerDs">
-                        <column width="250px">
-                            <field property="user"/>
-                        </column>
-                    </fieldGroup>
-                </vbox>
-                <hbox id="actionsPane"
-                      spacing="true"
-                      visible="false">
-                    <button id="saveBtn"
-                            action="save"/>
-                    <button id="cancelBtn"
-                            action="cancel"/>
-                </hbox>
             </vbox>
         </split>
     </layout>

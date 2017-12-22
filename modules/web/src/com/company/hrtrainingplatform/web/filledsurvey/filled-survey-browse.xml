@@ -32,9 +32,12 @@
                 <action id="excel"/>
             </actions>
             <columns>
-                <column id="survey"/>
-                <column id="filledDate"/>
-                <column id="user"/>
+                <column id="survey"
+                        caption="Filled in Survey"/>
+                <column id="filledDate"
+                        caption="Date"/>
+                <column id="user"
+                        caption="Employee"/>
             </columns>
             <rows datasource="filledSurveysDs"/>
             <rowsCount/>

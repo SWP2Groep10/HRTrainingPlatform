@@ -37,11 +37,32 @@
     <dialogMode height="600"
                 width="800"/>
     <layout>
-        <split id="split"
-               height="100%"
-               orientation="horizontal"
-               reversePosition="true"
+        <split height="100%"
+               orientation="vertical"
+               pos="14"
                width="100%">
+            <vbox id="editBox"
+                  expand="fieldGroupBox"
+                  height="100%"
+                  margin="true,true,false,true"
+                  spacing="true">
+                <vbox id="fieldGroupBox">
+                    <fieldGroup id="fieldGroup"
+                                datasource="iSBNnrDs">
+                        <column width="250px">
+                            <field property="isbn"/>
+                        </column>
+                    </fieldGroup>
+                </vbox>
+                <hbox id="actionsPane"
+                      spacing="true"
+                      visible="false">
+                    <button id="saveBtn"
+                            action="save"/>
+                    <button id="cancelBtn"
+                            action="cancel"/>
+                </hbox>
+            </vbox>
             <vbox id="lookupBox"
                   expand="table"
                   height="100%"
@@ -64,7 +85,8 @@
                                 invoke="onShowBookClick"/>
                     </actions>
                     <columns>
-                        <column id="isbn"/>
+                        <column id="isbn"
+                                caption="Book ISBN Number"/>
                     </columns>
                     <rows datasource="iSBNnrsDs"/>
                     <rowsCount/>
@@ -83,28 +105,6 @@
                                 invoke="onShowBookClick"/>
                     </buttonsPanel>
                 </groupTable>
-            </vbox>
-            <vbox id="editBox"
-                  expand="fieldGroupBox"
-                  height="100%"
-                  margin="false,false,false,true"
-                  spacing="true">
-                <vbox id="fieldGroupBox">
-                    <fieldGroup id="fieldGroup"
-                                datasource="iSBNnrDs">
-                        <column width="250px">
-                            <field property="isbn"/>
-                        </column>
-                    </fieldGroup>
-                </vbox>
-                <hbox id="actionsPane"
-                      spacing="true"
-                      visible="false">
-                    <button id="saveBtn"
-                            action="save"/>
-                    <button id="cancelBtn"
-                            action="cancel"/>
-                </hbox>
             </vbox>
         </split>
     </layout>

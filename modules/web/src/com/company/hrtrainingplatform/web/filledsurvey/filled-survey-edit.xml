@@ -20,13 +20,12 @@
         <fieldGroup id="fieldGroup"
                     datasource="filledSurveyDs">
             <column width="250px">
-                <field property="survey"/>
-            </column>
-            <column width="250px">
-                <field property="filledDate"/>
-            </column>
-            <column width="250px">
-                <field property="user"/>
+                <field caption="Filled in Survey"
+                       property="survey"/>
+                <field caption="Date"
+                       property="filledDate"/>
+                <field caption="Employee"
+                       property="user"/>
             </column>
         </fieldGroup>
         <groupBox id="answersBox"

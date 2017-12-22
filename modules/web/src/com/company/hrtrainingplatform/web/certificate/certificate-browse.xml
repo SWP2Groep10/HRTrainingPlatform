@@ -37,11 +37,35 @@
     <dialogMode height="600"
                 width="800"/>
     <layout>
-        <split id="split"
-               height="100%"
-               orientation="horizontal"
-               reversePosition="true"
+        <split height="100%"
+               orientation="vertical"
+               pos="19"
                width="100%">
+            <vbox id="editBox"
+                  expand="fieldGroupBox"
+                  height="100%"
+                  margin="true,true,false,true"
+                  spacing="true">
+                <vbox id="fieldGroupBox">
+                    <fieldGroup id="fieldGroup"
+                                datasource="certificateDs">
+                        <column width="250px">
+                            <field caption="Certificate Title"
+                                   property="description"/>
+                            <field caption="Upload File"
+                                   property="file"/>
+                        </column>
+                    </fieldGroup>
+                </vbox>
+                <hbox id="actionsPane"
+                      spacing="true"
+                      visible="false">
+                    <button id="saveBtn"
+                            action="save"/>
+                    <button id="cancelBtn"
+                            action="cancel"/>
+                </hbox>
+            </vbox>
             <vbox id="lookupBox"
                   expand="table"
                   height="100%"
@@ -61,8 +85,10 @@
                         <action id="excel"/>
                     </actions>
                     <columns>
-                        <column id="description"/>
-                        <column id="file"/>
+                        <column id="description"
+                                caption="Certificate Title"/>
+                        <column id="file"
+                                caption="Uploaded File"/>
                     </columns>
                     <rows datasource="certificatesDs"/>
                     <rowsCount/>
@@ -78,29 +104,6 @@
                                 action="table.excel"/>
                     </buttonsPanel>
                 </groupTable>
-            </vbox>
-            <vbox id="editBox"
-                  expand="fieldGroupBox"
-                  height="100%"
-                  margin="false,false,false,true"
-                  spacing="true">
-                <vbox id="fieldGroupBox">
-                    <fieldGroup id="fieldGroup"
-                                datasource="certificateDs">
-                        <column width="250px">
-                            <field property="description"/>
-                            <field property="file"/>
-                        </column>
-                    </fieldGroup>
-                </vbox>
-                <hbox id="actionsPane"
-                      spacing="true"
-                      visible="false">
-                    <button id="saveBtn"
-                            action="save"/>
-                    <button id="cancelBtn"
-                            action="cancel"/>
-                </hbox>
             </vbox>
         </split>
     </layout>

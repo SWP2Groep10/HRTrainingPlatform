@@ -3,10 +3,6 @@
     <include file="com/company/hrtrainingplatform/screens.xml"/>
     <screen id="hrtrainingplatform$Address.browse"
             template="com/company/hrtrainingplatform/web/address/address-browse.xml"/>
-    <screen id="hrtrainingplatform$Location.browse"
-            template="com/company/hrtrainingplatform/web/location/location-browse.xml"/>
-    <screen id="hrtrainingplatform$Location.edit"
-            template="com/company/hrtrainingplatform/web/location/location-edit.xml"/>
     <screen id="hrtrainingplatform$Address.edit"
             template="com/company/hrtrainingplatform/web/address/address-edit.xml"/>
     <screen id="hrtrainingplatform$Admin.browse"
@@ -45,4 +41,6 @@
             template="com/company/hrtrainingplatform/web/employee/employee-browse.xml"/>
     <screen id="hrtrainingplatform$ISBNnr.browse"
             template="com/company/hrtrainingplatform/web/isbnnr/isb-nnr-browse.xml"/>
+    <screen id="hrtrainingplatform$Location.browse"
+            template="com/company/hrtrainingplatform/web/location/location-browse.xml"/>
 </screen-config>

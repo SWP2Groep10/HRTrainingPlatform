@@ -37,11 +37,37 @@
     <dialogMode height="600"
                 width="800"/>
     <layout>
-        <split id="split"
-               height="100%"
-               orientation="horizontal"
-               reversePosition="true"
+        <split height="100%"
+               orientation="vertical"
+               pos="25"
                width="100%">
+            <vbox id="editBox"
+                  expand="fieldGroupBox"
+                  height="100%"
+                  margin="true,true,false,true"
+                  spacing="true">
+                <vbox id="fieldGroupBox">
+                    <fieldGroup id="fieldGroup"
+                                datasource="employeeDs">
+                        <column width="250px">
+                            <field caption="Employee"
+                                   property="user"/>
+                            <field caption="Responsible Manager"
+                                   property="manager"/>
+                            <field caption="Responsible HR Employee"
+                                   property="hrEmployee"/>
+                        </column>
+                    </fieldGroup>
+                </vbox>
+                <hbox id="actionsPane"
+                      spacing="true"
+                      visible="false">
+                    <button id="saveBtn"
+                            action="save"/>
+                    <button id="cancelBtn"
+                            action="cancel"/>
+                </hbox>
+            </vbox>
             <vbox id="lookupBox"
                   expand="table"
                   height="100%"
@@ -61,9 +87,12 @@
                         <action id="excel"/>
                     </actions>
                     <columns>
-                        <column id="user"/>
-                        <column id="manager"/>
-                        <column id="hrEmployee"/>
+                        <column id="user"
+                                caption="Employee"/>
+                        <column id="manager"
+                                caption="Responsible Manager"/>
+                        <column id="hrEmployee"
+                                caption="Responsible HR Employee"/>
                     </columns>
                     <rows datasource="employeesDs"/>
                     <rowsCount/>
@@ -80,30 +109,6 @@
                                 icon="icons/excel.png"/>
                     </buttonsPanel>
                 </groupTable>
-            </vbox>
-            <vbox id="editBox"
-                  expand="fieldGroupBox"
-                  height="100%"
-                  margin="false,false,false,true"
-                  spacing="true">
-                <vbox id="fieldGroupBox">
-                    <fieldGroup id="fieldGroup"
-                                datasource="employeeDs">
-                        <column width="250px">
-                            <field property="user"/>
-                            <field property="manager"/>
-                            <field property="hrEmployee"/>
-                        </column>
-                    </fieldGroup>
-                </vbox>
-                <hbox id="actionsPane"
-                      spacing="true"
-                      visible="false">
-                    <button id="saveBtn"
-                            action="save"/>
-                    <button id="cancelBtn"
-                            action="cancel"/>
-                </hbox>
             </vbox>
         </split>
     </layout>
