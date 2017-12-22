@@ -53,7 +53,6 @@
                     <properties include=".*"/>
                 </filter>
                 <groupTable id="table"
-                            multiselect="true"
                             width="100%">
                     <actions>
                         <action id="create"/>
@@ -63,6 +62,8 @@
                     </actions>
                     <columns>
                         <column id="user"/>
+                        <column id="manager"/>
+                        <column id="hrEmployee"/>
                     </columns>
                     <rows datasource="employeesDs"/>
                     <rowsCount/>
@@ -74,8 +75,9 @@
                                 action="table.edit"/>
                         <button id="removeBtn"
                                 action="table.remove"/>
-                        <button id="excelBtn"
-                                action="table.excel"/>
+                        <button id="excelButton"
+                                action="table.excel"
+                                icon="icons/excel.png"/>
                     </buttonsPanel>
                 </groupTable>
             </vbox>
@@ -89,6 +91,8 @@
                                 datasource="employeeDs">
                         <column width="250px">
                             <field property="user"/>
+                            <field property="manager"/>
+                            <field property="hrEmployee"/>
                         </column>
                     </fieldGroup>
                 </vbox>

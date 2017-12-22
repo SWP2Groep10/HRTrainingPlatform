@@ -17,6 +17,7 @@
     <dialogMode height="600"
                 width="800"/>
     <layout expand="surveysTable"
+            margin="true"
             spacing="true">
         <filter id="filter"
                 applyTo="surveysTable"
