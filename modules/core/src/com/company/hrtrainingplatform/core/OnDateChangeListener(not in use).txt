@@ -1,0 +1,47 @@
+package com.company.hrtrainingplatform.core;
+
+import com.company.hrtrainingplatform.entity.STATUS;
+import com.company.hrtrainingplatform.entity.Training;
+import com.haulmont.cuba.gui.components.FileUploadField;
+import com.haulmont.cuba.gui.components.Table;
+import com.haulmont.cuba.gui.data.Datasource;
+import com.haulmont.cuba.security.app.Authenticated;
+import com.haulmont.cuba.security.auth.events.UserLoggedInEvent;
+import org.springframework.context.ApplicationListener;
+import org.springframework.stereotype.Component;
+import org.springframework.transaction.annotation.Transactional;
+
+import javax.inject.Inject;
+import java.util.Date;
+
+@Component(OnDateChangeListener.NAME)
+public class OnDateChangeListener implements ApplicationListener<UserLoggedInEvent> {
+    public static final String NAME = "hrtrainingplatform_OnDateChangeListener";
+
+    @Override
+    public void onApplicationEvent(UserLoggedInEvent event) {
+
+    }
+//
+//    @Inject
+//    private Datasource<Training> trainingDs;
+//    private Table<Training> trainingTable;
+//
+//    @Authenticated
+//    @Transactional
+//    public void updateTrainingStatus(){
+//        STATUS state = STATUS.PLANNED;
+//        Date now = new Date();
+//        Date start = trainingDs.getItem().getStartDate();
+//        Date end = trainingDs.getItem().getEndDate();
+//        trainingTable.getColumn("status");
+//        if(end.before(now)){
+//            state = STATUS.EXPIRED;
+//        } else
+//            if(start.before(now) && end.after(now))
+//            {
+//                state = STATUS.ONGOING;
+//            }
+//        trainingDs.getItem().setStatus(state);
+//    }
+}
