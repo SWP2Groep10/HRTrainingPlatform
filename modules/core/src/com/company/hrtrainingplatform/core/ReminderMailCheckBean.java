@@ -57,8 +57,8 @@ public class ReminderMailCheckBean implements ReminderMailCheckComponent {
                 "Training Reminder: "+ trainingDesc, // subject
                 null, // the "from" address will be taken from the "cuba.email.fromAddress" app property
 
-                "Hello "+empName+",\n\nThis is a reminder for your upcoming training: "+trainingDesc+"\nThis training takes place on "
-                        +start_date+" and ends on "+end_date+".\n\nThis is a no-reply mail\nHave a nice day."// body template
+                "Hello "+empName+",\n\nThis is a reminder for your upcoming training: "+trainingDesc+"\nThis training takes place on: "
+                        +start_date+"\nand ends on: "+end_date+".\n\nThis is a no-reply mail\nHave a nice day."// body template
         );
         emailService.sendEmailAsync(emailInfo);
     }

@@ -47,7 +47,12 @@
             </property>
         </property>
         <property name="hrEmployee"
-                  view="_minimal"/>
+                  view="_minimal">
+            <property name="user"
+                      view="_minimal">
+                <property name="email"/>
+            </property>
+        </property>
     </view>
     <view class="com.company.hrtrainingplatform.entity.HREmployee"
           extends="_local"
