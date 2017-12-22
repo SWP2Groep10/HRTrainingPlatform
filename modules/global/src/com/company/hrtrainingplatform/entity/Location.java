@@ -21,7 +21,6 @@ public class Location extends StandardEntity {
     @OnDelete(DeletePolicy.UNLINK)
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "ADDRESS_ID")
-    @NotNull(message = "This value can not be null")
     protected Address address;
 
     @NotNull(message = "This value can not be null")

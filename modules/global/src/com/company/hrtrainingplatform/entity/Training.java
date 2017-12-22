@@ -19,7 +19,6 @@ import com.haulmont.cuba.core.entity.annotation.OnDelete;
 import com.haulmont.cuba.core.entity.annotation.OnDeleteInverse;
 import com.haulmont.cuba.core.global.DeletePolicy;
 import javax.persistence.Lob;
-import javax.persistence.ManyToOne;
 
 @NamePattern("%s %s|description,status")
 @Table(name = "HRTRAININGPLATFORM_TRAINING")
@@ -33,12 +32,6 @@ public class Training extends StandardEntity {
         inverseJoinColumns = @JoinColumn(name = "EMPLOYEE_ID"))
     @ManyToMany
     protected List<Employee> attendingList;
-
-
-    @OnDelete(DeletePolicy.CASCADE)
-    @OneToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "SURVEY_ID")
-    protected Survey survey;
 
     @JoinTable(name = "HRTRAININGPLATFORM_TRAINING_ISB_NNR_LINK",
         joinColumns = @JoinColumn(name = "TRAINING_ID"),
@@ -72,19 +65,6 @@ public class Training extends StandardEntity {
 
     @Column(name = "STATUS", nullable = false)
     protected String status;
-
-
-
-
-
-    public void setSurvey(Survey survey) {
-        this.survey = survey;
-    }
-
-    public Survey getSurvey() {
-        return survey;
-    }
-
 
     public void setRecBookList(List<ISBNnr> recBookList) {
         this.recBookList = recBookList;

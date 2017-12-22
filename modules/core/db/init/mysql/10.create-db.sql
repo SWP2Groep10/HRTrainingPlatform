@@ -95,8 +95,6 @@ create table HRTRAININGPLATFORM_EMPLOYEE (
     DELETED_BY varchar(50),
     --
     USER_ID varchar(32) not null,
-    HR_EMPLOYEE_ID varchar(32),
-    MANAGER_ID varchar(32),
     --
     primary key (ID)
 )^
@@ -130,7 +128,6 @@ create table HRTRAININGPLATFORM_TRAINING (
     DELETE_TS datetime(3),
     DELETED_BY varchar(50),
     --
-    SURVEY_ID varchar(32),
     DESCRIPTION longtext not null,
     START_DATE datetime(3) not null,
     END_DATE datetime(3) not null,
@@ -222,7 +219,7 @@ create table HRTRAININGPLATFORM_POSSIBLE_ANSWER (
     DELETED_BY varchar(50),
     --
     CODE varchar(255),
-    ANSWER_TEXT varchar(255) not null,
+    ANSWER_TEXT varchar(255),
     QUESTION_ID varchar(32) not null,
     ACTIVE boolean,
     --

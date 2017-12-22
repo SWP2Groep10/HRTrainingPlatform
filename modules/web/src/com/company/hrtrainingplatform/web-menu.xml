@@ -4,20 +4,19 @@
           insertBefore="administration">
         <item screen="hrtrainingplatform$Manager.browse"/>
         <item screen="hrtrainingplatform$HREmployee.browse"/>
-        <item screen="hrtrainingplatform$Admin.browse"/>
         <item screen="hrtrainingplatform$Employee.browse"/>
+        <item screen="hrtrainingplatform$Admin.browse"/>
     </menu>
     <menu id="Training"
           insertBefore="administration">
         <item screen="hrtrainingplatform$Training.browse"/>
+        <item screen="hrtrainingplatform$Certificate.browse"/>
         <item screen="hrtrainingplatform$Survey.browse"/>
         <item screen="hrtrainingplatform$FilledSurvey.browse"/>
-        <item screen="hrtrainingplatform$Certificate.browse"/>
     </menu>
     <menu id="Data"
           insertBefore="administration">
         <item screen="hrtrainingplatform$Address.browse"/>
         <item screen="hrtrainingplatform$Location.browse"/>
-        <item screen="hrtrainingplatform$ISBNnr.browse"/>
     </menu>
 </menu-config>

@@ -4,7 +4,8 @@
         class="com.company.hrtrainingplatform.web.training.TrainingBrowse"
         focusComponent="trainingsTable"
         lookupComponent="trainingsTable"
-        messagesPack="com.company.hrtrainingplatform.web.training">
+        messagesPack="com.company.hrtrainingplatform.web.training"
+        xmlns:chart="http://schemas.haulmont.com/charts/charts.xsd">
     <dsContext>
         <groupDatasource id="trainingsDs"
                          class="com.company.hrtrainingplatform.entity.Training"
@@ -12,35 +13,38 @@
             <query>
                 <![CDATA[select e from hrtrainingplatform$Training e]]>
             </query>
-            <collectionDatasource id="locationDs"
-                                  property="location"/>
         </groupDatasource>
     </dsContext>
     <dialogMode height="600"
                 width="800"/>
     <layout expand="trainingsTable"
             spacing="true">
+        <chart:mapViewer id="locationMap"
+                         height="200px"
+                         width="100%"/>
         <filter id="filter"
                 applyTo="trainingsTable"
                 datasource="trainingsDs">
             <properties include=".*"/>
         </filter>
         <groupTable id="trainingsTable"
+                    responsive="true"
                     width="100%">
             <actions>
                 <action id="create"/>
                 <action id="edit"/>
                 <action id="remove"/>
-                <action id="excel"
-                        caption="Excel"
-                        description="Excel"/>
+                <action id="excel"/>
             </actions>
             <columns>
                 <column id="description"/>
                 <column id="startDate"/>
                 <column id="endDate"/>
                 <column id="status"/>
-                <column id="location"/>
+                <column id="survey"/>
+                <column id="recBookList"
+                        align="RIGHT"
+                        collapsed="true"/>
             </columns>
             <rows datasource="trainingsDs"/>
             <rowsCount/>
@@ -52,12 +56,8 @@
                         action="trainingsTable.edit"/>
                 <button id="removeBtn"
                         action="trainingsTable.remove"/>
-                <button id="ExcelButton"
+                <button id="excelBtn"
                         action="trainingsTable.excel"/>
-                <button id="SendRequest"
-                        caption="Send Training Request"
-                        icon="font-icon:SEND"
-                        invoke="onSendRequestClick"/>
             </buttonsPanel>
         </groupTable>
     </layout>

@@ -15,39 +15,36 @@
     </dsContext>
     <dialogMode height="600"
                 width="800"/>
-    <layout margin="true"
+    <layout expand="windowActions"
             spacing="true">
-        <scrollBox height="100%"
-                   spacing="true">
-            <fieldGroup id="fieldGroup"
-                        datasource="surveyDs">
-                <column width="250px">
-                    <field property="title"/>
-                </column>
-            </fieldGroup>
-            <groupBox id="questionsBox"
-                      caption="msg://com.company.hrtrainingplatform.entity/Survey.questions">
-                <table id="questionsTable"
-                       height="200px"
-                       width="100%">
-                    <actions>
-                        <action id="add"/>
-                        <action id="remove"/>
-                    </actions>
-                    <columns>
-                        <column id="questionText"/>
-                        <column id="possibleAnswers"/>
-                        <column id="category"/>
-                    </columns>
-                    <rows datasource="questionsDs"/>
-                    <buttonsPanel>
-                        <button action="questionsTable.add"/>
-                        <button action="questionsTable.remove"/>
-                    </buttonsPanel>
-                </table>
-            </groupBox>
-            <frame id="windowActions"
-                   screen="editWindowActions"/>
-        </scrollBox>
+        <fieldGroup id="fieldGroup"
+                    datasource="surveyDs">
+            <column width="250px">
+                <field property="title"/>
+            </column>
+        </fieldGroup>
+        <groupBox id="questionsBox"
+                  caption="msg://com.company.hrtrainingplatform.entity/Survey.questions">
+            <table id="questionsTable"
+                   height="200px"
+                   width="100%">
+                <actions>
+                    <action id="add"/>
+                    <action id="remove"/>
+                </actions>
+                <columns>
+                    <column id="questionText"/>
+                    <column id="possibleAnswers"/>
+                    <column id="category"/>
+                </columns>
+                <rows datasource="questionsDs"/>
+                <buttonsPanel>
+                    <button action="questionsTable.add"/>
+                    <button action="questionsTable.remove"/>
+                </buttonsPanel>
+            </table>
+        </groupBox>
+        <frame id="windowActions"
+               screen="editWindowActions"/>
     </layout>
 </window>

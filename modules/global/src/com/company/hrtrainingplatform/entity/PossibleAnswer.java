@@ -8,7 +8,6 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import com.haulmont.cuba.core.entity.StandardEntity;
 import com.haulmont.chile.core.annotations.NamePattern;
-import javax.validation.constraints.NotNull;
 
 @NamePattern("%s|code")
 @Table(name = "HRTRAININGPLATFORM_POSSIBLE_ANSWER")
@@ -19,8 +18,7 @@ public class PossibleAnswer extends StandardEntity {
     @Column(name = "CODE")
     protected String code;
 
-    @NotNull
-    @Column(name = "ANSWER_TEXT", nullable = false)
+    @Column(name = "ANSWER_TEXT")
     protected String answerText;
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
