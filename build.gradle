@@ -162,6 +162,9 @@ configure(webModule) {
     dependencies {
         provided(servletApi)
         compile(guiModule)
+        compile 'com.codeborne:selenide:4.8'
+        compile 'org.seleniumhq.selenium:selenium-java:3.7.1'
+
 
     }
     
@@ -200,6 +203,10 @@ configure(webModule) {
     task deploy(dependsOn: [assemble, cleanConf], type: CubaDeployment) {
         appName = 'app'
         appJars('app-global', 'app-gui', 'app-web')
+    }
+    task testUI(type: Test,dependsOn: testClasses){
+        include("**/*UITest.class")
+        systemProperties= System.getProperties()
     }
     task buildScssThemes(type: CubaWebScssThemeCreation)
     task deployThemes(type: CubaDeployThemeTask, dependsOn: buildScssThemes)
