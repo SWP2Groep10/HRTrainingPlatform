@@ -27,7 +27,7 @@ import javax.persistence.ManyToOne;
 public class Training extends StandardEntity {
     private static final long serialVersionUID = 2831799128035995203L;
 
-    @NotNull(message = "Training can't be given without any attending employees")
+    @OnDeleteInverse(DeletePolicy.UNLINK)
     @JoinTable(name = "HRTRAININGPLATFORM_TRAINING_EMPLOYEE_LINK",
         joinColumns = @JoinColumn(name = "TRAINING_ID"),
         inverseJoinColumns = @JoinColumn(name = "EMPLOYEE_ID"))
@@ -40,11 +40,10 @@ public class Training extends StandardEntity {
     @JoinColumn(name = "SURVEY_ID")
     protected Survey survey;
 
+    @OnDeleteInverse(DeletePolicy.UNLINK)
     @JoinTable(name = "HRTRAININGPLATFORM_TRAINING_ISB_NNR_LINK",
         joinColumns = @JoinColumn(name = "TRAINING_ID"),
         inverseJoinColumns = @JoinColumn(name = "I_S_B_NNR_ID"))
-    @OnDeleteInverse(DeletePolicy.UNLINK)
-    @OnDelete(DeletePolicy.UNLINK)
     @ManyToMany
     protected List<ISBNnr> recBookList;
 
@@ -63,6 +62,7 @@ public class Training extends StandardEntity {
     @Column(name = "END_DATE", nullable = false)
     protected Date endDate;
 
+    @OnDeleteInverse(DeletePolicy.UNLINK)
     @NotNull(message = "Location is required.")
     @JoinTable(name = "HRTRAININGPLATFORM_TRAINING_LOCATION_LINK",
         joinColumns = @JoinColumn(name = "TRAINING_ID"),

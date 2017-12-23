@@ -15,6 +15,7 @@ public class HRTrainingPlatformUITest {
         //Open Website
         open("http://localhost:8080/app");
         //login as Admin
+        sleep(1500);
         $(By.xpath("//*[@cuba-id='loginField']")).shouldBe(visible).setValue("admin");
         $(By.xpath("//*[@cuba-id='passwordField']")).shouldBe(visible).setValue("admin");
 
@@ -70,6 +71,7 @@ public class HRTrainingPlatformUITest {
     public void createTraining(){
         //Open Website
         open("http://localhost:8080/app");
+        sleep(1500);
         //login as Admin
         $(By.xpath("//*[@cuba-id='loginField']")).shouldBe(visible).setValue("admin");
         $(By.xpath("//*[@cuba-id='passwordField']")).shouldBe(visible).setValue("admin");
@@ -141,6 +143,9 @@ public class HRTrainingPlatformUITest {
         //Delete Training
         $x("//*[@cuba-id='removeBtn']").shouldBe(visible).click();
         $x("//*[@cuba-id='optionDialog_ok']").shouldBe(visible).click();
+
+        //Disconnect
+        $(By.xpath("//*[@cuba-id='logoutButton']")).shouldBe(visible).click();
 
     }
 }
