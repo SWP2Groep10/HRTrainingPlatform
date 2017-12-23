@@ -34,7 +34,8 @@ public class Training extends StandardEntity {
     protected List<Employee> attendingList;
 
 
-    @OnDelete(DeletePolicy.CASCADE)
+    @OnDeleteInverse(DeletePolicy.UNLINK)
+    @OnDelete(DeletePolicy.UNLINK)
     @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "SURVEY_ID")
     protected Survey survey;
@@ -42,8 +43,6 @@ public class Training extends StandardEntity {
     @JoinTable(name = "HRTRAININGPLATFORM_TRAINING_ISB_NNR_LINK",
         joinColumns = @JoinColumn(name = "TRAINING_ID"),
         inverseJoinColumns = @JoinColumn(name = "I_S_B_NNR_ID"))
-    @OnDeleteInverse(DeletePolicy.UNLINK)
-    @OnDelete(DeletePolicy.UNLINK)
     @ManyToMany
     protected List<ISBNnr> recBookList;
 
