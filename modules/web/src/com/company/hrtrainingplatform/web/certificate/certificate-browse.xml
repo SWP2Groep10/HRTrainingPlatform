@@ -58,6 +58,7 @@
                     </fieldGroup>
                 </vbox>
                 <hbox id="actionsPane"
+                      margin="false,false,true,false"
                       spacing="true"
                       visible="false">
                     <button id="saveBtn"

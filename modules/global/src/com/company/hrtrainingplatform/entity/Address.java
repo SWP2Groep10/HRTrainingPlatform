@@ -17,7 +17,7 @@ import org.hibernate.validator.constraints.Length;
 public class Address extends StandardEntity {
     private static final long serialVersionUID = -4607488382137891335L;
 
-    @Pattern(message = "Must start with a capital letter", regexp = "[A-Z][a-zA-Z]*")
+    @Pattern(message = "Must start with a capital letter", regexp = "[A-Z][a-zA-Z\\-\u2423]*")
     @NotNull(message = "This value can not be null")
     @Column(name = "COUNTRY", nullable = false, length = 100)
     protected String country;
@@ -32,8 +32,7 @@ public class Address extends StandardEntity {
     @Column(name = "POSTALCODE", nullable = false)
     protected String postalcode;
 
-    @CaseConversion(type = ConversionType.LOWER)
-    @Pattern(message = "street name without number", regexp = "[a-zA-Z]*")
+    @Pattern(message = "street name without number", regexp = "[a-zA-Z\\-\u2423]*")
     @NotNull(message = "This value can not be null")
     @Column(name = "STREET", nullable = false, length = 100)
     protected String street;

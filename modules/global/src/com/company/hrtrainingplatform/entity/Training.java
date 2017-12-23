@@ -27,7 +27,6 @@ import javax.persistence.ManyToOne;
 public class Training extends StandardEntity {
     private static final long serialVersionUID = 2831799128035995203L;
 
-    @NotNull(message = "Training can't be given without any attending employees")
     @JoinTable(name = "HRTRAININGPLATFORM_TRAINING_EMPLOYEE_LINK",
         joinColumns = @JoinColumn(name = "TRAINING_ID"),
         inverseJoinColumns = @JoinColumn(name = "EMPLOYEE_ID"))

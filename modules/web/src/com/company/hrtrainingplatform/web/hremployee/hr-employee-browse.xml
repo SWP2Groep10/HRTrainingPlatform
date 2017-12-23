@@ -39,7 +39,7 @@
     <layout>
         <split height="100%"
                orientation="vertical"
-               pos="14"
+               pos="12"
                width="100%">
             <vbox id="editBox"
                   expand="fieldGroupBox"
@@ -56,6 +56,7 @@
                     </fieldGroup>
                 </vbox>
                 <hbox id="actionsPane"
+                      margin="false,false,true,false"
                       spacing="true"
                       visible="false">
                     <button id="saveBtn"
