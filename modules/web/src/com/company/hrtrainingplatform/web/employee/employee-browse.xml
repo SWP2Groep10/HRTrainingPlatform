@@ -88,11 +88,19 @@
                         <action id="excel"/>
                     </actions>
                     <columns>
-                        <column id="user"
-                                caption="Employee"/>
+                        <column id="user.login"
+                                align="CENTER"
+                                caption="Login"/>
+                        <column id="user.name"
+                                caption="Name"/>
+                        <column id="user.group"
+                                align="LEFT"
+                                caption="Department"/>
                         <column id="manager"
+                                align="CENTER"
                                 caption="Responsible Manager"/>
                         <column id="hrEmployee"
+                                align="CENTER"
                                 caption="Responsible HR Employee"/>
                     </columns>
                     <rows datasource="employeesDs"/>

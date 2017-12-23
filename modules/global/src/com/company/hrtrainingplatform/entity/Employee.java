@@ -13,6 +13,10 @@ import com.haulmont.cuba.core.entity.annotation.OnDeleteInverse;
 import com.haulmont.cuba.core.global.DeletePolicy;
 import java.util.List;
 import javax.persistence.OneToMany;
+import javax.persistence.InheritanceType;
+import javax.persistence.DiscriminatorType;
+import javax.persistence.Inheritance;
+import javax.persistence.DiscriminatorColumn;
 
 @NamePattern("%s|user")
 @Table(name = "HRTRAININGPLATFORM_EMPLOYEE")
@@ -21,8 +25,8 @@ public class Employee extends StandardEntity {
     private static final long serialVersionUID = 3647698373319442419L;
 
     @OnDeleteInverse(DeletePolicy.UNLINK)
-    @OnDelete(DeletePolicy.CASCADE)
-    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @OnDelete(DeletePolicy.UNLINK)
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "USER_ID")
     protected User user;
 

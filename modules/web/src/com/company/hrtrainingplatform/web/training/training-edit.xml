@@ -75,11 +75,13 @@
                         <columns>
                             <column id="user"
                                     caption="Attending Employee"/>
-                            <column id="manager"/>
-                            <column id="hrEmployee"
-                                    caption="HR Employee"/>
+                            <column id="user.position"
+                                    caption="Position"/>
+                            <column id="user.email"
+                                    caption="Email"/>
                         </columns>
                         <rows datasource="attendingListDs"/>
+                        <rowsCount/>
                         <buttonsPanel>
                             <button action="attendingListTable.add"/>
                             <button action="attendingListTable.remove"/>
@@ -103,8 +105,18 @@
                                     invoke="onShowMapClick"/>
                         </actions>
                         <columns>
-                            <column id="locationName"/>
-                            <column id="address"/>
+                            <column id="locationName"
+                                    align="CENTER"/>
+                            <column id="address.country"
+                                    caption="Country"/>
+                            <column id="address.city"
+                                    caption="City"/>
+                            <column id="address.postalcode"
+                                    caption="Postalcode"/>
+                            <column id="address.street"
+                                    caption="Street name"/>
+                            <column id="address.number"
+                                    caption="Number"/>
                         </columns>
                         <rows datasource="locationDs"/>
                         <rowsCount/>

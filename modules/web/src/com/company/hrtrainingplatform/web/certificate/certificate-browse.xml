@@ -107,8 +107,7 @@
                         <button id="refreshButton"
                                 action="table.refresh"
                                 caption=" "
-                                icon="icons/refresh.png"
-                                width="40px"/>
+                                icon="icons/refresh.png"/>
                     </buttonsPanel>
                 </groupTable>
             </vbox>

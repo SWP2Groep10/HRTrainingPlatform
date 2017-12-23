@@ -44,6 +44,8 @@
             <property name="user"
                       view="_minimal">
                 <property name="email"/>
+                <property name="group"
+                          view="_minimal"/>
             </property>
         </property>
         <property name="hrEmployee"
@@ -51,6 +53,8 @@
             <property name="user"
                       view="_minimal">
                 <property name="email"/>
+                <property name="group"
+                          view="_minimal"/>
             </property>
         </property>
     </view>
@@ -128,23 +132,10 @@
           name="training-view">
         <property name="attendingList"
                   view="_minimal">
-            <property name="manager"
-                      view="_minimal">
-                <property name="user"
-                          view="_minimal">
-                    <property name="email"/>
-                </property>
-            </property>
             <property name="user"
                       view="_minimal">
                 <property name="email"/>
-            </property>
-            <property name="hrEmployee"
-                      view="_minimal">
-                <property name="user"
-                          view="_minimal">
-                    <property name="email"/>
-                </property>
+                <property name="position"/>
             </property>
         </property>
         <property name="survey"

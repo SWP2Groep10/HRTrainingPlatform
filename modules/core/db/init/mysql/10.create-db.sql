@@ -94,7 +94,7 @@ create table HRTRAININGPLATFORM_EMPLOYEE (
     DELETE_TS datetime(3),
     DELETED_BY varchar(50),
     --
-    USER_ID varchar(32) not null,
+    USER_ID varchar(32),
     HR_EMPLOYEE_ID varchar(32),
     MANAGER_ID varchar(32),
     --

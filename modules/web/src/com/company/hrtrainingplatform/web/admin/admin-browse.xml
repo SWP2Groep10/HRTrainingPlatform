@@ -83,7 +83,10 @@
                         <action id="excel"/>
                     </actions>
                     <columns>
-                        <column id="user"/>
+                        <column id="user"
+                                caption="Admin"/>
+                        <column id="user.email"
+                                caption="Email"/>
                     </columns>
                     <rows datasource="adminsDs"/>
                     <rowsCount/>

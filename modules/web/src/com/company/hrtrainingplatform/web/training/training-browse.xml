@@ -62,8 +62,7 @@
                 <button id="refreshButton"
                         action="trainingsTable.refresh"
                         caption=" "
-                        icon="icons/refresh.png"
-                        width="40px"/>
+                        icon="icons/refresh.png"/>
             </buttonsPanel>
         </groupTable>
     </layout>

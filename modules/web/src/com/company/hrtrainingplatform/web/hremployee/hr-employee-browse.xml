@@ -85,8 +85,12 @@
                         <action id="excel"/>
                     </actions>
                     <columns>
-                        <column id="user"
+                        <column id="user.name"
                                 caption="HR Employee"/>
+                        <column id="user.group"
+                                caption="Department"/>
+                        <column id="user.email"
+                                caption="Email"/>
                     </columns>
                     <rows datasource="hREmployeesDs"/>
                     <rowsCount/>

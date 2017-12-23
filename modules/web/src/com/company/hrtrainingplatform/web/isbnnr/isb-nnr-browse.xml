@@ -50,7 +50,8 @@
                     <fieldGroup id="fieldGroup"
                                 datasource="iSBNnrDs">
                         <column width="250px">
-                            <field property="isbn"/>
+                            <field caption="Book ISBN Number"
+                                   property="isbn"/>
                         </column>
                     </fieldGroup>
                 </vbox>
