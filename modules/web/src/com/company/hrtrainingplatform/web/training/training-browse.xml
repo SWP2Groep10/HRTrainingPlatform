@@ -34,6 +34,7 @@
                 <action id="excel"
                         caption="Excel"
                         description="Excel"/>
+                <action id="refresh"/>
             </actions>
             <columns>
                 <column id="description"/>
@@ -58,6 +59,11 @@
                         caption="Send Training Request"
                         icon="font-icon:SEND"
                         invoke="onSendRequestClick"/>
+                <button id="refreshButton"
+                        action="trainingsTable.refresh"
+                        caption=" "
+                        icon="icons/refresh.png"
+                        width="40px"/>
             </buttonsPanel>
         </groupTable>
     </layout>

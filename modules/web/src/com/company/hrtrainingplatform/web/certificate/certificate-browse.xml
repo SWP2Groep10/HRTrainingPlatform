@@ -84,6 +84,7 @@
                         <action id="edit"/>
                         <action id="remove"/>
                         <action id="excel"/>
+                        <action id="refresh"/>
                     </actions>
                     <columns>
                         <column id="description"
@@ -103,6 +104,11 @@
                                 action="table.remove"/>
                         <button id="excelButton"
                                 action="table.excel"/>
+                        <button id="refreshButton"
+                                action="table.refresh"
+                                caption=" "
+                                icon="icons/refresh.png"
+                                width="40px"/>
                     </buttonsPanel>
                 </groupTable>
             </vbox>
