@@ -106,7 +106,7 @@
                                 action="table.excel"/>
                         <button id="refreshButton"
                                 action="table.refresh"
-                                caption=" "
+                                caption=" Refresh"
                                 icon="icons/refresh.png"/>
                     </buttonsPanel>
                 </groupTable>

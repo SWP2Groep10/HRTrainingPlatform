@@ -61,7 +61,7 @@
                         invoke="onSendRequestClick"/>
                 <button id="refreshButton"
                         action="trainingsTable.refresh"
-                        caption=" "
+                        caption="Refresh"
                         icon="icons/refresh.png"/>
             </buttonsPanel>
         </groupTable>
