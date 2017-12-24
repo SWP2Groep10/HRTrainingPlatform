@@ -75,8 +75,8 @@
                         <columns>
                             <column id="user"
                                     caption="Attending Employee"/>
-                            <column id="user.position"
-                                    caption="Position"/>
+                            <column id="user.group.name"
+                                    caption="Department"/>
                             <column id="user.email"
                                     caption="Email"/>
                         </columns>
@@ -125,7 +125,7 @@
                             <button action="locationTable.remove"/>
                             <button id="ShowMap"
                                     action="locationTable.ShowMap"
-                                    caption="Show Map"
+                                    caption="Show on Google Maps"
                                     trackSelection="true"/>
                         </buttonsPanel>
                     </table>

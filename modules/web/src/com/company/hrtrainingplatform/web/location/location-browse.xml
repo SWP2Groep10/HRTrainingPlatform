@@ -82,12 +82,16 @@
                         <action id="create"/>
                         <action id="edit"/>
                         <action id="remove"/>
+                        <action id="ShowMap"
+                                caption="Show Map"
+                                icon="font-icon:MAP_O"
+                                invoke="onShowMapClick"/>
                     </actions>
                     <columns>
                         <column id="address"
                                 caption="Location Address"/>
                         <column id="locationName"
-                                caption="Location Names"/>
+                                caption="Location Name"/>
                     </columns>
                     <rows datasource="locationsDs"/>
                     <rowsCount/>
@@ -99,6 +103,10 @@
                                 action="table.edit"/>
                         <button id="removeBtn"
                                 action="table.remove"/>
+                        <button id="ShowMapButton"
+                                action="table.ShowMap"
+                                caption="Show on Google Maps"
+                                icon="font-icon:MAP_O"/>
                     </buttonsPanel>
                 </groupTable>
             </vbox>

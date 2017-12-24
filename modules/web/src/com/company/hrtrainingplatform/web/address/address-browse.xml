@@ -52,7 +52,7 @@
                         action="addressesTable.excel"
                         icon="icons/excel.png"/>
                 <button id="ShowMap"
-                        caption="Show Map"
+                        caption="Show on Google Maps"
                         icon="font-icon:MAP_O"
                         invoke="onShowMapClick"/>
             </buttonsPanel>
