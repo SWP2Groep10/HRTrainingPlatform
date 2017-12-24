@@ -124,6 +124,7 @@ order by t.status]]>
                                width="100%">
                             <split height="100%"
                                    orientation="horizontal"
+                                   pos="56"
                                    width="100%">
                                 <chart:pieChart id="certificateChart"
                                                 datasource="certificateDs"
@@ -184,6 +185,7 @@ order by t.status]]>
                             </cssLayout>
                             <split height="100%"
                                    orientation="horizontal"
+                                   pos="40"
                                    width="100%">
                                 <chart:pieChart id="trainingChart"
                                                 datasource="statusDs"
