@@ -22,7 +22,8 @@ public class Certificate extends StandardEntity {
     private static final long serialVersionUID = 8658170452982695634L;
 
     @NotNull(message = "This value can not be null")
-    @Column(name = "DESCRIPTION", nullable = false, length = 100)
+    @Column(name = "DESCRIPTION",
+            nullable = false, length = 100)
     protected String description;
 
 

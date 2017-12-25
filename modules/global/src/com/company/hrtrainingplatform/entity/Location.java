@@ -11,6 +11,7 @@ import javax.persistence.ManyToOne;
 import javax.validation.constraints.NotNull;
 import com.haulmont.cuba.core.entity.StandardEntity;
 import com.haulmont.chile.core.annotations.NamePattern;
+import com.haulmont.cuba.core.entity.annotation.OnDeleteInverse;
 
 @NamePattern("%s|locationName")
 @Table(name = "HRTRAININGPLATFORM_LOCATION")
@@ -18,10 +19,9 @@ import com.haulmont.chile.core.annotations.NamePattern;
 public class Location extends StandardEntity {
     private static final long serialVersionUID = 8506275702325742061L;
 
-    @OnDelete(DeletePolicy.UNLINK)
+    @OnDeleteInverse(DeletePolicy.CASCADE)
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "ADDRESS_ID")
-    @NotNull(message = "This value can not be null")
     protected Address address;
 
     @NotNull(message = "This value can not be null")

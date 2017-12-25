@@ -23,7 +23,7 @@ public class HRTrainingPlatformUITest {
         $(By.xpath("//*[@cuba-id='loginButton']")).shouldBe(visible).click();
 
         //Test is too fast compared to the Web (Wait for it to load the javascript correctly)
-        sleep(1500);
+        sleep(2000);
 
         //Open 'Users' tab
         $x(("//*[@cuba-id='sideMenu']//*[@cuba-id='Users']")).shouldBe(visible).click();
@@ -80,7 +80,7 @@ public class HRTrainingPlatformUITest {
         $(By.xpath("//*[@cuba-id='loginButton']")).shouldBe(visible).click();
 
         //Test is too fast compared to the Web (Wait for it to load the javascript correctly)
-        sleep(1500);
+        sleep(2000);
 
         //Open 'Training' tab
         $x(("//*[@cuba-id='sideMenu']//*[@cuba-id='Training']")).shouldBe(visible).click();
@@ -101,24 +101,76 @@ public class HRTrainingPlatformUITest {
         $x("//*[@cuba-id='startDate']//input[@id='6cbba21f5b54e9c1bddfae02ce899ec0']")
                 .shouldBe(visible).setValue("10:00");
 
-        $x("//*[@cuba-id='endDate']//input[@aria-controls='gwt-uid-8'")
+        $x("//*[@cuba-id='endDate']//input[@aria-controls='gwt-uid-8']")
                 .shouldBe(visible).setValue("15/01/2018");
 
         $x("//*[@cuba-id='endDate']//input[@id='4ce1cd5ce482768ca17e3bada6660862']")
                 .shouldBe(visible).setValue("22:00");
 
         $x("//*[@cuba-id='status']//*[@role='button']").shouldBe(visible).click();
-        $x("//*[@cuba-id='status']//*[@id='VAADIN_COMBOBOX_OPTIONLIST']//span[text()='Ongoing']")
+        sleep(100);
+        $x("//*[@id='VAADIN_COMBOBOX_OPTIONLIST']//*[text()='Ongoing']")
                 .shouldBe(visible).click();
 
         $x("//*[@cuba-id='add']").shouldBe(visible).click();
-        $x("//*[@cuba-id='table_composition']//table//tr[1]").shouldBe(visible).doubleClick();
+        $x("//*[@cuba-id='createBtn']").shouldBe(visible).click();
+        $x("//*[@id='d617faffc6b4bb57d0acdef887c32d77']").shouldBe(visible).click();
+        $x("//*[@cuba-id='userTableCreateBtn']").shouldBe(visible).click();
+
+        //Create a user as Employee
+        $x("//*[@cuba-id='login']").shouldBe(visible).setValue("EMPTest");
+        $x("//*[@cuba-id='passw']").shouldBe(visible).setValue("passwordtest");
+        $x("//*[@cuba-id='confirmPassw']").shouldBe(visible).setValue("passwordtest");
+        $x("//*[@cuba-id='firstName']").shouldBe(visible).setValue("Brent");
+        $x("//*[@cuba-id='middleName']").shouldBe(visible).setValue("Amir");
+        $x("//*[@cuba-id='lastName']").shouldBe(visible).setValue("Ricardo");
+        $x("//*[@cuba-id='windowCommit']").shouldBe(visible).click();
+        $x("//*[@cuba-id='selectButton']").shouldBe(visible).click();
+
+        //Create Manager
+        $x("//*[@id='86b5b2a00e1674a9f8ce2d64fc3506cc']").shouldBe(visible).click();
+        $x("//*[@cuba-id='createBtn']").shouldBe(visible).click();
+        $x("//*[@cuba-id='lookup']").shouldBe(visible).click();
+        $x("//*[@cuba-id='userTableCreateBtn']").shouldBe(visible).click();
+        $x("//*[@cuba-id='login']").shouldBe(visible).setValue("MGRTest");
+        $x("//*[@cuba-id='passw']").shouldBe(visible).setValue("passwordtest");
+        $x("//*[@cuba-id='confirmPassw']").shouldBe(visible).setValue("passwordtest");
+        $x("//*[@cuba-id='firstName']").shouldBe(visible).setValue("John");
+        $x("//*[@cuba-id='middleName']").shouldBe(visible).setValue("Fitz Gerald");
+        $x("//*[@cuba-id='lastName']").shouldBe(visible).setValue("Kennedy");
+        $x("//*[@cuba-id='windowCommit']").shouldBe(visible).click();
+        $x("//*[@cuba-id='selectButton']").shouldBe(visible).click();
+        $x("//*[@cuba-id='saveBtn']").shouldBe(visible).click();
+        $x("//*[@cuba-id='selectButton']").shouldBe(visible).click();
+        $x("//*[@cuba-id='selectButton']").shouldBe(visible).click();
+
+
+        //Create HR employee
+        $x("//*[@id='9e3846630dc3e49ed3facc9493234155']").shouldBe(visible).click();
+        $x("//*[@cuba-id='createBtn']").shouldBe(visible).click();
+        $x("//*[@cuba-id='lookup']").shouldBe(visible).click();
+        $x("//*[@cuba-id='userTableCreateBtn']").shouldBe(visible).click();
+        $x("//*[@cuba-id='login']").shouldBe(visible).setValue("HREmpTest");
+        $x("//*[@cuba-id='passw']").shouldBe(visible).setValue("passwordtest");
+        $x("//*[@cuba-id='confirmPassw']").shouldBe(visible).setValue("passwordtest");
+        $x("//*[@cuba-id='firstName']").shouldBe(visible).setValue("Femke");
+        $x("//*[@cuba-id='middleName']").shouldBe(visible).setValue("Tom");
+        $x("//*[@cuba-id='lastName']").shouldBe(visible).setValue("Van Kruflaer");
+        $x("//*[@cuba-id='windowCommit']").shouldBe(visible).click();
+        $x("//*[@cuba-id='selectButton']").shouldBe(visible).click();
+        $x("//*[@cuba-id='saveBtn']").shouldBe(visible).click();
+        $x("//*[@cuba-id='selectButton']").shouldBe(visible).click();
+
+        $x("//*[@cuba-id='saveBtn']").shouldBe(visible).click();
+        $x("//*[@cuba-id='selectButton']").shouldBe(visible).click();
+
         //Create Location for The Training
         $x("//*[@cuba-id='Locations']").shouldBe(visible).click();
         $x("//*[@cuba-id='add']").shouldBe(visible).click();
         $x("//*[@cuba-id='createBtn']").shouldBe(visible).click();
         $x("//*[@cuba-id='lookup']").shouldBe(visible).click();
         $x("//*[@cuba-id='createBtn']").shouldBe(visible).click();
+
         //Input data for the address
         $x("//*[@cuba-id='country']").shouldBe(visible).setValue("Belgium");
         $x("//*[@cuba-id='city']").shouldBe(visible).setValue("Brussels");
@@ -138,7 +190,12 @@ public class HRTrainingPlatformUITest {
         $x("//*[@cuba-id='createBtn']").shouldBe(visible).click();
         $x("//*[@cuba-id='isbn']").shouldBe(visible).setValue("9781306810494");
         $x("//*[@cuba-id='selectButton']").shouldBe(visible).click();
+        $x("//*[@cuba-id='saveBtn']").shouldBe(visible).click();
+        $x("//*[@cuba-id='selectButton']").shouldBe(visible).click();
+
+        //commit Training
         $x("//*[@cuba-id='windowCommit']").shouldBe(visible).click();
+
 
         //Delete Training
         $x("//*[@cuba-id='removeBtn']").shouldBe(visible).click();
